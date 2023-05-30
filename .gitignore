@@ -1,3 +1,5 @@
 node_modules
 venv
-jam-project
+jam-project/.expo
+jam-project/assets
+jam-project/node_modules
