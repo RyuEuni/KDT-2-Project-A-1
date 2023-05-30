@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 
 export const StylesColors = StyleSheet.create({
   mainColor: "#D3EAFF",

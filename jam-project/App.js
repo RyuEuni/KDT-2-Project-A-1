@@ -3,10 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { styles } from './styles.js';
-import loginScreen from './login';
-import homeScreen from './home';
-import singupScreen from './singup';
+import { Styles } from './Styles.js';
+import loginScreen from './Login';
+import homeScreen from './Home';
+import singupScreen from './Singup';
 
 const Stack = createNativeStackNavigator();
 

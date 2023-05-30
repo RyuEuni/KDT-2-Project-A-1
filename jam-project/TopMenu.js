@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Button, Image} from 'react-native';
-import { Styles, StylesText } from './styles.js';
+import { Styles, StylesText } from './Styles.js';
 
-export default function TopMenu({navigation}) {
+export default function TopMenu() {
   return (
     <View style={Styles.homeBox}>
       <View>
