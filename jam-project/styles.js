@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export const colors = StyleSheet.create({
+export const StylesColors = StyleSheet.create({
   mainColor: "#D3EAFF",
   subColorLight: "#E3F2FF",
   subColorDeep: "#A5C7FB",
@@ -8,12 +8,25 @@ export const colors = StyleSheet.create({
   whiteColor: "#FFFFFF"
 });
 
+export const StylesText = StyleSheet.create({
+  smallSize: 12,
+  regularSize: 16,
+  mediumSize: 20,
+  largeSize: 25,
+  extraLargeSize: 35,
 
-export const styles = StyleSheet.create({
+  thinWeight: 200,
+  normalWeight: 400,
+  boldWeight: 700,
+  extraBoldWeight: 900
+
+});
+
+export const Styles = StyleSheet.create({
   homeBox: {
     width: '100%', 
     height: '100%', 
-    backgroundColor: colors.mainColor
+    backgroundColor: StylesColors.mainColor
   },
   container2: {
     width: 80, 
