@@ -1,2 +1,2 @@
-Project A
+Project A, OB팀
 
