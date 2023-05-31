@@ -43,10 +43,14 @@ export const Styles = StyleSheet.create({
   },
   bottonBox: {
     width: '100%',
-    height: '10%',
+    height: '25%',
     backgroundColor:'#A5C7FB',
     display:'flex',
-
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+  bottonText:{
+    
   }
 });
 
