@@ -1,3 +1,4 @@
+
 # 현재가 조회
 #import mojito
 
@@ -22,3 +23,23 @@
 # price = broker.fetch_price(symbol=SYMBOL)
 # curr_price = price['output']['stck_prpr']
 # print(curr_price)
+
+
+
+
+
+import websockets
+import json
+import os
+import asyncio
+import time
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+from base64 import b64decode
+
+g_appkey = "PSqY0usw7Qno1EZq5htoLFGSMghmflV4sSOK"
+g_appsceret = "tPzkiC4pW43WHREcTXm7rPBRodtAWioxndwBTilX6E3uB1ef6s66jcTyc/dvBG70jrByEWE9uZCG0zbT+XhGydFjJBWgw+huQqRvpl1QYFZiF0I/C1sSfBxXhPI7YhZY7eb04A0E0TAsAvhP4DuA8INfVfYgvxsrMr9UVz3UsWk6yAxYpmE="
+
+
+

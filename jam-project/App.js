@@ -6,7 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Styles } from './Styles.js';
 import loginScreen from './Login';
 import homeScreen from './Home';
-import singupScreen from './Singup';
+import singupScreen from './Signup';
 
 const Stack = createNativeStackNavigator();
 

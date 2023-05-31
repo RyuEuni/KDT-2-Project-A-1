@@ -25,7 +25,8 @@ export const StylesText = StyleSheet.create({
 export const Styles = StyleSheet.create({
   homeBox: {
     width: '100%', 
-    height: '100%', 
+    // height: '100%', 
+    height: 80, 
     backgroundColor: StylesColors.mainColor
   },
   container2: {

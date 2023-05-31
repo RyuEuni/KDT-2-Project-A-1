@@ -8,8 +8,8 @@ export default function homeScreen({navigation}) {
   // let imagePath = topMenu
   return (
     <View>
+      <Button title="Login" onPress={() => navigation.navigate('Signup')} />
       <TopMenu />
-      <Button title="Login" onPress={() => navigation.navigate('login')} />
     </View>
     
   );
