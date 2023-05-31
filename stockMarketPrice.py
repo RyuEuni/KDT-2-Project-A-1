@@ -1,5 +1,6 @@
 import mojito
 import pprint
+import json
 
 key = "PSqY0usw7Qno1EZq5htoLFGSMghmflV4sSOK"
 secret = "tPzkiC4pW43WHREcTXm7rPBRodtAWioxndwBTilX6E3uB1ef6s66jcTyc/dvBG70jrByEWE9uZCG0zbT+XhGydFjJBWgw+huQqRvpl1QYFZiF0I/C1sSfBxXhPI7YhZY7eb04A0E0TAsAvhP4DuA8INfVfYgvxsrMr9UVz3UsWk6yAxYpmE="
@@ -15,6 +16,4 @@ print("High : ", resp['output']['stck_hgpr'])    # 고가
 print("Low  : ", resp['output']['stck_lwpr'])     # 저가
 print("Close: ", resp['output']['stck_prpr'])    # 종가
 
-symbols = broker.fetch_symbols()
-pprint.pprint(symbols['단축코드'])
-pprint.pprint(symbols['한글명'])
+
