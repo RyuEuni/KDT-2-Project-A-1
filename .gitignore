@@ -5,3 +5,5 @@ venv/Scripts
 jam-project/.expo
 jam-project/assets
 jam-project/node_modules
+.env
+Jamstock
