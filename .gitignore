@@ -1,5 +1,7 @@
 node_modules
-venv
+venv/Include
+venv/Lib
+venv/Scripts
 jam-project/.expo
 jam-project/assets
 jam-project/node_modules
