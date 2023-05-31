@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { Styles } from './Styles.js';
+import { Styles, StylesColors } from './Styles';
 import loginScreen from './Login';
 import homeScreen from './Home';
 import singupScreen from './Signup';
@@ -15,10 +15,10 @@ export default function App() {
     
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="jamStock" component={homeScreen} options={{headerShown: false}} />
-        {/* <Stack.Screen name="home" component={homeScreen} /> */}
-        <Stack.Screen name="login" component={loginScreen} />
-        <Stack.Screen name="Signup" component={singupScreen} />
+          <Stack.Screen name="JamStock" component={homeScreen} options={{headerShown: false}} />
+          {/* <Stack.Screen name="home" component={homeScreen} /> */}
+          <Stack.Screen name="Login" component={loginScreen} />
+          <Stack.Screen name="Signup" component={singupScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

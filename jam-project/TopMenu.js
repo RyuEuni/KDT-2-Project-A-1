@@ -4,13 +4,25 @@ import { Styles, StylesText } from './Styles.js';
 
 export default function TopMenu() {
   return (
-    <View style={Styles.homeBox}>
-      <View>
-        <Text style={{fontSize: StylesText.extraLargeSize}}>JamStock</Text>
+    <View style={Styles.topRoot}>
+      <View style={Styles.logoWrap}>
+        <Text style={Styles.logoText}>JamStock</Text>
         <Image
-          style={{height: 50, width: 50, marginLeft: '30%', marginTop: -5}}
+          style={Styles.logoImage}
           source={require('./resource/JamStock_Pig.png')}
         />
+      </View>
+
+      <View style={Styles.topWrap}>
+        <Image
+            style={Styles.logoImage}
+            source={require('./resource/shoppingcart.png')}
+          />
+        <View style={Styles.hambergerWrap}>
+          <View style={Styles.hambergerBar}></View>
+          <View style={Styles.hambergerBar}></View>
+          <View style={Styles.hambergerBar}></View>
+        </View>
       </View>
     </View>
     
