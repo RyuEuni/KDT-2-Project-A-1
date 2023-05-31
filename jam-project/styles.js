@@ -41,5 +41,12 @@ export const Styles = StyleSheet.create({
     alignSelf:'center', 
     // elevation:50 //앞으로 나와있는 효과
   },
+  bottonBox: {
+    width: '100%',
+    height: '10%',
+    backgroundColor:'#A5C7FB',
+    display:'flex',
+
+  }
 });
 
