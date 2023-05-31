@@ -14,3 +14,12 @@ export default function homeScreen({navigation}) {
     
   );
 }
+
+fetch("http://localhost:3008/home", {
+    method: "POST",
+  })
+  .then((response) => response.json())
+  .then((result) => {
+    console.log("count: ", result)
+
+  })

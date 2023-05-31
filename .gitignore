@@ -2,6 +2,7 @@ node_modules
 venv/Include
 venv/Lib
 venv/Scripts
+venv/pyvenv.cfg
 jam-project/.expo
 jam-project/assets
 jam-project/node_modules
