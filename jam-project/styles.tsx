@@ -199,6 +199,42 @@ export const Styles = StyleSheet.create({
     height:'30%',
     textAlign:'center',
     fontSize:StylesText.regularSize.fontSize
+  },
+  walletBox:{
+    width:'100%',
+    height:'100%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexDirection:'column',
+    position:'relative',
+    flex:1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent:'center',
+  },
+  walletContainer:{
+    width:'100%',
+    height:'83%',
+    display:'flex',
+    flexDirection:'column',
+    backgroundColor:StylesColors.subColorLight.backgroundColor,
+    position:'relative'
+  },
+  walletAsset:{
+    width:'100%',
+    height:'10%',
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-around'
+  },
+  walletAssetName:{
+    width:'30%',
+    height:'80%',
+    fontSize:StylesText.regularSize.fontSize,
+    backgroundColor:StylesColors.subColorDeep.backgroundColor,
+    borderRadius:30,
+    alignItems:'center',
+    justifyContent:'center'
   }
 });
 

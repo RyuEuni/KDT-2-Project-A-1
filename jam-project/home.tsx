@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, Button, Image} from 'react-native';
-import { Styles, StylesText, StylesColors } from './styles';
+import {View} from 'react-native';
+import { Styles } from './styles';
 import TopMenu from './topMenu';
 import BottomMenu from './bottomMenu';
 

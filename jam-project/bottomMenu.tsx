@@ -62,7 +62,7 @@ const BottomMenu: React.FC<BottomMenuProps> = ({ navigation }) => {
       <View style={Styles.bottomView}>
         <TouchableOpacity
           style={Styles.bottomTouch}
-          onPress={() => navigation.navigate('')}
+          onPress={() => navigation.navigate('wallet')}
         >
           <Image
             source={require('./resource/wallet.png')}

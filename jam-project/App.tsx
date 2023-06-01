@@ -9,6 +9,7 @@ import HomeScreen from './home';
 import SignupScreen from './signUp';
 import TopScreen from './topMenu'
 import BottomScreen from './bottomMenu';
+import WalletScreen from './wallet';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
           <Stack.Screen name="bottomMenu" component={BottomScreen} />
           <Stack.Screen name="login" component={LoginScreen} />
           <Stack.Screen name="signUp" component={SignupScreen} />
+          <Stack.Screen name="wallet" component={WalletScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
