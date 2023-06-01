@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, Button, Image} from 'react-native';
-import { Styles, StylesText, StylesColors } from './Styles.js';
-import TopMenu from './TopMenu.js';
-import BottomMenu from './BottonMenu.js';
+import { Styles, StylesText, StylesColors } from './styles.js';
+import TopMenu from './topMenu.js';
+import BottomMenu from './bottomMenu.js';
 
 
-export default function homeScreen({navigation}) {
+export default function HomeScreen({navigation}) {
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />

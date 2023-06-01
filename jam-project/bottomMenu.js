@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { Styles, StylesText } from './Styles.js';
+import { Styles, StylesText } from './styles.js';
 import { navigation } from '@react-navigation/native';
 
 export default function BottomMenu({ navigation }) {
