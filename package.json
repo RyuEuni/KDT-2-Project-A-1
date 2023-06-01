@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {"type":"module",
   "name": "kdt-2-project-a-1",
   "version": "1.0.0",
@@ -69,7 +69,9 @@
     "utils-merge": "^1.0.1",
     "v8-compile-cache-lib": "^3.0.1",
     "vary": "^1.1.2",
-    "yn": "^3.1.1"
+    "yn": "^3.1.1",
+    "websocket": "^1.0.34",
+    "websockets": "^0.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
@@ -79,22 +81,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-=======
-{
-  "dependencies": {
-    "websocket": "^1.0.34",
-    "websockets": "^0.2.0"
-  },
-  "name": "kdt-2-project-a-1",
-  "description": "Team name = 'OB'\r Project name = 'JamStock'",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
->>>>>>> RyuEuni/issue10
-  "author": "",
-  "license": "ISC"
+  }
+
 }
