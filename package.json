@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"type":"module",
   "name": "kdt-2-project-a-1",
   "version": "1.0.0",
@@ -79,6 +80,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+{
+  "dependencies": {
+    "websocket": "^1.0.34",
+    "websockets": "^0.2.0"
+  },
+  "name": "kdt-2-project-a-1",
+  "description": "Team name = 'OB'\r Project name = 'JamStock'",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+>>>>>>> RyuEuni/issue10
   "author": "",
   "license": "ISC"
 }
