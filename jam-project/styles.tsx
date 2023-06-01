@@ -337,12 +337,25 @@ export const Styles = StyleSheet.create({
     display:'flex',
     flexWrap:'wrap',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
   },
-  recommandKeyword:{
-    width:'25%',
+  recommandKeywordPink:{
+    width:'20%',
     height:'30%',
-
+    backgroundColor:StylesColors.pinkColor.backgroundColor,
+    borderRadius:10,
+  },
+  recommandKeywordPurple:{
+    width:'20%',
+    height:'30%',
+    backgroundColor:StylesColors.purpleColor.backgroundColor,
+    borderRadius:10,
+  },
+  recommandKeywordYellow:{
+    width:'20%',
+    height:'30%',
+    backgroundColor:StylesColors.yellowColor.backgroundColor,
+    borderRadius:10,
   }
 });
 
