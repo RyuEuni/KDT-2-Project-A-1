@@ -1,10 +1,15 @@
 import React from 'react';
 import {View, Text, Button, Image, TouchableOpacity} from 'react-native';
-import { Styles, StylesText } from './styles.js';
+import { Styles, StylesText } from './styles';
 // import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default function TopMenu({navigation}) {
+type topMenuProps = {
+  navigation: any;
+  // Replace `any` with your navigation type
+};
+
+const TopMenu:React.FC<topMenuProps>=({navigation})=> {
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
@@ -17,13 +22,13 @@ export default function TopMenu({navigation}) {
             />
           </View>
           <View style={Styles.topWrap}>
-            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+            <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
               <Image
                   style={Styles.logoImage}
                   source={require('./resource/shoppingcart.png')}
                 />
             </TouchableOpacity>
-            <TouchableOpacity style={Styles.hambergerWrap} onPress={() => navigation.navigate('Signup')}>
+            <TouchableOpacity style={Styles.hambergerWrap} onPress={() => navigation.navigate('signUp')}>
               <View style={Styles.hambergerBar}></View>
               <View style={Styles.hambergerBar}></View>
               <View style={Styles.hambergerBar}></View>
@@ -34,3 +39,5 @@ export default function TopMenu({navigation}) {
     // </NavigationContainer>
   );
 }
+
+export default TopMenu

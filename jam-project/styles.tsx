@@ -1,25 +1,54 @@
-import { StyleSheet} from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import Constants from 'expo-constants';
 
-export const StylesColors = StyleSheet.create({
-  mainColor: "#D3EAFF",
-  subColorLight: "#E3F2FF",
-  subColorDeep: "#A5C7FB",
-  grayColor: "#BDBDBD",
-  whiteColor: "#FFFFFF"
+export const StylesColors=StyleSheet.create({
+  mainColor: {
+    backgroundColor:"#D3EAFF",
+    color:"#D3EAFF"
+  },
+  subColorLight: {
+    backgroundColor:"#E3F2FF"
+  },
+  subColorDeep: {
+    backgroundColor:"#A5C7FB"
+  },
+  grayColor: {
+    backgroundColor:"#BDBDBD"
+  },
+  whiteColor: {
+    backgroundColor:"#FFFFFF"
+  }
 });
 
 export const StylesText = StyleSheet.create({
-  smallSize: 12,
-  regularSize: 16,
-  mediumSize: 20,
-  largeSize: 25,
-  extraLargeSize: 35,
+  smallSize: {
+    fontSize:12
+  },
+  regularSize: {
+    fontSize:16
+  },
+  mediumSize: {
+    fontSize:20
+  },
+  largeSize: {
+    fontSize:25
+  },
+  extraLargeSize: {
+    fontSize:35
+  },
 
-  thinWeight: 200,
-  normalWeight: 400,
-  boldWeight: 700,
-  extraBoldWeight: 900
+  thinWeight: {
+    fontSize:200
+  },
+  normalWeight: {
+    fontSize:400
+  },
+  boldWeight: {
+    fontSize:700
+  },
+  extraBoldWeight: {
+    fontSize:900
+  }
 });
 
 export const Styles = StyleSheet.create({
@@ -59,7 +88,7 @@ export const Styles = StyleSheet.create({
     // borderColor: 'red'
   },
   logoText: {
-    fontSize: StylesText.extraLargeSize
+    fontSize: StylesText.extraLargeSize.fontSize
   },
   logoImage: {
     width: 40, 
@@ -80,7 +109,7 @@ export const Styles = StyleSheet.create({
   hambergerBar: {
     width: '100%',
     height: "20%",
-    backgroundColor: StylesColors.whiteColor,
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
     borderRadius: 10,
   },
   //! 홈 화면
@@ -89,7 +118,7 @@ export const Styles = StyleSheet.create({
     marginBottom: Constants.BottomTabBarHeight,
     width: '100%', 
     height: '100%', 
-    backgroundColor: StylesColors.mainColor,
+    backgroundColor: StylesColors.mainColor.backgroundColor,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -102,7 +131,7 @@ export const Styles = StyleSheet.create({
   homeWrap: {
     width: '100%', 
     height: '40%',
-    backgroundColor: StylesColors.subColorLight,
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
     // flex: 1,
     borderWidth: 1,
     borderColor: 'red'
@@ -169,7 +198,7 @@ export const Styles = StyleSheet.create({
     width:'100%',
     height:'30%',
     textAlign:'center',
-    fontSize:StylesText.regularSize
+    fontSize:StylesText.regularSize.fontSize
   }
 });
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import {View, Text, Button, Image} from 'react-native';
-import { Styles, StylesText, StylesColors } from './styles.js';
-import TopMenu from './topMenu.js';
-import BottomMenu from './bottomMenu.js';
+import { Styles, StylesText, StylesColors } from './styles';
+import TopMenu from './topMenu';
+import BottomMenu from './bottomMenu';
 
+type HomeProps = {
+  navigation:any;
+}
 
-export default function HomeScreen({navigation}) {
+const HomeScreen:React.FC<HomeProps> = ({navigation}) => {
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />
@@ -18,6 +21,8 @@ export default function HomeScreen({navigation}) {
     </View>
   );
 }
+
+export default HomeScreen
 
 // fetch("http://localhost:3008/home", {
 //     method: "POST",

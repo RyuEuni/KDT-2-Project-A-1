@@ -1,7 +1,12 @@
 import React from 'react';
 import {View, Button} from 'react-native';
 
-export default function LoginScreen({navigation}) {
+type loginProps = {
+  navigation: any;
+  // Replace `any` with your navigation type
+};
+
+const LoginScreen:React.FC<loginProps>=({navigation})=> {
   return (
     <View>
       <Button title="Login" onPress={() => navigation.navigate('Signup')} />
@@ -9,3 +14,5 @@ export default function LoginScreen({navigation}) {
     </View>
   );
 }
+
+export default LoginScreen
