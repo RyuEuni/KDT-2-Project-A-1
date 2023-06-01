@@ -1,10 +1,12 @@
+
 import React, { useState } from 'react';
 import {View, Text, Button, Image, TextInput, TouchableOpacity} from 'react-native';
 import { Styles, StylesText, StylesColors } from './styles';
 import TopMenu from './topMenu';
+import BottomMenu from './bottomMenu.js';
 
 
-export default function homeScreen({navigation}) {
+export default function HomeScreen({navigation}) {
 
   // const SearchComponent = () => {
   const [searchText, setSearchText] = useState('');
@@ -68,8 +70,8 @@ export default function homeScreen({navigation}) {
           </TouchableOpacity>
         </View>
       </View>
+      <BottomMenu navigation={navigation} />
     </View>
-    
   );
 }
 
