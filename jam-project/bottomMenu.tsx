@@ -1,14 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { Styles, StylesText } from './styles.js';
-import { navigation } from '@react-navigation/native';
+import { Styles, StylesText } from './styles';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function BottomMenu({ navigation }) {
+type BottomMenuProps = {
+  navigation: any; // Replace `any` with your navigation type
+};
+
+const BottomMenu: React.FC<BottomMenuProps> = ({ navigation }) => {
   return (
     <View style={Styles.bottomBox}>
       <View style={Styles.bottomView}>
-        {/* 버튼은 이미지를 넣을 수 없어서 사진을 포함한 버튼기능인 TouchableOpacity을 사용. */}
-        <TouchableOpacity style={Styles.bottomTouch} onPress={() => navigation.navigate('')}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
           <Image
             source={require('./resource/realtime.png')}
             style={Styles.bottomImg}
@@ -17,7 +23,10 @@ export default function BottomMenu({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={Styles.bottomView}>
-        <TouchableOpacity style={Styles.bottomTouch} onPress={() => navigation.navigate('')}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
           <Image
             source={require('./resource/recommand.png')}
             style={Styles.bottomImg}
@@ -26,7 +35,10 @@ export default function BottomMenu({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={Styles.bottomView}>
-        <TouchableOpacity style={Styles.bottomTouch} onPress={() => navigation.navigate('')}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
           <Image
             source={require('./resource/search.png')}
             style={Styles.bottomImg}
@@ -35,7 +47,10 @@ export default function BottomMenu({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={Styles.bottomView}>
-        <TouchableOpacity style={Styles.bottomTouch} onPress={() => navigation.navigate('')}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
           <Image
             source={require('./resource/guide.png')}
             style={Styles.bottomImg}
@@ -44,7 +59,10 @@ export default function BottomMenu({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={Styles.bottomView}>
-        <TouchableOpacity style={Styles.bottomTouch} onPress={() => navigation.navigate('')}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
           <Image
             source={require('./resource/wallet.png')}
             style={Styles.bottomImg}
@@ -54,4 +72,6 @@ export default function BottomMenu({ navigation }) {
       </View>
     </View>
   );
-}
+};
+
+export default BottomMenu;
