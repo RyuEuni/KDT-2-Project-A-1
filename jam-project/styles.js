@@ -41,16 +41,50 @@ export const Styles = StyleSheet.create({
     alignSelf:'center', 
     // elevation:50 //앞으로 나와있는 효과
   },
-  bottonBox: {
+  bottomBox: {
     width: '100%',
-    height: '25%',
+    height: '10%',
     backgroundColor:'#A5C7FB',
     display:'flex',
     flexDirection:'row',
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+    margin:0,
+    padding:0,
+    position:'absolute',
+    bottom:0,
+    right:0,
+    left:0
   },
-  bottonText:{
-    
+  bottomView:{
+    height: '100%',
+    width: '20%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent:'center',
+    margin:0,
+    padding:0
+  },
+  bottomTouch:{
+    height: '100%',
+    width: '100%',
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    justifyContent:'center',
+    // shadowColor: '#fff',
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.7
+  },
+  bottomImg:{
+    width:'100%',
+    height:'70%',
+    resizeMode:'contain'
+  },
+  bottomText:{
+    width:'100%',
+    height:'30%',
+    textAlign:'center',
+    fontSize:StylesText.regularSize
   }
 });
 
