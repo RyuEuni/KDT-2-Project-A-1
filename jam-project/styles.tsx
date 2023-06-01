@@ -18,6 +18,15 @@ export const StylesColors=StyleSheet.create({
   },
   whiteColor: {
     backgroundColor:"#FFFFFF"
+  },
+  pinkColor:{
+    backgroundColor:"#FFC1C1"
+  },
+  purpleColor:{
+    backgroundColor:"#D8CEFF"
+  },
+  yellowColor:{
+    backgroundColor:"#FAE7B6"
   }
 });
 
@@ -154,7 +163,7 @@ export const Styles = StyleSheet.create({
   bottomBox: {
     width: '100%',
     height: '10%',
-    backgroundColor:'#A5C7FB',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-between',
@@ -201,6 +210,8 @@ export const Styles = StyleSheet.create({
     textAlign:'center',
     fontSize:StylesText.regularSize.fontSize
   },
+
+  // ! 지갑 
   walletBox:{
     width:'100%',
     height:'100%',
@@ -304,6 +315,34 @@ export const Styles = StyleSheet.create({
     width:'25%',
     height:'100%',
     textAlign:'center'
+  },
+
+  // ! 추천페이지
+  recommandBox:{
+    width:'100%',
+    height:'100%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexDirection:'column',
+    position:'relative',
+    flex:1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent:'center',
+  },
+  recommandTheme:{
+    width:'100%',
+    height:'30%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexWrap:'wrap',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  recommandKeyword:{
+    width:'25%',
+    height:'30%',
+
   }
 });
 

@@ -10,6 +10,7 @@ import SignupScreen from './signUp';
 import TopScreen from './topMenu'
 import BottomScreen from './bottomMenu';
 import WalletScreen from './wallet';
+import RecommandScreen from './recommand'
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App() {
           <Stack.Screen name="login" component={LoginScreen} />
           <Stack.Screen name="signUp" component={SignupScreen} />
           <Stack.Screen name="wallet" component={WalletScreen} options={{headerShown: false}}/>
+          <Stack.Screen name="recommand" component={RecommandScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

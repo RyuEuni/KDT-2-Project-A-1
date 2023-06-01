@@ -26,7 +26,7 @@ const BottomMenu: React.FC<BottomMenuProps> = ({ navigation }) => {
       <View style={Styles.bottomView}>
         <TouchableOpacity
           style={Styles.bottomTouch}
-          onPress={() => navigation.navigate('')}
+          onPress={() => navigation.navigate('recommand')}
         >
           <Image
             source={require('./resource/recommand.png')}
