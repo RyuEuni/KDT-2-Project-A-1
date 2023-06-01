@@ -4,7 +4,8 @@ import Constants from 'expo-constants';
 export const StylesColors=StyleSheet.create({
   mainColor: {
     backgroundColor:"#D3EAFF",
-    color:"#D3EAFF"
+    color:"#D3EAFF",
+    borderBottomColor:"#D3EAFF"
   },
   subColorLight: {
     backgroundColor:"#E3F2FF"
@@ -218,23 +219,91 @@ export const Styles = StyleSheet.create({
     display:'flex',
     flexDirection:'column',
     backgroundColor:StylesColors.subColorLight.backgroundColor,
-    position:'relative'
+    position:'relative',
+    justifyContent:'center',
+    alignItems:'center'
   },
   walletAsset:{
     width:'100%',
-    height:'10%',
+    height:'15%',
     display:'flex',
     flexDirection:'row',
-    justifyContent:'space-around'
+    justifyContent:'space-around',
+    alignItems:'center'
   },
   walletAssetName:{
-    width:'30%',
-    height:'80%',
-    fontSize:StylesText.regularSize.fontSize,
+    width:'35%',
+    height:'50%',
+    fontSize:StylesText.mediumSize.fontSize,
     backgroundColor:StylesColors.subColorDeep.backgroundColor,
-    borderRadius:30,
+    borderRadius:10,
+    alignItems:'center',
+    justifyContent:'center',
+    textAlign:'center',
+    padding:10
+  },
+  walletAssetMoney:{
+    width:'45%',
+    height:'50%',
+    fontSize:StylesText.mediumSize.fontSize,
+    justifyContent:'center',
+    textAlign:'center',
+    padding:10,
+    borderBottomColor:StylesColors.subColorDeep.backgroundColor,
+    borderBottomWidth:3,
+    borderStyle:'solid'
+  },
+  walletProcess:{
+    width:'90%',
+    height:'15%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexDirection:'row',
     alignItems:'center',
     justifyContent:'center'
+  },
+  walletProcessStep:{
+    width:'30%',
+    height:'100%',
+    display:'flex',
+    flexDirection:'column'
+  },
+  walletProfit:{
+    width:'90%',
+    height:'15%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexDirection:'column',
+  },
+  walletProfitTotal:{
+    width:'100%',
+    height:'50%',
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-around',
+    alignItems:'center'
+  },
+  walletbank:{
+    width:'90%',
+    height:'18%',
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    display:'flex',
+    flexDirection:'column',
+  },
+  walletbankLists:{
+    width:'100%',
+    height:'30%',
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'center',
+    // borderBottomColor:StylesColors.mainColor.borderBottomColor,
+    // borderStyle:'solid',
+    // borderBottomWidth:3
+  },
+  walletbankList:{
+    width:'25%',
+    height:'100%',
+    textAlign:'center'
   }
 });
 
