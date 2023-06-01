@@ -4,9 +4,10 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Styles, StylesColors } from './Styles';
-import loginScreen from './Login';
-import homeScreen from './Home';
-import singupScreen from './Signup';
+import LoginScreen from './Login';
+import HomeScreen from './Home';
+import SignupScreen from './Signup';
+import TopScreen from './TopMenu';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,10 +16,10 @@ export default function App() {
     
     <NavigationContainer>
       <Stack.Navigator>
-          <Stack.Screen name="JamStock" component={homeScreen} options={{headerShown: false}} />
-          {/* <Stack.Screen name="home" component={homeScreen} /> */}
-          <Stack.Screen name="Login" component={loginScreen} />
-          <Stack.Screen name="Signup" component={singupScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
+          <Stack.Screen name="TopMenu" component={TopScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Signup" component={SignupScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

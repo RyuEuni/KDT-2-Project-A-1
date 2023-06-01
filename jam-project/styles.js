@@ -24,6 +24,7 @@ export const StylesText = StyleSheet.create({
 });
 
 export const Styles = StyleSheet.create({
+  //! 탑 메뉴 영역
   topRoot: {
     width: '100%',
     height: '7%',
@@ -37,18 +38,8 @@ export const Styles = StyleSheet.create({
     // left: 10,
     flex: 0,
     
-    borderWidth: 1,
-    borderColor: 'red'
-  },
-  logoWrap: {
-    height: "100%", 
-    display: "flex", 
-    flexDirection: "row", 
-    alignItems: "center",
-    justifyContent: "center",
-
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   topWrap: {
     width: "30%",
@@ -60,6 +51,17 @@ export const Styles = StyleSheet.create({
     // justifyContent: "center",
 
   },
+  //! 탑 메뉴 - 로고 부분
+  logoWrap: {
+    height: "100%", 
+    display: "flex", 
+    flexDirection: "row", 
+    alignItems: "center",
+    justifyContent: "center",
+
+    // borderWidth: 1,
+    // borderColor: 'red'
+  },
   logoText: {
     fontSize: StylesText.extraLargeSize
   },
@@ -69,6 +71,7 @@ export const Styles = StyleSheet.create({
     marginLeft: 5, 
     // marginTop: -5
   },
+  //! 햄버거 버튼 영역
   hambergerWrap: {
     width: "35%", 
     height: "100%", 
@@ -85,6 +88,7 @@ export const Styles = StyleSheet.create({
     borderRadius: 10,
 
   },
+  //! 홈 화면
   homeRoot: {
     marginTop: Constants.statusBarHeight,
     width: '100%', 
@@ -101,7 +105,7 @@ export const Styles = StyleSheet.create({
   },
   homeWrap: {
     width: '100%', 
-    height: '80%', 
+    height: '40%', 
     backgroundColor: StylesColors.subColorLight,
     // flex: 1,
 

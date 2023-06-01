@@ -1,30 +1,36 @@
 import React from 'react';
-import {View, Text, Button, Image} from 'react-native';
+import {View, Text, Button, Image, TouchableOpacity} from 'react-native';
 import { Styles, StylesText } from './Styles.js';
+// import {NavigationContainer} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default function TopMenu() {
+export default function TopMenu({navigation}) {
   return (
-    <View style={Styles.topRoot}>
-      <View style={Styles.logoWrap}>
-        <Text style={Styles.logoText}>JamStock</Text>
-        <Image
-          style={Styles.logoImage}
-          source={require('./resource/JamStock_Pig.png')}
-        />
-      </View>
-
-      <View style={Styles.topWrap}>
-        <Image
-            style={Styles.logoImage}
-            source={require('./resource/shoppingcart.png')}
-          />
-        <View style={Styles.hambergerWrap}>
-          <View style={Styles.hambergerBar}></View>
-          <View style={Styles.hambergerBar}></View>
-          <View style={Styles.hambergerBar}></View>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+        <View style={Styles.topRoot}>
+          <View style={Styles.logoWrap}>
+            <Text style={Styles.logoText}>JamStock</Text>
+            <Image
+              style={Styles.logoImage}
+              source={require('./resource/JamStock_Pig.png')}
+            />
+          </View>
+          <View style={Styles.topWrap}>
+            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+              <Image
+                  style={Styles.logoImage}
+                  source={require('./resource/shoppingcart.png')}
+                />
+            </TouchableOpacity>
+            <TouchableOpacity style={Styles.hambergerWrap} onPress={() => navigation.navigate('Signup')}>
+              <View style={Styles.hambergerBar}></View>
+              <View style={Styles.hambergerBar}></View>
+              <View style={Styles.hambergerBar}></View>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </View>
-    
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 }

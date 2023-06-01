@@ -8,9 +8,11 @@ export default function homeScreen({navigation}) {
 
   return (
     <View style={Styles.homeRoot}>
-      <TopMenu />
+      <TopMenu navigation={navigation} />
       <View style={Styles.homeWrap}>
-        <Button title="Login" onPress={() => navigation.navigate('Signup')} />
+        {/* <Button title="Login" onPress={() => navigation.navigate('Signup')} /> */}
+        <View></View>
+        <View></View>
       </View>
     </View>
     
