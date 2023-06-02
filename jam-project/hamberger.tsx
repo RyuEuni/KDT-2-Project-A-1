@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 // const Drawer = createDrawerNavigator();
 
@@ -23,11 +24,11 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
   return (
     <View style={Styles.hamBox}>
       <View style={Styles.hamTop}>
-        <Text style={Styles.hamName}>쨈픽 님</Text>
-        <TouchableOpacity style={Styles.hamButton}>
+        {/* <Text style={Styles.hamName}>쨈픽 님</Text> */}
+        <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('signUp')}>
           <Text style={Styles.hamButtonText}>회원가입</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={Styles.hamButton}>
+        <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('login')}>
           <Text style={Styles.hamButtonText}>로그인</Text>
         </TouchableOpacity> 
       </View>

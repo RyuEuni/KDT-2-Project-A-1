@@ -4,27 +4,27 @@ import Constants from 'expo-constants';
 
 /**
  * 앱 테마 컬러 리스트
- * mainColor: "#D3EAFF"
- * subColorLight: "#E3F2FF"
- * subColorDeep: "#A5C7FB"
- * grayColor: "#BDBDBD"
+ * mainColor: '#D3EAFF'
+ * subColorLight: '#E3F2FF'
+ * subColorDeep: '#A5C7FB'
+ * grayColor: '#BDBDBD'
  */
 
 export const StylesColors=StyleSheet.create({
   mainColor: {
-    backgroundColor:"#D3EAFF"
+    backgroundColor:'#D3EAFF'
   },
   subColorLight: {
-    backgroundColor:"#E3F2FF"
+    backgroundColor:'#E3F2FF'
   },
   subColorDeep: {
-    backgroundColor:"#A5C7FB"
+    backgroundColor:'#A5C7FB'
   },
   grayColor: {
-    backgroundColor:"#BDBDBD"
+    backgroundColor:'#BDBDBD'
   },
   whiteColor: {
-    backgroundColor:"#FFFFFF"
+    backgroundColor:'#FFFFFF'
   }
 });
 export const StylesText = StyleSheet.create({
@@ -44,16 +44,16 @@ export const StylesText = StyleSheet.create({
     fontSize: 35
   },
   weightThin: {
-    fontWeight: "200"
+    fontWeight: '200'
   },
   weightNormal: {
-    fontWeight: "400"
+    fontWeight: '400'
   },
   weightBold: {
-    fontWeight: "700"
+    fontWeight: '700'
   },
   weightExtraBold: {
-    fontWeight: "900"
+    fontWeight: '900'
   }
 });
 
@@ -63,29 +63,29 @@ export const Styles = StyleSheet.create({
     width: '100%',
     height: '7%',
     padding: 10,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: "center",
+    alignItems: 'center',
     position: 'absolute',
     top: 0,
     flex: 0,
   },
   topWrap: {
-    width: "30%",
-    height: "100%",
+    width: '30%',
+    height: '100%',
     paddingLeft: 5,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   //! 탑 메뉴 - 로고 부분
   logoWrap: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   logoText: {
     fontSize: StylesText.sizeExtraLarge.fontSize
@@ -97,49 +97,48 @@ export const Styles = StyleSheet.create({
   },
   //! 햄버거 버튼 영역
   hambergerWrap: {
-    width: "35%",
-    height: "100%",
+    width: '35%',
+    height: '100%',
     marginLeft: 20,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   hambergerBar: {
     width: '100%',
-    height: "20%",
+    height: '20%',
     backgroundColor: StylesColors.whiteColor.backgroundColor,
     borderRadius: 10,
   },
   //! 홈 화면 - 검색창
   serchBox: {
-    width: "100%",
-    height: "6%",
+    width: '95%',
+    height: '6%',
     backgroundColor: StylesColors.whiteColor.backgroundColor,
     borderRadius: 20,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     position: 'relative',
     top: 10,
   },
   serchBar: {
-    width: "80%",
-    height: "100%",
-    textAlign: "center",
+    width: '80%',
+    height: '100%',
+    textAlign: 'center',
   },
   serchButton: {
-    width: "20%",
-    height: "100%",
-    marginTop: 2,
+    width: '20%',
+    height: '100%',
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     borderRadius: 20,
   },
   serchButtonText: {
     marginTop: 5,
     fontSize: StylesText.sizeExtraSmall.fontSize,
-    textAlign: "center",
+    textAlign: 'center',
     color: StylesColors.whiteColor.backgroundColor,
     fontWeight: StylesText.weightExtraBold.fontWeight
   },
@@ -150,10 +149,10 @@ export const Styles = StyleSheet.create({
     width: '100%', 
     height: '100%', 
     backgroundColor: StylesColors.mainColor.backgroundColor,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
     position:'relative',
@@ -162,10 +161,10 @@ export const Styles = StyleSheet.create({
   homeArea: {
     width: '100%',
     height: '80%',
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'blue',
     position: 'relative',
@@ -173,10 +172,10 @@ export const Styles = StyleSheet.create({
   homeWrap: {
     width: '100%',
     height: '100%',
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   homePopular: {
     width: '100%',
@@ -209,12 +208,12 @@ export const Styles = StyleSheet.create({
   container2: {
     width: 80,
     height: 80,
-    backgroundColor: "beige"
+    backgroundColor: 'beige'
   },
   container3: {
     width: 50,
     height: 50,
-    backgroundColor: "indianred",
+    backgroundColor: 'indianred',
     alignSelf: 'center',
   },
 
@@ -271,15 +270,15 @@ export const Styles = StyleSheet.create({
   //! 햄버거 메뉴
   hamBox:{
     marginTop: Constants.statusBarHeight,
-    marginLeft: "50%",
+    marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
     width: '50%', 
     height: '100%', 
     backgroundColor: StylesColors.mainColor.backgroundColor,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
     position:'relative',
@@ -288,23 +287,23 @@ export const Styles = StyleSheet.create({
   hamTop: {
     width: '100%', 
     height: '10%', 
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   hamCategory: {
     width: '100%', 
     height: '90%', 
     backgroundColor: StylesColors.subColorLight.backgroundColor,
-    display: "flex",
-    flexDirection: "column",
-    // justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
   },
   //! 햄버거 - 이름 
   hamName:{
-    width: "40%",
+    width: '40%',
     marginTop: 10,
     marginLeft: 10,
     fontSize: StylesText.sizeExtraSmall.fontSize,
@@ -315,44 +314,170 @@ export const Styles = StyleSheet.create({
   },
   //! 햄버거 - 회원가입, 로그인 버튼
   hamButton:{
-    width: '25%', 
+    width: '30%', 
     height: '30%',
     marginLeft: 5, 
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     marginTop: 10,
-    textAlign: "center",
+    textAlign: 'center',
 
     borderWidth: 1,
     borderColor: 'red'
   },
   hamButtonText:{
     marginTop: 3,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: StylesText.sizeSmall.fontSize,
     fontWeight: StylesText.weightBold.fontWeight,
 
   },
   //! 햄버거 - 메뉴 리스트
   hamCategoryList: {
-    width: "90%",
-    height: "60%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "center",
+    width: '90%',
+    height: '60%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
 
     borderWidth: 1,
     borderColor: 'red'
   },
   hamListWrap:{
-    width: "80%",
-    height: "10%",
+    width: '80%',
+    height: '10%',
     borderBottomWidth: 1,
     borderColor: StylesColors.grayColor.backgroundColor
 
   },
   hamListText: {
-    textAlign: "center",
+    textAlign: 'center',
   },
+  //! 로그인 화면
+  loginBox: {
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    width: '100%',
+    height: '100%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red'
+
+  },
+  backButton: {
+    width: '6%', 
+    height: '6%', 
+    marginRight: '85%',
+    marginTop: '2%',
+  },
+  loginTitle: {
+    width: '25%',
+    height: '7%',
+    fontSize: StylesText.sizeExtraLarge.fontSize,
+    marginRight: '62%',
+    marginTop: '5%',
+
+    
+  },
+  loginImage: {
+    width: '25%',
+    height: '12%',
+    resizeMode: 'contain',
+    marginTop: '10%',
+    marginBottom: '10%',
+  },
+  idPwWrap: {
+    width: '85%',
+    height: '5%',
+    marginTop: '6%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    
+
+  },
+  idPwText:{
+    width: '15%',
+    height: '100%',
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center',
+    marginTop: '3%'
+  },
+  idPwInput: {
+    width: '82%',
+    height: '100%',
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
+    borderRadius: 20,
+    textAlign: 'center',
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 4,
+    
+  },
+  //! 계정찾기, 회원가입 버튼
+  loginPageBtnWrap: {
+    width: '80%',
+    height: '5%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: '15%',
+
+  },
+  loginPageBtn: {
+    width: '45%',
+    height: '100%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+
+  },
+  loginPageBtnText:{
+    fontSize: StylesText.sizeMedium.fontSize, 
+    textAlign: 'center', 
+    marginTop: 7
+  },
+  //! 로그인 버튼
+  loginPageLoginBtn: {
+    width: '80%',
+    height: '5%',
+    marginTop: '3%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+
+  },
+
 });
 
