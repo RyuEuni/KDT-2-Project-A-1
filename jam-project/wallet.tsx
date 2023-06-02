@@ -5,9 +5,9 @@ import TopMenu from "./topMenu";
 import BottomMenu from "./bottomMenu";
 import Icon from "react-native-vector-icons/AntDesign"
 
-type walletProps = {
-  navigation: any;
-}
+// type walletProps = {
+//   navigation: any;
+// }
 
 const stockdata = [{
   company: '삼성전자',
@@ -43,7 +43,7 @@ const stockList = (data) => {
   )
 }
 
-const WalletScreen: React.FC<walletProps> = ({ navigation }) => {
+const WalletScreen: React.FC<any> = ({ navigation }) => {
   return (
     <View style={Styles.walletBox}>
       {/* top메뉴 */}

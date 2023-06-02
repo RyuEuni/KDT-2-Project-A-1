@@ -4,22 +4,22 @@ import { Styles } from "./styles";
 import TopMenu from "./topMenu";
 import BottomMenu from "./bottomMenu";
 
-type walletProps = {
-  navigation: any;
-}
+// type walletProps = {
+//   navigation: any;
+// }
 
-const RecommandScreen: React.FC<walletProps> = ({ navigation }) => {
+const RecommandScreen: React.FC<any> = ({ navigation }) => {
   return (
     <View style={Styles.recommandBox}>
       <TopMenu navigation={navigation} />
-      <View>
+      <View style={{ width: '100%', height: '80%' }}>
 
         {/* 테마 키워드 */}
         <View style={Styles.recommandTheme}>
-          <TouchableOpacity style={Styles.recommandKeywordPink}>
+          <TouchableOpacity style={Styles.recommandKeywordYellow}>
             <Text style={{ textAlign: 'center' }}>반도체</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.recommandKeywordYellow}>
+          <TouchableOpacity style={Styles.recommandKeywordPurple}>
             <Text style={{ textAlign: 'center' }}>의료·바이오</Text>
           </TouchableOpacity>
           <TouchableOpacity style={Styles.recommandKeywordPink}>
@@ -28,13 +28,13 @@ const RecommandScreen: React.FC<walletProps> = ({ navigation }) => {
           <TouchableOpacity style={Styles.recommandKeywordYellow}>
             <Text style={{ textAlign: 'center' }}>음식</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.recommandKeywordPurple}>
+          <TouchableOpacity style={Styles.recommandKeywordPink}>
             <Text style={{ textAlign: 'center' }}>자동차</Text>
           </TouchableOpacity>
           <TouchableOpacity style={Styles.recommandKeywordPink}>
             <Text style={{ textAlign: 'center' }}>주류</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.recommandKeywordPink}>
+          <TouchableOpacity style={Styles.recommandKeywordPurple}>
             <Text style={{ textAlign: 'center' }}>국내 30위</Text>
           </TouchableOpacity>
           <TouchableOpacity style={Styles.recommandKeywordYellow}>
@@ -53,10 +53,39 @@ const RecommandScreen: React.FC<walletProps> = ({ navigation }) => {
             <Text style={{ textAlign: 'center' }}>뷰티</Text>
           </TouchableOpacity>
         </View>
-
-        {/* 기업 */}
         <View>
-          
+
+        </View>
+        
+        {/* 기업 */}
+        <View style={Styles.recommandCompany}>
+        <TouchableOpacity style={Styles.recomandCompanyBallSmall}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallBig}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallMedium}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallBig}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallMedium}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallSmall}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallMedium}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallBig}>
+          <Text></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.recomandCompanyBallSmall}>
+          <Text></Text>
+        </TouchableOpacity>
         </View>
       </View>
       <BottomMenu navigation={navigation} />

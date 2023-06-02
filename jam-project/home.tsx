@@ -4,11 +4,11 @@ import { Styles } from './styles';
 import TopMenu from './topMenu';
 import BottomMenu from './bottomMenu';
 
-type HomeProps = {
-  navigation:any;
-}
+// type HomeProps = {
+//   navigation:any;
+// }
 
-const HomeScreen:React.FC<HomeProps> = ({navigation}) => {
+const HomeScreen:React.FC<any> = ({navigation}) => {
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />

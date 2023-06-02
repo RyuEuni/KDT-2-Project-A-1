@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Styles, StylesText } from './styles';
 import { NavigationContainer } from '@react-navigation/native';
 
-type BottomMenuProps = {
-  navigation: any;
-  // Replace `any` with your navigation type
-};
+// type BottomMenuProps = {
+//   navigation: any;
+//   // Replace `any` with your navigation type
+// };
 
-const BottomMenu: React.FC<BottomMenuProps> = ({ navigation }) => {
+const BottomMenu: React.FC<any> = ({ navigation }) => {
   return (
     <View style={Styles.bottomBox}>
       <View style={Styles.bottomView}>

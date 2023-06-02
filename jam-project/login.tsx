@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Button} from 'react-native';
 
-type loginProps = {
-  navigation: any;
-  // Replace `any` with your navigation type
-};
+// type loginProps = {
+//   navigation: any;
+//   // Replace `any` with your navigation type
+// };
 
-const LoginScreen:React.FC<loginProps>=({navigation})=> {
+const LoginScreen:React.FC<any>=({navigation})=> {
   return (
     <View>
       <Button title="Login" onPress={() => navigation.navigate('Signup')} />

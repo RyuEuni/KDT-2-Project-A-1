@@ -4,12 +4,12 @@ import { Styles } from './styles';
 // import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-type topMenuProps = {
-  navigation: any;
-  // Replace `any` with your navigation type
-};
+// type topMenuProps = {
+//   navigation: any;
+//   // Replace `any` with your navigation type
+// };
 
-const TopMenu:React.FC<topMenuProps>=({navigation})=> {
+const TopMenu:React.FC<any>=({navigation})=> {
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
