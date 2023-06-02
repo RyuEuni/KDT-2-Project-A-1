@@ -11,7 +11,8 @@ export const StylesColors=StyleSheet.create({
     backgroundColor:"#E3F2FF"
   },
   subColorDeep: {
-    backgroundColor:"#A5C7FB"
+    backgroundColor:"#A5C7FB",
+    color:"#A5C7FB"
   },
   grayColor: {
     backgroundColor:"#BDBDBD"
@@ -162,8 +163,8 @@ export const Styles = StyleSheet.create({
   // ! 바텀메뉴 스타일 부분
   bottomBox: {
     width: '100%',
-    height: '10%',
-    backgroundColor:StylesColors.mainColor.backgroundColor,
+    height: '9%',
+    // backgroundColor:StylesColors.mainColor.backgroundColor,
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-between',
@@ -226,7 +227,7 @@ export const Styles = StyleSheet.create({
   },
   walletContainer:{
     width:'100%',
-    height:'83%',
+    height:'80%',
     display:'flex',
     flexDirection:'column',
     backgroundColor:StylesColors.subColorLight.backgroundColor,
@@ -234,7 +235,7 @@ export const Styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
   },
-  walletAsset:{
+  walletAssetTotal:{
     width:'100%',
     height:'15%',
     display:'flex',
