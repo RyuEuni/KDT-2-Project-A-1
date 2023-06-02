@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { Styles, StylesText } from './styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 
 
-type LoginScreenProps = {
-  navigation: StackNavigationProp<any>; // Replace `any` with your stack's navigation type
-};
 
-const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
+const LoginScreen: React.FC<any> = ({ navigation }) => {
   const [loginText, setLoginText] = useState('');
   const [passwordText, setPasswordText] = useState('');
 
@@ -49,10 +45,10 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
 
       {/* 회원가입, 계정찾기, 로그인 버튼 */}
       <View style={Styles.loginPageBtnWrap}>
-        <TouchableOpacity style={Styles.loginPageBtn}>
+        <TouchableOpacity style={Styles.loginPageBtn} onPress={() => navigation.navigate('signUp')}>
           <Text style={Styles.loginPageBtnText}>회원가입</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={Styles.loginPageBtn}>
+        <TouchableOpacity style={Styles.loginPageBtn} onPress={() => navigation.navigate('home')}>
           <Text style={Styles.loginPageBtnText}>계정찾기</Text>
         </TouchableOpacity>
       </View>

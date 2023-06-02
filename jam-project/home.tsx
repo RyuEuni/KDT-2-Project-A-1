@@ -5,11 +5,8 @@ import { Styles, StylesText } from './styles';
 import TopMenu from './topMenu';
 import BottomMenu from './bottomMenu';
 
-interface HomeScreenProps {
-  navigation: any;
-}
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+const HomeScreen: React.FC<any> = ({ navigation }) => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {

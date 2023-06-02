@@ -309,8 +309,6 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraSmall.fontSize,
     fontWeight: StylesText.weightExtraBold.fontWeight,
 
-    borderWidth: 1,
-    borderColor: 'red'
   },
   //! 햄버거 - 회원가입, 로그인 버튼
   hamButton:{
@@ -321,8 +319,6 @@ export const Styles = StyleSheet.create({
     marginTop: 10,
     textAlign: 'center',
 
-    borderWidth: 1,
-    borderColor: 'red'
   },
   hamButtonText:{
     marginTop: 3,
@@ -340,8 +336,6 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
 
-    borderWidth: 1,
-    borderColor: 'red'
   },
   hamListWrap:{
     width: '80%',
@@ -365,9 +359,6 @@ export const Styles = StyleSheet.create({
     // justifyContent: 'center',
     alignItems: 'center',
 
-    borderWidth: 1,
-    borderColor: 'red'
-
   },
   backButton: {
     width: '6%', 
@@ -381,7 +372,6 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraLarge.fontSize,
     marginRight: '62%',
     marginTop: '5%',
-
     
   },
   loginImage: {
@@ -466,6 +456,93 @@ export const Styles = StyleSheet.create({
     marginTop: '3%',
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     borderRadius: 20,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+
+  },
+  //! 회원가입 페이지
+  signUpTitleWrap: {
+    width: '100%',
+    height: '10%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+
+  },
+  signUpTitle: {
+    width: '30%',
+    height: '50%',
+    fontSize: 33,
+    textAlign: 'center',
+    marginLeft: '5%',
+    
+  },
+  signUpImage: {
+    width: '10%',
+    height: '50%',
+    resizeMode: 'contain',
+    marginLeft: '2%',
+
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+
+  //! 회원가입 목록
+  signUpListWrap: {
+    width: '100%',
+    height: '5%',
+    marginTop: '6%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+  signUpListText: {
+    width: '30%',
+    height: '65%',
+    fontSize: StylesText.sizeExtraSmall.fontSize,
+    fontWeight: StylesText.weightBold.fontWeight,
+    textAlign: 'center',
+    
+  },
+  signUpInput: {
+    width: '65%',
+    height: '100%',
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
+    borderRadius: 20,
+    textAlign: 'center',
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 4,
+    
+  },
+  //! 회원가입, 계정찾기 쪽 버튼
+  signUpNFindBtn: {
+    width: '35%',
+    height: '5%',
+    marginTop: '10%',
+    marginLeft: '50%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+
 
     shadowColor: "#000",
     shadowOffset: {

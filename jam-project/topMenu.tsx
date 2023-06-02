@@ -1,14 +1,9 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from './styles';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-interface TopMenuProps {
-  navigation: any;
-}
 
-const TopMenu: React.FC<TopMenuProps> = ({ navigation }) => {
+const TopMenu: React.FC<any> = ({ navigation }) => {
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
