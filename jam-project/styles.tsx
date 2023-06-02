@@ -308,6 +308,7 @@ export const Styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     justifyContent:'center',
+    // alignItems:'center'
     // borderBottomColor:StylesColors.mainColor.borderBottomColor,
     // borderStyle:'solid',
     // borderBottomWidth:3
@@ -315,7 +316,10 @@ export const Styles = StyleSheet.create({
   walletbankList:{
     width:'25%',
     height:'100%',
-    textAlign:'center'
+    // textAlign:'center',
+    padding:'auto',
+    alignItems:'center',
+    justifyContent:'center'
   },
 
   // ! 추천페이지

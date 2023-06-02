@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { FlatList, View, Text } from "react-native";
 import { Styles, StylesColors } from "./styles";
 import TopMenu from "./topMenu";
 import BottomMenu from "./bottomMenu";
@@ -7,6 +7,40 @@ import Icon from "react-native-vector-icons/AntDesign"
 
 type walletProps = {
   navigation: any;
+}
+
+const stockdata = [{
+  company: '삼성전자',
+  ea: 35,
+  marketPrice: 69000,
+  buyPrice: 68000,
+},
+{
+  company: '하이트',
+  ea: 30,
+  marketPrice: 69000,
+  buyPrice: 79000,
+}
+]
+
+const stockList = (data) => {
+  return (<View style={Styles.walletbankLists}>
+    <View style={Styles.walletbankList}>
+      <Text>{data.company}</Text>
+    </View>
+    <View style={Styles.walletbankList}>
+      <Text>{data.ea}</Text>
+    </View>
+    <View style={Styles.walletbankList}>
+      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>{data.marketPrice}</Text>
+      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>data.buyPrice</Text>
+    </View>
+    <View style={Styles.walletbankList}>
+      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>{data.marketPrice * data.ea}</Text>
+      <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize: 12 }}>{((data.marketPrice - data.buyPrice) / data.buyPrice) + '%'}</Text>
+    </View>
+  </View>
+  )
 }
 
 const WalletScreen: React.FC<walletProps> = ({ navigation }) => {
@@ -34,7 +68,7 @@ const WalletScreen: React.FC<walletProps> = ({ navigation }) => {
               접수
             </Text>
           </View>
-          <Icon name="right" size={20} color={StylesColors.subColorDeep.color}/>
+          <Icon name="right" size={20} color={StylesColors.subColorDeep.color} />
           <View style={Styles.walletProcessStep}>
             <View style={{ width: '100%', height: '70%' }}>
 
@@ -43,7 +77,7 @@ const WalletScreen: React.FC<walletProps> = ({ navigation }) => {
               처리 중
             </Text>
           </View>
-          <Icon name="right" size={20} color={StylesColors.subColorDeep.color}/>
+          <Icon name="right" size={20} color={StylesColors.subColorDeep.color} />
 
           <View style={Styles.walletProcessStep}>
             <View style={{ width: '100%', height: '70%' }}>
@@ -82,40 +116,59 @@ const WalletScreen: React.FC<walletProps> = ({ navigation }) => {
         {/* 주식내용 */}
         <View style={Styles.walletbank}>
           <View style={Styles.walletbankLists}>
-            <Text style={Styles.walletbankList}>기업명</Text>
-            <Text style={Styles.walletbankList}>보유 개수</Text>
+            <View style={Styles.walletbankList}>
+              <Text>기업명</Text>
+            </View>
+            <View style={Styles.walletbankList}>
+              <Text>보유 개수</Text>
+            </View>
             <View style={Styles.walletbankList}>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>현재 금액</Text>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>구매 금액</Text>
             </View>
-            <Text style={Styles.walletbankList}>평가 금액</Text>
+            <View style={Styles.walletbankList}>
+              <Text>평가 금액</Text>
+            </View>
           </View>
 
-          <View style={Styles.walletbankLists}>
-            <Text style={Styles.walletbankList}>삼성전자</Text>
-            <Text style={Styles.walletbankList}>35</Text>
+
+          <FlatList
+            data={stockdata}
+            renderItem={stockList} />
+          {/* <View style={Styles.walletbankLists}>
+            <View style={Styles.walletbankList}>
+              <Text>삼성전자</Text>
+            </View>
+            <View style={Styles.walletbankList}>
+              <Text>35</Text>
+            </View>
             <View style={Styles.walletbankList}>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>69,000원</Text>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>68,000원</Text>
             </View>
             <View style={Styles.walletbankList}>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>2,343,000원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>+0.03%</Text>
+              <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize:12, color:'red'}}>+0.03%</Text>
             </View>
           </View>
 
           <View style={Styles.walletbankLists}>
-            <Text style={Styles.walletbankList}>삼성전자</Text>
-            <Text style={Styles.walletbankList}>35</Text>
             <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>69,000원</Text>
+              <Text>하이트</Text>
+            </View>
+            <View style={Styles.walletbankList}>
+              <Text>20</Text>
+            </View>
+            <View style={Styles.walletbankList}>
               <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>68,000원</Text>
+              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>79,000원</Text>
             </View>
             <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>2,343,000원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>+0.03%</Text>
+              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>1,890,222원</Text>
+              <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize:12, color:'skyblue'}}>-0.02%</Text>
             </View>
-          </View>
+          </View> */}
+
 
         </View>
 
