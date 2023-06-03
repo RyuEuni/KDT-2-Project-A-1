@@ -14,7 +14,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
       <View style={Styles.bottomView}>
         <TouchableOpacity
           style={Styles.bottomTouch}
-          onPress={() => navigation.navigate('')}
+          onPress={() => navigation.navigate('realtime')}
         >
           <Image
             source={require('./resource/realtime.png')}
