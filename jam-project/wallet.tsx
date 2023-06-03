@@ -5,12 +5,18 @@ import TopMenu from "./topMenu";
 import BottomMenu from "./bottomMenu";
 import Icon from "react-native-vector-icons/AntDesign"
 
-// type walletProps = {
-//   navigation: any;
-// }
+// flaylist 용 아래 함수에 들어갈 매개변수타입 작성
+interface Stockdata {
+  company:string
+  ea : number
+  marketPrice: number
+  buyPrice: number
+}
 
+// 함수에 들어갈 데이터 자료.
+// 실제로 우린 불러온 데이터를 변환과정 필요
 const stockdata = [{
-  company: '삼성전자',
+  company : '삼성전자',
   ea: 35,
   marketPrice: 69000,
   buyPrice: 68000,
@@ -23,8 +29,10 @@ const stockdata = [{
 }
 ]
 
-const stockList = (data) => {
-  return (<View style={Styles.walletbankLists}>
+// flatlist 용 함수.
+const stockList = (data:Stockdata) => {
+  return (
+  <View style={Styles.walletbankLists}>
     <View style={Styles.walletbankList}>
       <Text>{data.company}</Text>
     </View>
@@ -130,46 +138,9 @@ const WalletScreen: React.FC<any> = ({ navigation }) => {
               <Text>평가 금액</Text>
             </View>
           </View>
-
-
           <FlatList
             data={stockdata}
-            renderItem={stockList} />
-          {/* <View style={Styles.walletbankLists}>
-            <View style={Styles.walletbankList}>
-              <Text>삼성전자</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text>35</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>69,000원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>68,000원</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>2,343,000원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize:12, color:'red'}}>+0.03%</Text>
-            </View>
-          </View>
-
-          <View style={Styles.walletbankLists}>
-            <View style={Styles.walletbankList}>
-              <Text>하이트</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text>20</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>68,000원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>79,000원</Text>
-            </View>
-            <View style={Styles.walletbankList}>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>1,890,222원</Text>
-              <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize:12, color:'skyblue'}}>-0.02%</Text>
-            </View>
-          </View> */}
-
-
+            renderItem={({item})=>stockList(item)} />
         </View>
 
       </View>
