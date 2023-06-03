@@ -81,6 +81,7 @@ export const Styles = StyleSheet.create({
     flex: 0,
     // borderWidth: 1,
     // borderColor: 'red'
+    zIndex:1
   },
   topWrap: {
     width: "30%",
@@ -175,8 +176,8 @@ export const Styles = StyleSheet.create({
     padding: 0,
     position: 'absolute',
     bottom: 0,
-    right: 0,
-    left: 0
+    // zIndex:1,
+    backgroundColor:StylesColors.mainColor.backgroundColor
   },
   bottomView: {
     height: '100%',
@@ -315,9 +316,9 @@ export const Styles = StyleSheet.create({
     // borderBottomColor:StylesColors.mainColor.borderBottomColor,
     // borderStyle:'solid',
     // borderBottomWidth:3,
-    borderColor:'red',
-    borderStyle:'solid',
-    borderWidth:1
+    borderColor: 'red',
+    borderStyle: 'solid',
+    borderWidth: 1
   },
   walletbankList: {
     width: '25%',
@@ -326,9 +327,9 @@ export const Styles = StyleSheet.create({
     padding: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor:'red',
-    borderStyle:'solid',
-    borderWidth:1
+    borderColor: 'red',
+    borderStyle: 'solid',
+    borderWidth: 1
   },
 
 
@@ -393,7 +394,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    flexWrap:'wrap',
+    flexWrap: 'wrap',
     // padding:50
   },
   recomandCompanyBallBig: {
@@ -404,7 +405,7 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 70,
-    margin:3
+    margin: 3
   },
   recomandCompanyBallMedium: {
     width: 100,
@@ -414,7 +415,7 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 70,
-    margin:6
+    margin: 6
   },
   recomandCompanyBallSmall: {
     width: 90,
@@ -424,90 +425,107 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 70,
-    margin:5
+    margin: 5
   },
 
   // ! 실시간 페이지
-  rankingBox:{
-    width:'100%',
-    height:'100%',
-    display:'flex',
-    flexDirection:'column',
-    flex:1,
-    backgroundColor:StylesColors.mainColor.backgroundColor,
+  rankingBox: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    backgroundColor: StylesColors.mainColor.backgroundColor,
     marginTop: Constants.statusBarHeight,
     marginBottom: Constants.BottomTabBarHeight,
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center',
   },
-  ranking:{
-    width:'100%',
-    height:'80%',
-    display:'flex',
-    flexDirection:'column',
-    backgroundColor:StylesColors.subColorLight.backgroundColor,
+  ranking: {
+    width: '100%',
+    height: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
   },
-  rankingMenu:{
-    width:'100%',
-    height:'5%',
-    display:'flex',
-    flexDirection:'row',
+  rankingMenu: {
+    width: '100%',
+    height: '5%',
+    display: 'flex',
+    flexDirection: 'row',
   },
-  rankingMenuButton:{
-    width:'25%',
-    height:'100%',
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
+  rankingMenuButton: {
+    width: '25%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  rankingList:{
-    width:'100%',
-    height:'95%',
-    display:'flex',
-    flexDirection:'column',
+  rankingList: {
+    width: '100%',
+    height: '95%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   // ! 랭킹 회사별 ( FlatList )
-  rankingCompany:{
-    width:'100%',
-    height:'100%',
-    display:'flex',
-    flexDirection:'row',
-    flex:1,
-    paddingLeft:10,
-    paddingRight:10
+  rankingCompany: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+    paddingLeft: 10,
+    paddingRight: 10
   },
   // ! 랭킹 회사이름
-  rankingCompanyName:{
+  rankingCompanyName: {
     width: "50%",
     height: "100%",
-    display:"flex",
+    display: "flex",
     justifyContent: "flex-start",
   },
-  rankingCompanyText:{
-    width:"50%",
-    textAlign:'center',
-    fontSize:StylesText.mediumSize.fontSize
+  rankingCompanyText: {
+    width: "50%",
+    textAlign: 'center',
+    fontSize: StylesText.mediumSize.fontSize
   }
   ,
   // ! 랭킹 회사 랭킹금액
-  rankingCompanyPrice:{
+  rankingCompanyPrice: {
     width: "50%",
     height: "100%",
-    display:"flex",
-    flexDirection:"row-reverse",
+    display: "flex",
+    flexDirection: "row-reverse",
   },
 
-  // ! 용어 가이드( 전체틀은 추천페이지랑 같아서 그거 씀 recommandBox )
+  // ! 용어 가이드
+  guideBox: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    // flexWrap:"wrap",
+    position: 'relative',
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+  },
+
   guideTheme: {
     width: '100%',
     height: '15%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
+    position: 'relative',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    top:"17%",
+    zIndex:1
   },
   guideKeywordPink: {
     width: '20%',
@@ -539,15 +557,100 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  guideCompany: {
+
+  guideScroll:{
+    width:"100%",
+    height:"100%",
+    // flex:1,
+    // top:50
+  },
+  guideContent: {
     width: '100%',
-    height: '65%',
+    height: '200%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    flexWrap:"wrap",
     alignItems: 'center',
-    flexWrap:'wrap',
+    position:'relative',
+    top:"17%",
+    padding:5,
+    zIndex:1
+  },
+  guideLift: {
+    width:200,
+    height:130
+  },
+  guidePigLeft: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 70,
+    left:20
+  },
+  guideSayleft: {
+    width: 150,
+    height: 50,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    left: 40
+  },
+
+  guideText: {
+    width: "100%",
+    textAlign: "center"
+  },
+
+  guideRight: {
+    width:200,
+    height:130,
+  },
+  guidePigRight: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 100,
+    right:30
+  },
+  guideSayRight: {
+    width: 150,
+    height: 50,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    left: 10,
+    top:35
+  },
+  guideRightBig: {
+    width:200,
+    height:130,
+  },
+  guidePigRightBig: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 225,
+    right:30
+  },
+  guideSayRightBig: {
+    width: 230,
+    height: 150,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    right: 65,
+    top:60
   },
 
 });
