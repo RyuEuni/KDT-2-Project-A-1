@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 export const StylesColors = StyleSheet.create({
@@ -332,7 +332,7 @@ export const Styles = StyleSheet.create({
   },
 
 
-  // ! 추천페이지
+  // ! 추천페이지 ( Box 는 용어 가이드랑 같이 씀 )
   recommandBox: {
     width: '100%',
     height: '100%',
@@ -496,6 +496,58 @@ export const Styles = StyleSheet.create({
     height: "100%",
     display:"flex",
     flexDirection:"row-reverse",
-  }
+  },
+
+  // ! 용어 가이드( 전체틀은 추천페이지랑 같아서 그거 씀 recommandBox )
+  guideTheme: {
+    width: '100%',
+    height: '15%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideKeywordPink: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.pinkColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideKeywordPurple: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.purpleColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideKeywordYellow: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.yellowColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideCompany: {
+    width: '100%',
+    height: '65%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap:'wrap',
+  },
 
 });
