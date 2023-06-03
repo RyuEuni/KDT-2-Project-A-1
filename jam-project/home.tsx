@@ -34,7 +34,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
         <View style={Styles.homeWrap}>
           <View style={Styles.homePopular}>
             <Text style={Styles.titleText}>Today 구매 인기 기업</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('companyDetail')}>
               <Text style={Styles.rankText}>🥇 삼성전자</Text>
             </TouchableOpacity>
             <TouchableOpacity>

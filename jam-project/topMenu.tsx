@@ -8,13 +8,13 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
     // <NavigationContainer>
     //   <Stack.Navigator>
     <View style={Styles.topRoot}>
-      <View style={Styles.logoWrap}>
+      <TouchableOpacity style={Styles.logoWrap} onPress={() => navigation.navigate('home')}>
         <Text style={Styles.logoText}>JamStock</Text>
         <Image
           style={Styles.logoImage}
           source={require('./resource/JamStock_Pig.png')}
         />
-      </View>
+      </TouchableOpacity>
       <View style={Styles.topWrap}>
         {/* 장바구니로 이동 */}
         <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
