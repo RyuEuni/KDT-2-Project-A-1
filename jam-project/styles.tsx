@@ -314,7 +314,10 @@ export const Styles = StyleSheet.create({
     // alignItems:'center'
     // borderBottomColor:StylesColors.mainColor.borderBottomColor,
     // borderStyle:'solid',
-    // borderBottomWidth:3
+    // borderBottomWidth:3,
+    borderColor:'red',
+    borderStyle:'solid',
+    borderWidth:1
   },
   walletbankList: {
     width: '25%',
@@ -322,8 +325,12 @@ export const Styles = StyleSheet.create({
     // textAlign:'center',
     padding: 'auto',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderColor:'red',
+    borderStyle:'solid',
+    borderWidth:1
   },
+
 
   // ! 추천페이지
   recommandBox: {
@@ -380,7 +387,7 @@ export const Styles = StyleSheet.create({
   },
   recommandCompany: {
     width: '100%',
-    height: '70%',
+    height: '75%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'row',
@@ -418,6 +425,77 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 70,
     margin:5
-  }
-});
+  },
 
+  // ! 실시간 페이지
+  rankingBox:{
+    width:'100%',
+    height:'100%',
+    display:'flex',
+    flexDirection:'column',
+    flex:1,
+    backgroundColor:StylesColors.mainColor.backgroundColor,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+    alignItems:'center',
+  },
+  ranking:{
+    width:'100%',
+    height:'80%',
+    display:'flex',
+    flexDirection:'column',
+    backgroundColor:StylesColors.subColorLight.backgroundColor,
+  },
+  rankingMenu:{
+    width:'100%',
+    height:'5%',
+    display:'flex',
+    flexDirection:'row',
+  },
+  rankingMenuButton:{
+    width:'25%',
+    height:'100%',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+  },
+
+  rankingList:{
+    width:'100%',
+    height:'95%',
+    display:'flex',
+    flexDirection:'column',
+  },
+  // ! 랭킹 회사별 ( FlatList )
+  rankingCompany:{
+    width:'100%',
+    height:'100%',
+    display:'flex',
+    flexDirection:'row',
+    flex:1,
+    paddingLeft:10,
+    paddingRight:10
+  },
+  // ! 랭킹 회사이름
+  rankingCompanyName:{
+    width: "50%",
+    height: "100%",
+    display:"flex",
+    justifyContent: "flex-start",
+  },
+  rankingCompanyText:{
+    width:"50%",
+    textAlign:'center',
+    fontSize:StylesText.mediumSize.fontSize
+  }
+  ,
+  // ! 랭킹 회사 랭킹금액
+  rankingCompanyPrice:{
+    width: "50%",
+    height: "100%",
+    display:"flex",
+    flexDirection:"row-reverse",
+  }
+
+});
