@@ -11,7 +11,8 @@ import TopScreen from './topMenu'
 import BottomScreen from './bottomMenu';
 import WalletScreen from './wallet';
 import RecommandScreen from './recommand'
-import RealtimeUpScreen from './realtime'
+// import RealtimeScreen from './realtime'
+import { GuideScreen } from './guide';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +28,8 @@ export default function App() {
           <Stack.Screen name="signUp" component={SignupScreen} />
           <Stack.Screen name="wallet" component={WalletScreen} options={{headerShown: false}}/>
           <Stack.Screen name="recommand" component={RecommandScreen} options={{headerShown: false}}/>
-          <Stack.Screen name="realtime" component={RealtimeUpScreen} options={{headerShown: false}}/>
+          <Stack.Screen name="guide" component={GuideScreen} options={{headerShown: false}}/>
+          {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
 
       </Stack.Navigator>
     </NavigationContainer>
