@@ -10,21 +10,22 @@ import Constants from 'expo-constants';
  * grayColor: '#BDBDBD'
  */
 
-export const StylesColors=StyleSheet.create({
+export const StylesColors = StyleSheet.create({
   mainColor: {
-    backgroundColor:'#D3EAFF'
+    backgroundColor: '#D3EAFF'
   },
   subColorLight: {
-    backgroundColor:'#E3F2FF'
+    backgroundColor: '#E3F2FF'
   },
   subColorDeep: {
-    backgroundColor:'#A5C7FB'
+    backgroundColor: '#A5C7FB',
+    borderBottomColor:'#A5C7FB'
   },
   grayColor: {
-    backgroundColor:'#BDBDBD'
+    backgroundColor: '#BDBDBD'
   },
   whiteColor: {
-    backgroundColor:'#FFFFFF'
+    backgroundColor: '#FFFFFF'
   }
 });
 export const StylesText = StyleSheet.create({
@@ -70,6 +71,7 @@ export const Styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     flex: 0,
+    zIndex: 1
   },
   topWrap: {
     width: '30%',
@@ -146,8 +148,8 @@ export const Styles = StyleSheet.create({
   homeRoot: {
     marginTop: Constants.statusBarHeight,
     marginBottom: Constants.BottomTabBarHeight,
-    width: '100%', 
-    height: '100%', 
+    width: '100%',
+    height: '100%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -155,8 +157,8 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position:'relative',
-    flex:1
+    position: 'relative',
+    flex: 1
   },
   homeArea: {
     width: '100%',
@@ -221,7 +223,7 @@ export const Styles = StyleSheet.create({
   bottomBox: {
     width: '100%',
     height: '10%',
-    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -229,8 +231,7 @@ export const Styles = StyleSheet.create({
     padding: 0,
     position: 'absolute',
     bottom: 0,
-    right: 0,
-    left: 0
+    zIndex: 1
   },
   bottomView: {
     height: '100%',
@@ -268,12 +269,12 @@ export const Styles = StyleSheet.create({
   },
 
   //! 햄버거 메뉴
-  hamBox:{
+  hamBox: {
     marginTop: Constants.statusBarHeight,
     marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
-    width: '50%', 
-    height: '100%', 
+    width: '50%',
+    height: '100%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -281,20 +282,20 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position:'relative',
-    flex:1
+    position: 'relative',
+    flex: 1
   },
   hamTop: {
-    width: '100%', 
-    height: '10%', 
+    width: '100%',
+    height: '10%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   hamCategory: {
-    width: '100%', 
-    height: '90%', 
+    width: '100%',
+    height: '90%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -302,7 +303,7 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   //! 햄버거 - 이름 
-  hamName:{
+  hamName: {
     width: '40%',
     marginTop: 10,
     marginLeft: 10,
@@ -311,16 +312,16 @@ export const Styles = StyleSheet.create({
 
   },
   //! 햄버거 - 회원가입, 로그인 버튼
-  hamButton:{
-    width: '30%', 
+  hamButton: {
+    width: '30%',
     height: '30%',
-    marginLeft: 5, 
+    marginLeft: 5,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     marginTop: 10,
     textAlign: 'center',
 
   },
-  hamButtonText:{
+  hamButtonText: {
     marginTop: 3,
     textAlign: 'center',
     fontSize: StylesText.sizeSmall.fontSize,
@@ -337,7 +338,7 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
 
   },
-  hamListWrap:{
+  hamListWrap: {
     width: '80%',
     height: '10%',
     borderBottomWidth: 1,
@@ -361,8 +362,8 @@ export const Styles = StyleSheet.create({
 
   },
   backButton: {
-    width: '6%', 
-    height: '6%', 
+    width: '6%',
+    height: '6%',
     marginRight: '85%',
     marginTop: '2%',
   },
@@ -372,7 +373,7 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraLarge.fontSize,
     marginRight: '62%',
     marginTop: '5%',
-    
+
   },
   loginImage: {
     width: '25%',
@@ -389,10 +390,10 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
+
 
   },
-  idPwText:{
+  idPwText: {
     width: '15%',
     height: '100%',
     fontSize: StylesText.sizeLarge.fontSize,
@@ -414,7 +415,7 @@ export const Styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3,
     elevation: 4,
-    
+
   },
   //! 계정찾기, 회원가입 버튼
   loginPageBtnWrap: {
@@ -444,9 +445,9 @@ export const Styles = StyleSheet.create({
     elevation: 2,
 
   },
-  loginPageBtnText:{
-    fontSize: StylesText.sizeMedium.fontSize, 
-    textAlign: 'center', 
+  loginPageBtnText: {
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center',
     marginTop: 7
   },
   //! 로그인 버튼
@@ -484,7 +485,7 @@ export const Styles = StyleSheet.create({
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
-    
+
   },
   signUpImage: {
     width: '10%',
@@ -505,7 +506,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    
+
     borderWidth: 1,
     borderColor: 'red'
   },
@@ -515,7 +516,7 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraSmall.fontSize,
     fontWeight: StylesText.weightBold.fontWeight,
     textAlign: 'center',
-    
+
   },
   signUpInput: {
     width: '65%',
@@ -532,7 +533,7 @@ export const Styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3,
     elevation: 4,
-    
+
   },
   //! 회원가입, 계정찾기 쪽 버튼
   signUpNFindBtn: {
@@ -555,6 +556,118 @@ export const Styles = StyleSheet.create({
     elevation: 2,
 
   },
+
+  // ! 마이페이지 - 수정 전
+  myPageBox: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+  },
+
+  myPagePhoto: {
+    width: "100%",
+    height: "30%",
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // flex:1
+    // top:30
+  },
+  myPagePhotoView: {
+    width: "40%",
+    height: "60%",
+    borderRadius: 80,
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  myPagePhotoAdd: {
+    width: 30,
+    height: 30,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    position: 'relative',
+    borderRadius:30,
+    bottom: 30,
+    left: 60,
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center"
+  },
+
+  myPageInfoBox: {
+    width: "100%",
+    height: "15%",
+    display: 'flex',
+    flexDirection: 'column',
+    borderBottomColor:StylesColors.subColorDeep.borderBottomColor,
+    borderBottomWidth:1,
+  },
+  myPageInfo: {
+    width: "100%",
+    height: "30%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems:'center'
+  },
+  myPageTitle: {
+    width: "30%",
+    // height: "100%",
+    fontSize: StylesText.sizeSmall.fontSize,
+    textAlign: 'center'
+  },
+  myPageText: {
+    width: "70%",
+    // height: "100%",
+    fontSize: StylesText.sizeSmall.fontSize,
+    textAlign: 'left'
+  },
+
+  myPageAlarm: {
+    width: "100%",
+    height: "25%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  myPageTitleBig: {
+    width: "30%",
+    height: "30%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center'
+  },
+
+  myPageAlarmText: {
+    width: "100%",
+    height: "15%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems:'center'
+  },
+  
+  myPageEdits: {
+    width: "30%",
+    height: "15%",
+    borderRadius: 30,
+  },
+  myPageEdit: {
+    width: 100,
+    height: 50,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    display:'flex',
+    alignItems:"center",
+    justifyContent:"center"
+  }
+
+
 
 });
 
