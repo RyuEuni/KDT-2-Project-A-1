@@ -578,11 +578,83 @@ export const Styles = StyleSheet.create({
     width: "100%",
     height: "70%",
     backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: "flex",
+    flexDirection: "column"
+  },
+  cartLists: {
+    width: "100%",
+    height: "60%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    borderBottomWidth:1,
+    borderBottomColor:StylesColors.subColorDeep.backgroundColor,
+  },
+  cartList:{
+    width:"100%",
+    height:"30%",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  cartListItemCompany: {
+    width: "30%",
+    height: "100%",
+    textAlign: "left",
+    // fontSize:StylesText.sizeSmall.fontSize
+  },
+  cartListItemEA: {
+    width: "30%",
+    height: "100%",
+    textAlign: "right",
+    // fontSize:StylesText.sizeSmall.fontSize
+  },
+  cartListItemPrice: {
+    width: "30%",
+    height: "100%",
+    textAlign: "center",
+    // fontSize:StylesText.sizeMedium.fontSize
+  },
+  cartListClick: {
+    width: "10%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "row-reverse"
+  },
+  cartPrice:{
+    width:"100%",
+    height:"15%",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-around",
+    marginTop:10
+  },
+  cartPriceText:{
+    width:"50%",
+    height:"100%",
+    textAlign:'center'
+    
+  },
+  cartTotalPrice:{
+    width:"100%",
+    height:"20%",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-around",
+  },
+  cartTotalPriceText:{
+    width:"50%",
+    height:"100%",
+    fontSize:StylesText.sizeMedium.fontSize,
+    textAlign:'center'
+    
   },
   cartSell: {
     width: "100%",
     height: "35%",
-    marginBottom:30
+    marginBottom: 30
   },
   cartSellList: {
     width: "100%",
@@ -590,6 +662,8 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor,
   },
 
+
+  // ! 목록 이름 & 버튼 스타일
   cartTitle: {
     width: "100%",
     height: "15%",
@@ -608,9 +682,9 @@ export const Styles = StyleSheet.create({
   },
   cartchoose: {
     width: "22%",
-    display:"flex",
-    flexDirection:"row",
-    alignItems:"center"
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center"
   },
   cartButton: {
     width: "100%",
@@ -626,9 +700,11 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     alignItems: "center",
     justifyContent: "center",
-    marginRight:10,
-    marginTop:10
+    marginRight: 10,
+    marginTop: 10
   },
+
+
 
 });
 
