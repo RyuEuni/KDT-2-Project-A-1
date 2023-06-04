@@ -17,7 +17,7 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
       </View>
       <View style={Styles.topWrap}>
         {/* 장바구니로 이동 */}
-        <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
+        <TouchableOpacity onPress={() => navigation.navigate('cart')}>
           <Image
             style={Styles.logoImage}
             source={require('./resource/shoppingcart.png')}
