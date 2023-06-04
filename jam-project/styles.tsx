@@ -10,21 +10,21 @@ import Constants from 'expo-constants';
  * grayColor: '#BDBDBD'
  */
 
-export const StylesColors=StyleSheet.create({
+export const StylesColors = StyleSheet.create({
   mainColor: {
-    backgroundColor:'#D3EAFF'
+    backgroundColor: '#D3EAFF'
   },
   subColorLight: {
-    backgroundColor:'#E3F2FF'
+    backgroundColor: '#E3F2FF'
   },
   subColorDeep: {
-    backgroundColor:'#A5C7FB'
+    backgroundColor: '#A5C7FB'
   },
   grayColor: {
-    backgroundColor:'#BDBDBD'
+    backgroundColor: '#BDBDBD'
   },
   whiteColor: {
-    backgroundColor:'#FFFFFF'
+    backgroundColor: '#FFFFFF'
   }
 });
 export const StylesText = StyleSheet.create({
@@ -146,8 +146,8 @@ export const Styles = StyleSheet.create({
   homeRoot: {
     marginTop: Constants.statusBarHeight,
     marginBottom: Constants.BottomTabBarHeight,
-    width: '100%', 
-    height: '100%', 
+    width: '100%',
+    height: '100%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -155,8 +155,8 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position:'relative',
-    flex:1
+    position: 'relative',
+    flex: 1
   },
   homeArea: {
     width: '100%',
@@ -268,12 +268,12 @@ export const Styles = StyleSheet.create({
   },
 
   //! 햄버거 메뉴
-  hamBox:{
+  hamBox: {
     marginTop: Constants.statusBarHeight,
     marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
-    width: '50%', 
-    height: '100%', 
+    width: '50%',
+    height: '100%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -281,20 +281,20 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position:'relative',
-    flex:1
+    position: 'relative',
+    flex: 1
   },
   hamTop: {
-    width: '100%', 
-    height: '10%', 
+    width: '100%',
+    height: '10%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   hamCategory: {
-    width: '100%', 
-    height: '90%', 
+    width: '100%',
+    height: '90%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -302,7 +302,7 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   //! 햄버거 - 이름 
-  hamName:{
+  hamName: {
     width: '40%',
     marginTop: 10,
     marginLeft: 10,
@@ -311,16 +311,16 @@ export const Styles = StyleSheet.create({
 
   },
   //! 햄버거 - 회원가입, 로그인 버튼
-  hamButton:{
-    width: '30%', 
+  hamButton: {
+    width: '30%',
     height: '30%',
-    marginLeft: 5, 
+    marginLeft: 5,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     marginTop: 10,
     textAlign: 'center',
 
   },
-  hamButtonText:{
+  hamButtonText: {
     marginTop: 3,
     textAlign: 'center',
     fontSize: StylesText.sizeSmall.fontSize,
@@ -337,7 +337,7 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
 
   },
-  hamListWrap:{
+  hamListWrap: {
     width: '80%',
     height: '10%',
     borderBottomWidth: 1,
@@ -361,8 +361,8 @@ export const Styles = StyleSheet.create({
 
   },
   backButton: {
-    width: '6%', 
-    height: '6%', 
+    width: '6%',
+    height: '6%',
     marginRight: '85%',
     marginTop: '2%',
   },
@@ -372,7 +372,7 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraLarge.fontSize,
     marginRight: '62%',
     marginTop: '5%',
-    
+
   },
   loginImage: {
     width: '25%',
@@ -389,10 +389,10 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
+
 
   },
-  idPwText:{
+  idPwText: {
     width: '15%',
     height: '100%',
     fontSize: StylesText.sizeLarge.fontSize,
@@ -414,7 +414,7 @@ export const Styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3,
     elevation: 4,
-    
+
   },
   //! 계정찾기, 회원가입 버튼
   loginPageBtnWrap: {
@@ -444,9 +444,9 @@ export const Styles = StyleSheet.create({
     elevation: 2,
 
   },
-  loginPageBtnText:{
-    fontSize: StylesText.sizeMedium.fontSize, 
-    textAlign: 'center', 
+  loginPageBtnText: {
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center',
     marginTop: 7
   },
   //! 로그인 버튼
@@ -484,7 +484,7 @@ export const Styles = StyleSheet.create({
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
-    
+
   },
   signUpImage: {
     width: '10%',
@@ -505,7 +505,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    
+
     borderWidth: 1,
     borderColor: 'red'
   },
@@ -515,7 +515,7 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeExtraSmall.fontSize,
     fontWeight: StylesText.weightBold.fontWeight,
     textAlign: 'center',
-    
+
   },
   signUpInput: {
     width: '65%',
@@ -532,7 +532,7 @@ export const Styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3,
     elevation: 4,
-    
+
   },
   //! 회원가입, 계정찾기 쪽 버튼
   signUpNFindBtn: {
@@ -555,6 +555,40 @@ export const Styles = StyleSheet.create({
     elevation: 2,
 
   },
+
+  // ! 장바구니 
+  cartBox: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  cartBuy: {
+    width: "100%",
+    height: "40%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+  },
+  cartBuyList: {
+    width: "100%",
+    height: "80%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+  },
+  cartSell: {
+    width: "100%",
+    height: "40%",
+  },
+  cartSellList: {
+    width: "100%",
+    height: "80%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+  },
+
 
 });
 
