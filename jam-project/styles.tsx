@@ -579,12 +579,14 @@ export const Styles = StyleSheet.create({
     height: "70%",
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    
   },
   cartLists: {
     width: "100%",
     height: "60%",
     display: "flex",
+    flex:1,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -593,7 +595,7 @@ export const Styles = StyleSheet.create({
   },
   cartList:{
     width:"100%",
-    height:"30%",
+    height:"60%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
