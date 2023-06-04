@@ -301,7 +301,7 @@ export const Styles = StyleSheet.create({
   },
   walletbank: {
     width: '90%',
-    height: '18%',
+    height: '20%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -312,26 +312,22 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    // alignItems:'center'
-    // borderBottomColor:StylesColors.mainColor.borderBottomColor,
-    // borderStyle:'solid',
-    // borderBottomWidth:3,
-    borderColor: 'red',
-    borderStyle: 'solid',
-    borderWidth: 1
   },
   walletbankList: {
     width: '25%',
     height: '100%',
-    // textAlign:'center',
     padding: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'red',
-    borderStyle: 'solid',
-    borderWidth: 1
   },
-
+  walletBankList: {
+    width: '100%',
+    height: '50%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flex:1,
+  },
 
   // ! 추천페이지 ( Box 는 용어 가이드랑 같이 씀 )
   recommandBox: {
@@ -395,7 +391,6 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
-    // padding:50
   },
   recomandCompanyBallBig: {
     width: 110,

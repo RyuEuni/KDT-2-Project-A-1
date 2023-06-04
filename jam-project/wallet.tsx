@@ -32,7 +32,7 @@ const stockdata = [{
 // flatlist 용 함수.
 const stockList = (data:Stockdata) => {
   return (
-  <View style={Styles.walletbankLists}>
+  <View style={Styles.walletBankList}>
     <View style={Styles.walletbankList}>
       <Text>{data.company}</Text>
     </View>
@@ -40,12 +40,12 @@ const stockList = (data:Stockdata) => {
       <Text>{data.ea}</Text>
     </View>
     <View style={Styles.walletbankList}>
-      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>{data.marketPrice}</Text>
-      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>data.buyPrice</Text>
+      <Text style={{ width: '100%', height: '40%', textAlign: 'center' }}>{data.marketPrice}원</Text>
+      <Text style={{ width: '100%', height: '40%', textAlign: 'center' }}>{data.buyPrice}원</Text>
     </View>
     <View style={Styles.walletbankList}>
-      <Text style={{ width: '100%', height: '50%', textAlign: 'center' }}>{data.marketPrice * data.ea}</Text>
-      <Text style={{ width: '100%', height: '50%', textAlign: 'center', fontSize: 12 }}>{((data.marketPrice - data.buyPrice) / data.buyPrice) + '%'}</Text>
+      <Text style={{ width: '100%', height: '40%', textAlign: 'center' }}>{data.marketPrice * data.ea}원</Text>
+      <Text style={{ width: '100%', height: '30%', textAlign: 'center', fontSize: 12 }}>{((data.marketPrice - data.buyPrice) / data.buyPrice) + '%'}</Text>
     </View>
   </View>
   )
