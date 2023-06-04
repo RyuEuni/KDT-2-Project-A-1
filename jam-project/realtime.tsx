@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
 import { Styles } from "./styles";
 import TopMenu from "./topMenu";
@@ -30,7 +30,7 @@ const companylist = (data: Companydata) => {
 }
 
 
-const RealtimeUpScreen: React.FC<any> = ({ navigation }) => {
+export const RealtimeScreen: React.FC<any> = ({ navigation }) => {
 
   // 함수 도입 필요
   const menuCilck = () => {
@@ -88,5 +88,3 @@ const RealtimeUpScreen: React.FC<any> = ({ navigation }) => {
     </View>
   )
 }
-
-export default RealtimeUpScreen

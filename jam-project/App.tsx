@@ -11,7 +11,7 @@ import TopScreen from './topMenu'
 import BottomScreen from './bottomMenu';
 import WalletScreen from './wallet';
 import RecommandScreen from './recommand'
-// import RealtimeScreen from './realtime'
+// import {RealtimeScreen} from './realtime'
 import { GuideScreen } from './guide';
 import HambergerScreen from './hamberger';
 import { MyPageScreen } from './myPage';
