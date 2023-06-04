@@ -1,12 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Styles, StylesText } from './styles';
-import { NavigationContainer } from '@react-navigation/native';
 
-// type BottomMenuProps = {
-//   navigation: any;
-//   // Replace `any` with your navigation type
-// };
 
 const BottomMenu: React.FC<any> = ({ navigation }) => {
   return (
@@ -36,6 +31,10 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <View style={Styles.bottomView}>
+        <TouchableOpacity
+          style={Styles.bottomTouch}
+          onPress={() => navigation.navigate('')}
+        >
         <TouchableOpacity
           style={Styles.bottomTouch}
           onPress={() => navigation.navigate('')}

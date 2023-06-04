@@ -1,43 +1,42 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import { Styles } from './styles';
-// import {NavigationContainer} from '@react-navigation/native';
-// import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import { Styles, StylesText } from './styles';
 
-// type topMenuProps = {
-//   navigation: any;
-//   // Replace `any` with your navigation type
-// };
 
-const TopMenu:React.FC<any>=({navigation})=> {
+const TopMenu: React.FC<any> = ({ navigation }) => {
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
-        <View style={Styles.topRoot}>
-          <View style={Styles.logoWrap}>
-            <Text style={Styles.logoText}>JamStock</Text>
-            <Image
-              style={Styles.logoImage}
-              source={require('./resource/JamStock_Pig.png')}
-            />
-          </View>
-          <View style={Styles.topWrap}>
-            <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
-              <Image
-                  style={Styles.logoImage}
-                  source={require('./resource/shoppingcart.png')}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity style={Styles.hambergerWrap} onPress={() => navigation.navigate('signUp')}>
-              <View style={Styles.hambergerBar}></View>
-              <View style={Styles.hambergerBar}></View>
-              <View style={Styles.hambergerBar}></View>
-            </TouchableOpacity>
-          </View>
-        </View>
+    <View style={Styles.topRoot}>
+      <View style={Styles.logoWrap}>
+        <Text style={Styles.logoText}>JamStock</Text>
+        <Image
+          style={Styles.logoImage}
+          source={require('./resource/JamStock_Pig.png')}
+        />
+      </View>
+      <View style={Styles.topWrap}>
+        {/* 장바구니로 이동 */}
+        <TouchableOpacity onPress={() => navigation.navigate('cart')}>
+          <Image
+            style={Styles.logoImage}
+            source={require('./resource/shoppingcart.png')}
+          />
+        </TouchableOpacity>
+        {/* 햄버거 메뉴 이동 */}
+        <TouchableOpacity
+          style={Styles.hambergerWrap}
+          onPress={() => navigation.navigate('hamberger')}
+        >
+          <View style={Styles.hambergerBar}></View>
+          <View style={Styles.hambergerBar}></View>
+          <View style={Styles.hambergerBar}></View>
+        </TouchableOpacity>
+      </View>
+    </View>
     //   </Stack.Navigator>
     // </NavigationContainer>
   );
-}
+};
 
-export default TopMenu
+export default TopMenu;
