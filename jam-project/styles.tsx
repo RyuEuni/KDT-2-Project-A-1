@@ -570,6 +570,14 @@ export const Styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     marginBottom: Constants.BottomTabBarHeight,
   },
+  myPageMain:{
+    width:"100%",
+    height:"85%",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center"
+  },
 
   myPagePhoto: {
     width: "100%",
@@ -583,7 +591,7 @@ export const Styles = StyleSheet.create({
   },
   myPagePhotoView: {
     width: "40%",
-    height: "60%",
+    height: "80%",
     borderRadius: 80,
     backgroundColor: StylesColors.whiteColor.backgroundColor,
     display: "flex",
@@ -621,32 +629,33 @@ export const Styles = StyleSheet.create({
   myPageTitle: {
     width: "30%",
     // height: "100%",
-    fontSize: StylesText.sizeSmall.fontSize,
+    fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'center'
   },
   myPageText: {
     width: "70%",
     // height: "100%",
-    fontSize: StylesText.sizeSmall.fontSize,
+    fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'left'
   },
 
   myPageAlarm: {
     width: "100%",
-    height: "25%",
+    height: "30%",
     display: "flex",
     flexDirection: "column",
+    paddingTop:15
   },
   myPageTitleBig: {
     width: "30%",
     height: "30%",
-    fontSize: StylesText.sizeMedium.fontSize,
+    fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center'
   },
 
   myPageAlarmText: {
     width: "100%",
-    height: "15%",
+    height: "25%",
     display: 'flex',
     flexDirection: 'row',
     alignItems:'center'
@@ -658,13 +667,84 @@ export const Styles = StyleSheet.create({
     borderRadius: 30,
   },
   myPageEdit: {
-    width: 100,
-    height: 50,
+    width: 120,
+    height: 60,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
-    borderRadius: 30,
+    borderRadius: 10,
     display:'flex',
     alignItems:"center",
     justifyContent:"center"
+  },
+
+  // ! 마이페이지 - 수정 후 ( 아래 빼곤 수정 전과 동일 )
+  myPageAlarmEdit: {
+    width: "100%",
+    height: "20%",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop:15
+  },
+  myPagePasswordEdit: {
+    width: "100%",
+    height: "15%",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop:15,
+    borderTopWidth:1,
+    borderTopColor:StylesColors.subColorDeep.borderBottomColor,
+    
+  },
+
+  myPagePasswordText: {
+    width: "100%",
+    height: "35%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems:'center',
+    // padding:5
+  },
+
+  myPageTitleBigEdit: {
+    width: "45%",
+    height: "30%",
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center',
+    marginBottom:13
+  },
+
+  myPageTitleEdit: {
+    width: "35%",
+    // height: "50%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center',
+    marginLeft:5
+  },
+  myPageTextEdit: {
+    width: "40%",
+    // height: "100%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'left',
+    backgroundColor:StylesColors.whiteColor.backgroundColor
+  },
+
+  //  ! 완료 버튼
+  myPageEditing: {
+    width: "100%",
+    height: "10%",
+    borderRadius: 30,
+    display:"flex",
+    flexDirection:"row-reverse",
+  },
+  myPageEditDone: {
+    width: 80,
+    height: 35,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    display:'flex',
+    alignItems:"center",
+    justifyContent:"center",
+    marginRight:20,
+    marginTop:20
   }
 
 
