@@ -221,7 +221,7 @@ export const Styles = StyleSheet.create({
   bottomBox: {
     width: '100%',
     height: '10%',
-    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    // backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -566,29 +566,69 @@ export const Styles = StyleSheet.create({
     flex: 1,
     marginTop: Constants.statusBarHeight,
     marginBottom: Constants.BottomTabBarHeight,
-    alignItems:"center",
-    justifyContent:"center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   cartBuy: {
     width: "100%",
-    height: "40%",
-    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    height: "35%",
+    marginBottom: 50,
   },
   cartBuyList: {
     width: "100%",
-    height: "80%",
+    height: "70%",
     backgroundColor: StylesColors.subColorLight.backgroundColor,
   },
   cartSell: {
     width: "100%",
-    height: "40%",
+    height: "35%",
+    marginBottom:30
   },
   cartSellList: {
     width: "100%",
-    height: "80%",
+    height: "70%",
     backgroundColor: StylesColors.subColorLight.backgroundColor,
   },
 
+  cartTitle: {
+    width: "100%",
+    height: "15%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: "flex",
+    flexDirection: "row",
+    flex: 1,
+    justifyContent: "space-between"
+  },
+  cartTitleText: {
+    width: "30%",
+    // height:10,
+    fontSize: StylesText.sizeMedium.fontSize,
+    left: 20,
+    top: 10
+  },
+  cartchoose: {
+    width: "22%",
+    display:"flex",
+    flexDirection:"row",
+    alignItems:"center"
+  },
+  cartButton: {
+    width: "100%",
+    height: "15%",
+    display: "flex",
+    flexDirection: "row-reverse",
+  },
+  cartButtonBox: {
+    width: 120,
+    height: 40,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight:10,
+    marginTop:10
+  },
 
 });
 
