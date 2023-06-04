@@ -31,7 +31,7 @@ const CompanyDetail: React.FC<any> = ({ navigation }) => {
             <Text style={Styles.companyTabText}>정보</Text>
 
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.companyTabBtn}>
+          <TouchableOpacity style={Styles.companyTabBtn} onPress={navigation.navigate('companyDetailBuy')}>
             <Text style={Styles.companyTabText}>구매</Text>
 
           </TouchableOpacity>

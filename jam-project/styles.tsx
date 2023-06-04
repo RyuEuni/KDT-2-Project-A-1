@@ -782,5 +782,66 @@ export const Styles = StyleSheet.create({
     borderColor: 'red',
   },
   
+  //! 종목 상세화면 - 구매
+  buyWrap: {
+    width: '100%', 
+    height: '40%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  buyInputWrap: {
+    width: '95%', 
+    height: '15%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  buyInput:{
+    width: '25%',
+    height: '70%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+
+  },
+  buyButton: {
+    width: '60%',
+    height: '100%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cartButton: {
+    width: '30%',
+    height: '100%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buyInfo: {
+    height: '40%', 
+    backgroundColor: StylesColors.subColorDeep.backgroundColor, 
+    borderRadius: 20, 
+    display:'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'space-around', 
+    alignItems: 'center',
+    marginLeft: '15%',
+    padding: '3%'
+  },
+  
 });
 

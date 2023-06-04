@@ -12,6 +12,7 @@ import HambergerScreen from './hamberger';
 import FindAccountScreen from './findAccount';
 import SearchScreen from './search';
 import CompanyDetailScreen from './companyDetail';
+import CompanyDetailBuyScreen from './companyDetailBuy';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
         <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
         <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
