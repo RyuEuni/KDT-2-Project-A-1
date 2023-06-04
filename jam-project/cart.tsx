@@ -7,21 +7,28 @@ import BottomMenu from './bottomMenu';
 
 export const CartScreen: React.FC<any> = ({ navigation }) => {
 
+  interface Stockdata {
+    company: string
+    ea: number
+    price: string
+  }
+
+
   let buyList = [
     {
       company: "삼성전자",
       ea: 10,
-      price: 1300000
+      price: '1,300,000'
     },
     {
       company: "CJ제일제당",
       ea: 10,
-      price: 1300000
+      price: '1,300,000'
     },
     {
       company: "삼표시멘트",
       ea: 10,
-      price: 1300000
+      price: '1,300,000'
     }
   ]
 
@@ -29,20 +36,35 @@ export const CartScreen: React.FC<any> = ({ navigation }) => {
     {
       company: "SK하이닉스",
       ea: 10,
-      price: 1300000
+      price: '1,300,000'
     },
     {
       company: "현대차",
       ea: 10,
-      price: 1300000
+      price: '1,300,000'
     },
     {
       company: "대한항공",
       ea: 10,
-      price: 1300000
-    }
+      price: '1,300,000'
+    },
+
   ]
 
+  const keyExtractor = (data: Stockdata) => data.company;
+
+  const Lists = (data: Stockdata) => {
+    return (
+      <View style={Styles.cartList}>
+        <TouchableOpacity style={Styles.cartListClick}>
+          <Icon name="check" size={22} />
+        </TouchableOpacity>
+        <Text style={Styles.cartListItemCompany}>{data.company}</Text>
+        <Text style={Styles.cartListItemEA}>{data.ea}</Text>
+        <Text style={Styles.cartListItemPrice}>{data.price}</Text>
+      </View>
+    )
+  }
 
 
   return (
@@ -61,7 +83,19 @@ export const CartScreen: React.FC<any> = ({ navigation }) => {
 
         {/* 구입 리스트 출력 */}
         <View style={Styles.cartBuyList}>
+          <View style={Styles.cartLists}>
+            <FlatList data={buyList} renderItem={({ item }) => Lists(item)} keyExtractor={keyExtractor} />
 
+          </View>
+
+          <View style={Styles.cartPrice}>
+            <Text style={Styles.cartPriceText}>구매 가능 금액</Text>
+            <Text style={Styles.cartPriceText}>몇원</Text>
+          </View>
+          <View style={Styles.cartTotalPrice}>
+            <Text style={Styles.cartTotalPriceText}>합계</Text>
+            <Text style={Styles.cartTotalPriceText}>몇원</Text>
+          </View>
         </View>
 
         <View style={Styles.cartButton}>
@@ -83,11 +117,21 @@ export const CartScreen: React.FC<any> = ({ navigation }) => {
 
         {/* 판매 리스트 출력 */}
         <View style={Styles.cartSellList}>
-          {/* 리스트 */}
-          {/* 구분선 */}
-          {/* 구매가능금액 */}
-          {/* 합계 */}
+
+          <View style={Styles.cartLists}>
+            <FlatList data={sellList} renderItem={({ item }) => Lists(item)} keyExtractor={keyExtractor} />
+          </View>
+
+          <View style={Styles.cartPrice}>
+            <Text style={Styles.cartPriceText}>판매 가능 금액</Text>
+            <Text style={Styles.cartPriceText}>몇원</Text>
+          </View>
+          <View style={Styles.cartTotalPrice}>
+            <Text style={Styles.cartTotalPriceText}>합계</Text>
+            <Text style={Styles.cartTotalPriceText}>몇원</Text>
+          </View>
         </View>
+
         <View style={Styles.cartButton}>
           <TouchableOpacity style={Styles.cartButtonBox}>
             <Text>한번에 판매하기</Text>
