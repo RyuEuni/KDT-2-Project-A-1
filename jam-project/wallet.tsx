@@ -31,6 +31,15 @@ const stockdata = [{
 
 // flatlist 용 함수.
 const stockList = (data:Stockdata) => {
+  let percentColor = ""
+  if(data.buyPrice>data.marketPrice){
+    percentColor = "blue"
+  }else if(data.buyPrice<data.marketPrice){
+    percentColor = "red"
+  }else{
+    percentColor = "black"
+  }
+
   return (
   <View style={Styles.walletBankList}>
     <View style={Styles.walletbankList}>
@@ -45,7 +54,7 @@ const stockList = (data:Stockdata) => {
     </View>
     <View style={Styles.walletbankList}>
       <Text style={{ width: '100%', height: '40%', textAlign: 'center' }}>{data.marketPrice * data.ea}원</Text>
-      <Text style={{ width: '100%', height: '30%', textAlign: 'center', fontSize: 12 }}>{((data.marketPrice - data.buyPrice) / data.buyPrice) + '%'}</Text>
+      <Text style={{ width: '100%', height: '40%', textAlign: 'center', fontSize: 12, color:percentColor }}>{((data.marketPrice - data.buyPrice) / data.buyPrice).toFixed(2) + '%'}</Text>
     </View>
   </View>
   )
