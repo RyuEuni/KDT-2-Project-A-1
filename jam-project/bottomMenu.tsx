@@ -35,10 +35,6 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           style={Styles.bottomTouch}
           onPress={() => navigation.navigate('')}
         >
-        <TouchableOpacity
-          style={Styles.bottomTouch}
-          onPress={() => navigation.navigate('')}
-        >
           <Image
             source={require('./resource/search.png')}
             style={Styles.bottomImg}
