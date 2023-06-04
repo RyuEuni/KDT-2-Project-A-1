@@ -9,6 +9,7 @@ import SignupScreen from './signUp';
 import TopScreen from './topMenu';
 import BottomScreen from './bottomMenu';
 import HambergerScreen from './hamberger';
+import {MyPageScreen} from './myPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="signUp" component={SignupScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
