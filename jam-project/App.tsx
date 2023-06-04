@@ -14,6 +14,7 @@ import RecommandScreen from './recommand'
 // import RealtimeScreen from './realtime'
 import { GuideScreen } from './guide';
 import HambergerScreen from './hamberger';
+import { MyPageScreen } from './myPage';
 import { CartScreen } from './cart';
 
 const Stack = createNativeStackNavigator();
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
         {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
 
       </Stack.Navigator>

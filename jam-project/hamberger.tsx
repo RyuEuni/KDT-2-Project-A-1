@@ -35,7 +35,7 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
 
       <View style={Styles.hamCategory}>
         <View style={Styles.hamCategoryList}>
-          <TouchableOpacity style={Styles.hamListWrap}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
             <Text style={Styles.hamListText}>마이페이지</Text>
           </TouchableOpacity>
           <TouchableOpacity style={Styles.hamListWrap}>

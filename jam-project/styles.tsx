@@ -18,7 +18,8 @@ export const StylesColors = StyleSheet.create({
     backgroundColor: '#E3F2FF'
   },
   subColorDeep: {
-    backgroundColor: '#A5C7FB'
+    backgroundColor: '#A5C7FB',
+    borderBottomColor: '#A5C7FB'
   },
   grayColor: {
     backgroundColor: '#BDBDBD'
@@ -80,6 +81,7 @@ export const Styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     flex: 0,
+    zIndex: 1
   },
   topWrap: {
     width: '30%',
@@ -231,7 +233,7 @@ export const Styles = StyleSheet.create({
   bottomBox: {
     width: '100%',
     height: '10%',
-    // backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -239,8 +241,7 @@ export const Styles = StyleSheet.create({
     padding: 0,
     position: 'absolute',
     bottom: 0,
-    right: 0,
-    left: 0
+    zIndex: 1
   },
   bottomView: {
     height: '100%',
@@ -590,22 +591,22 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: "flex",
     flexDirection: "column",
-    
+
   },
   cartLists: {
     width: "100%",
     height: "60%",
     display: "flex",
-    flex:1,
+    flex: 1,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    borderBottomWidth:1,
-    borderBottomColor:StylesColors.subColorDeep.backgroundColor,
+    borderBottomWidth: 1,
+    borderBottomColor: StylesColors.subColorDeep.backgroundColor,
   },
-  cartList:{
-    width:"100%",
-    height:"60%",
+  cartList: {
+    width: "100%",
+    height: "60%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -635,33 +636,33 @@ export const Styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row-reverse"
   },
-  cartPrice:{
-    width:"100%",
-    height:"15%",
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"space-around",
-    marginTop:10
+  cartPrice: {
+    width: "100%",
+    height: "15%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 10
   },
-  cartPriceText:{
-    width:"50%",
-    height:"100%",
-    textAlign:'center'
-    
+  cartPriceText: {
+    width: "50%",
+    height: "100%",
+    textAlign: 'center'
+
   },
-  cartTotalPrice:{
-    width:"100%",
-    height:"20%",
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"space-around",
+  cartTotalPrice: {
+    width: "100%",
+    height: "20%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
-  cartTotalPriceText:{
-    width:"50%",
-    height:"100%",
-    fontSize:StylesText.sizeMedium.fontSize,
-    textAlign:'center'
-    
+  cartTotalPriceText: {
+    width: "50%",
+    height: "100%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center'
+
   },
   cartSell: {
     width: "100%",
@@ -715,440 +716,627 @@ export const Styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10
   },
-    // ! 지갑 
-    walletBox: {
-      width: '100%',
-      height: '100%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'relative',
-      flex: 1,
-      marginTop: Constants.statusBarHeight,
-      marginBottom: Constants.BottomTabBarHeight,
-      justifyContent: 'center',
-    },
-    walletContainer: {
-      width: '100%',
-      height: '80%',
-      display: 'flex',
-      flexDirection: 'column',
-      backgroundColor: StylesColors.subColorLight.backgroundColor,
-      position: 'relative',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    walletAssetTotal: {
-      width: '100%',
-      height: '15%',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center'
-    },
-    walletAssetName: {
-      width: '35%',
-      height: '50%',
-      fontSize: StylesText.sizeMedium.fontSize,
-      backgroundColor: StylesColors.subColorDeep.backgroundColor,
-      borderRadius: 10,
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      padding: 10
-    },
-    walletAssetMoney: {
-      width: '45%',
-      height: '50%',
-      fontSize: StylesText.sizeMedium.fontSize,
-      justifyContent: 'center',
-      textAlign: 'center',
-      padding: 10,
-      borderBottomColor: StylesColors.subColorDeep.backgroundColor,
-      borderBottomWidth: 3,
-      borderStyle: 'solid'
-    },
-    walletProcess: {
-      width: '90%',
-      height: '15%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    walletProcessStep: {
-      width: '30%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
-    },
-    walletProfit: {
-      width: '90%',
-      height: '15%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    walletProfitTotal: {
-      width: '100%',
-      height: '50%',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center'
-    },
-    walletbank: {
-      width: '90%',
-      height: '20%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    walletbankLists: {
-      width: '100%',
-      height: '30%',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-    },
-    walletbankList: {
-      width: '25%',
-      height: '100%',
-      padding: 'auto',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    walletBankList: {
-      width: '100%',
-      height: '50%',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      flex:1,
-    },
-  
-    // ! 추천페이지 ( Box 는 용어 가이드랑 같이 씀 )
-    recommandBox: {
-      width: '100%',
-      height: '100%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'relative',
-      flex: 1,
-      marginTop: Constants.statusBarHeight,
-      marginBottom: Constants.BottomTabBarHeight,
-      justifyContent: 'center',
-    },
-    recommandTheme: {
-      width: '100%',
-      height: '25%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    recommandKeywordPink: {
-      width: '20%',
-      height: '20%',
-      backgroundColor: StylesColors.pinkColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    recommandKeywordPurple: {
-      width: '20%',
-      height: '20%',
-      backgroundColor: StylesColors.purpleColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    recommandKeywordYellow: {
-      width: '20%',
-      height: '20%',
-      backgroundColor: StylesColors.yellowColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    recommandCompany: {
-      width: '100%',
-      height: '75%',
-      backgroundColor: StylesColors.subColorLight.backgroundColor,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-    },
-    recomandCompanyBallBig: {
-      width: 110,
-      height: 110,
-      backgroundColor: StylesColors.grayColor.backgroundColor,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 70,
-      margin: 3
-    },
-    recomandCompanyBallMedium: {
-      width: 100,
-      height: 100,
-      backgroundColor: StylesColors.grayColor.backgroundColor,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 70,
-      margin: 6
-    },
-    recomandCompanyBallSmall: {
-      width: 90,
-      height: 90,
-      backgroundColor: StylesColors.grayColor.backgroundColor,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 70,
-      margin: 5
-    },
-  
-    // ! 실시간 페이지
-    rankingBox: {
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      flex: 1,
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      marginTop: Constants.statusBarHeight,
-      marginBottom: Constants.BottomTabBarHeight,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    ranking: {
-      width: '100%',
-      height: '80%',
-      display: 'flex',
-      flexDirection: 'column',
-      backgroundColor: StylesColors.subColorLight.backgroundColor,
-    },
-    rankingMenu: {
-      width: '100%',
-      height: '5%',
-      display: 'flex',
-      flexDirection: 'row',
-    },
-    rankingMenuButton: {
-      width: '25%',
-      height: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  
-    rankingList: {
-      width: '100%',
-      height: '95%',
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    // ! 랭킹 회사별 ( FlatList )
-    rankingCompany: {
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'row',
-      flex: 1,
-      paddingLeft: 10,
-      paddingRight: 10
-    },
-    // ! 랭킹 회사이름
-    rankingCompanyName: {
-      width: "50%",
-      height: "100%",
-      display: "flex",
-      justifyContent: "flex-start",
-    },
-    rankingCompanyText: {
-      width: "50%",
-      textAlign: 'center',
-      fontSize: StylesText.sizeMedium.fontSize
-    }
-    ,
-    // ! 랭킹 회사 랭킹금액
-    rankingCompanyPrice: {
-      width: "50%",
-      height: "100%",
-      display: "flex",
-      flexDirection: "row-reverse",
-    },
-  
-    // ! 용어 가이드
-    guideBox: {
-      width: '100%',
-      height: '100%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      flexDirection: 'column',
-      // flexWrap:"wrap",
-      position: 'relative',
-      flex: 1,
-      marginTop: Constants.statusBarHeight,
-      marginBottom: Constants.BottomTabBarHeight,
-      justifyContent: 'center',
-    },
-  
-    guideTheme: {
-      width: '100%',
-      height: '15%',
-      backgroundColor: StylesColors.mainColor.backgroundColor,
-      display: 'flex',
-      position: 'relative',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      alignItems: 'center',
-      top:"17%",
-      zIndex:1
-    },
-    guideKeywordPink: {
-      width: '20%',
-      height: '15%',
-      backgroundColor: StylesColors.pinkColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    guideKeywordPurple: {
-      width: '20%',
-      height: '15%',
-      backgroundColor: StylesColors.purpleColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    guideKeywordYellow: {
-      width: '20%',
-      height: '15%',
-      backgroundColor: StylesColors.yellowColor.backgroundColor,
-      borderRadius: 10,
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-  
-    guideScroll:{
-      width:"100%",
-      height:"100%",
-      // flex:1,
-      // top:50
-    },
-    guideContent: {
-      width: '100%',
-      height: '200%',
-      backgroundColor: StylesColors.subColorLight.backgroundColor,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      flexWrap:"wrap",
-      alignItems: 'center',
-      position:'relative',
-      top:"17%",
-      padding:5,
-      zIndex:1
-    },
-    guideLift: {
-      width:200,
-      height:130
-    },
-    guidePigLeft: {
-      width: 50,
-      height: 50,
-      position: 'absolute',
-      top: 70,
-      left:20
-    },
-    guideSayleft: {
-      width: 150,
-      height: 50,
-      backgroundColor: StylesColors.subColorDeep.backgroundColor,
-      borderRadius: 30,
-      marginTop: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      left: 40
-    },
-  
-    guideText: {
-      width: "100%",
-      textAlign: "center"
-    },
-  
-    guideRight: {
-      width:200,
-      height:130,
-    },
-    guidePigRight: {
-      width: 50,
-      height: 50,
-      position: 'absolute',
-      top: 100,
-      right:30
-    },
-    guideSayRight: {
-      width: 150,
-      height: 50,
-      backgroundColor: StylesColors.subColorDeep.backgroundColor,
-      borderRadius: 30,
-      marginTop: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      left: 10,
-      top:35
-    },
-    guideRightBig: {
-      width:200,
-      height:130,
-    },
-    guidePigRightBig: {
-      width: 50,
-      height: 50,
-      position: 'absolute',
-      top: 225,
-      right:30
-    },
-    guideSayRightBig: {
-      width: 230,
-      height: 150,
-      backgroundColor: StylesColors.subColorDeep.backgroundColor,
-      borderRadius: 30,
-      marginTop: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      right: 65,
-      top:60
-    },
-  
-  });
 
+  // ! 지갑 
+  walletBox: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+  },
+  walletContainer: {
+    width: '100%',
+    height: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    position: 'relative',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  walletAssetTotal: {
+    width: '100%',
+    height: '15%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  walletAssetName: {
+    width: '35%',
+    height: '50%',
+    fontSize: StylesText.sizeMedium.fontSize,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    padding: 10
+  },
+  walletAssetMoney: {
+    width: '45%',
+    height: '50%',
+    fontSize: StylesText.sizeMedium.fontSize,
+    justifyContent: 'center',
+    textAlign: 'center',
+    padding: 10,
+    borderBottomColor: StylesColors.subColorDeep.backgroundColor,
+    borderBottomWidth: 3,
+    borderStyle: 'solid'
+  },
+  walletProcess: {
+    width: '90%',
+    height: '15%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  walletProcessStep: {
+    width: '30%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  walletProfit: {
+    width: '90%',
+    height: '15%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  walletProfitTotal: {
+    width: '100%',
+    height: '50%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  walletbank: {
+    width: '90%',
+    height: '20%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  walletbankLists: {
+    width: '100%',
+    height: '30%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  walletbankList: {
+    width: '25%',
+    height: '100%',
+    padding: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  walletBankList: {
+    width: '100%',
+    height: '50%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flex: 1,
+  },
 
+  // ! 추천페이지 ( Box 는 용어 가이드랑 같이 씀 )
+  recommandBox: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+  },
+  recommandTheme: {
+    width: '100%',
+    height: '25%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  recommandKeywordPink: {
+    width: '20%',
+    height: '20%',
+    backgroundColor: StylesColors.pinkColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  recommandKeywordPurple: {
+    width: '20%',
+    height: '20%',
+    backgroundColor: StylesColors.purpleColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  recommandKeywordYellow: {
+    width: '20%',
+    height: '20%',
+    backgroundColor: StylesColors.yellowColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  recommandCompany: {
+    width: '100%',
+    height: '75%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  },
+  recomandCompanyBallBig: {
+    width: 110,
+    height: 110,
+    backgroundColor: StylesColors.grayColor.backgroundColor,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 70,
+    margin: 3
+  },
+  recomandCompanyBallMedium: {
+    width: 100,
+    height: 100,
+    backgroundColor: StylesColors.grayColor.backgroundColor,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 70,
+    margin: 6
+  },
+  recomandCompanyBallSmall: {
+    width: 90,
+    height: 90,
+    backgroundColor: StylesColors.grayColor.backgroundColor,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 70,
+    margin: 5
+  },
 
+  // ! 실시간 페이지
+  rankingBox: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ranking: {
+    width: '100%',
+    height: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+  },
+  rankingMenu: {
+    width: '100%',
+    height: '5%',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  rankingMenuButton: {
+    width: '25%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 
+  rankingList: {
+    width: '100%',
+    height: '95%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  // ! 랭킹 회사별 ( FlatList )
+  rankingCompany: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  // ! 랭킹 회사이름
+  rankingCompanyName: {
+    width: "50%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
+  rankingCompanyText: {
+    width: "50%",
+    textAlign: 'center',
+    fontSize: StylesText.sizeMedium.fontSize
+  }
+  ,
+  // ! 랭킹 회사 랭킹금액
+  rankingCompanyPrice: {
+    width: "50%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "row-reverse",
+  },
+
+  // ! 용어 가이드
+  guideBox: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    // flexWrap:"wrap",
+    position: 'relative',
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+    justifyContent: 'center',
+  },
+
+  guideTheme: {
+    width: '100%',
+    height: '15%',
+    backgroundColor: StylesColors.mainColor.backgroundColor,
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: "17%",
+    zIndex: 1
+  },
+  guideKeywordPink: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.pinkColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideKeywordPurple: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.purpleColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  guideKeywordYellow: {
+    width: '20%',
+    height: '15%',
+    backgroundColor: StylesColors.yellowColor.backgroundColor,
+    borderRadius: 10,
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  guideScroll: {
+    width: "100%",
+    height: "100%",
+    // flex:1,
+    // top:50
+  },
+  guideContent: {
+    width: '100%',
+    height: '200%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: "wrap",
+    alignItems: 'center',
+    position: 'relative',
+    top: "17%",
+    padding: 5,
+    zIndex: 1
+  },
+  guideLift: {
+    width: 200,
+    height: 130
+  },
+  guidePigLeft: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 70,
+    left: 20
+  },
+  guideSayleft: {
+    width: 150,
+    height: 50,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    left: 40
+  },
+
+  guideText: {
+    width: "100%",
+    textAlign: "center"
+  },
+
+  guideRight: {
+    width: 200,
+    height: 130,
+  },
+  guidePigRight: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 100,
+    right: 30
+  },
+  guideSayRight: {
+    width: 150,
+    height: 50,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    left: 10,
+    top: 35
+  },
+  guideRightBig: {
+    width: 200,
+    height: 130,
+  },
+  guidePigRightBig: {
+    width: 50,
+    height: 50,
+    position: 'absolute',
+    top: 225,
+    right: 30
+  },
+  guideSayRightBig: {
+    width: 230,
+    height: 150,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 30,
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    right: 65,
+    top: 60
+  },
+
+  // ! 마이페이지 - 수정 전
+  myPageBox: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: Constants.statusBarHeight,
+    marginBottom: Constants.BottomTabBarHeight,
+  },
+  myPageMain: {
+    width: "100%",
+    height: "85%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  myPagePhoto: {
+    width: "100%",
+    height: "30%",
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // flex:1
+    // top:30
+  },
+  myPagePhotoView: {
+    width: "40%",
+    height: "60%",
+    borderRadius: 80,
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  myPagePhotoAdd: {
+    width: 30,
+    height: 30,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    position: 'relative',
+    borderRadius: 30,
+    bottom: 30,
+    left: 60,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
+  myPageInfoBox: {
+    width: "100%",
+    height: "15%",
+    display: 'flex',
+    flexDirection: 'column',
+    borderBottomColor: StylesColors.subColorDeep.borderBottomColor,
+    borderBottomWidth: 1,
+  },
+  myPageInfo: {
+    width: "100%",
+    height: "30%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  myPageTitle: {
+    width: "30%",
+    // height: "100%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center'
+  },
+  myPageText: {
+    width: "70%",
+    // height: "100%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'left'
+  },
+
+  myPageAlarm: {
+    width: "100%",
+    height: "30%",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 15
+  },
+  myPageTitleBig: {
+    width: "30%",
+    height: "30%",
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center'
+  },
+
+  myPageAlarmText: {
+    width: "100%",
+    height: "25%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  myPageEdits: {
+    width: "30%",
+    height: "15%",
+    borderRadius: 30,
+  },
+  myPageEdit: {
+    width: 120,
+    height: 60,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
+  // ! 마이페이지 - 수정 후 ( 아래 빼곤 수정 전과 동일 )
+  myPageAlarmEdit: {
+    width: "100%",
+    height: "20%",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 15
+  },
+  myPagePasswordEdit: {
+    width: "100%",
+    height: "15%",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 15,
+    borderTopWidth: 1,
+    borderTopColor: StylesColors.subColorDeep.borderBottomColor,
+
+  },
+
+  myPagePasswordText: {
+    width: "100%",
+    height: "35%",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    // padding:5
+  },
+
+  myPageTitleBigEdit: {
+    width: "45%",
+    height: "30%",
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center',
+    marginBottom: 13
+  },
+
+  myPageTitleEdit: {
+    width: "35%",
+    // height: "50%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center',
+    marginLeft: 5
+  },
+  myPageTextEdit: {
+    width: "40%",
+    // height: "100%",
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'left',
+    backgroundColor: StylesColors.whiteColor.backgroundColor
+  },
+
+  //  ! 완료 버튼
+  myPageEditing: {
+    width: "100%",
+    height: "10%",
+    borderRadius: 30,
+    display: "flex",
+    flexDirection: "row-reverse",
+  },
+  myPageEditDone: {
+    width: 80,
+    height: 35,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 20,
+    marginTop: 20
+  }
+
+});
