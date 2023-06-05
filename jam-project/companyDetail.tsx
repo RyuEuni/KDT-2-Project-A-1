@@ -15,7 +15,7 @@ const CompanyDetail: React.FC<any> = ({ navigation }) => {
       {/*========== 기업정보 상세 영역 =========*/}
       <View style={Styles.cpyDetailBox}>
         {/* 기업 명 */}
-        <View style={{width: '100%', height: '15%',}}>
+        <View style={{width: '100%', height: '12%',}}>
           <TouchableOpacity style={Styles.companyInfo}>
             {/* <Image style={Styles.companyTitleImg} source={require('./resource/heart.png')}></Image> */}
             <View style={Styles.companyTitleImg}></View>
@@ -27,11 +27,11 @@ const CompanyDetail: React.FC<any> = ({ navigation }) => {
 
         {/* 구분 탭 */}
         <View style={Styles.companyTabWrap}>
-          <TouchableOpacity style={Styles.companyTabBtn}>
+          <TouchableOpacity style={Styles.companyTabBtn} onPress={()=>navigation.navigate('companyDetail')}>
             <Text style={Styles.companyTabText}>정보</Text>
 
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.companyTabBtn} onPress={navigation.navigate('companyDetailBuy')}>
+          <TouchableOpacity style={Styles.companyTabBtn} onPress={()=>navigation.navigate('companyDetailBuy')}>
             <Text style={Styles.companyTabText}>구매</Text>
 
           </TouchableOpacity>
@@ -45,14 +45,16 @@ const CompanyDetail: React.FC<any> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* 내용 1 */}
-        <View style={Styles.companyIntroWrap}></View>
+        <View style={{width: '100%', height: '100%', position: 'relative', top: '-3%', backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, borderColor: 'green',}}>
+          {/* 내용 1 */}
+          <View style={Styles.companyIntroWrap}></View>
 
-        {/* 내용 2 */}
-        <View style={Styles.companyFinanceWrap}></View>
+          {/* 내용 2 */}
+          <View style={Styles.companyFinanceWrap}></View>
 
-        {/* 내용 3 */}
-        <View style={Styles.companyInterestWrap}></View>
+          {/* 내용 3 */}
+          <View style={Styles.companyInterestWrap}></View>
+        </View>
       </View>
       {/*========== 기업정보 상세 영역 =========*/}
 
