@@ -31,8 +31,8 @@ export default function App() {
         <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="topMenu" component={TopScreen} />
         <Stack.Screen name="bottomMenu" component={BottomScreen} />
-        <Stack.Screen name="login" component={LoginScreen} />
-        <Stack.Screen name="signUp" component={SignupScreen} />
+        <Stack.Screen name="login" component={LoginScreen}  options={{ headerShown: false }}/>
+        <Stack.Screen name="signUp" component={SignupScreen}  options={{ headerShown: false }}/>
         <Stack.Screen name="wallet" component={WalletScreen} options={{ headerShown: false }} />
         <Stack.Screen name="recommand" component={RecommandScreen} options={{ headerShown: false }} />
         <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
