@@ -1,10 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesColors, StylesText } from './styles';
-import TopMenu from './topMenu';
-import BottomMenu from './bottomMenu';
-
+import { Styles, StylesColors, StylesText } from '../style/styles';
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 
 const CompanyDetailBuy: React.FC<any> = ({ navigation }) => {
   
@@ -25,10 +24,10 @@ const CompanyDetailBuy: React.FC<any> = ({ navigation }) => {
         {/* 기업 명 */}
         <View style={{width: '100%', height: '12%',}}>
           <TouchableOpacity style={Styles.companyInfo}>
-            {/* <Image style={Styles.companyTitleImg} source={require('./resource/heart.png')}></Image> */}
+            {/* <Image style={Styles.companyTitleImg} source={require('../../Resource/Icon/heart.png')}></Image> */}
             <View style={Styles.companyTitleImg}></View>
             <Text style={Styles.companyTitile}>CJ제일제당</Text>
-            <Image style={Styles.companyHeartImg} source={require('./resource/heart.png')}></Image>
+            <Image style={Styles.companyHeartImg} source={require('../../Resource/Icon/heart.png')}></Image>
             <Text style={Styles.companyMoney}>금액 표시</Text>
           </TouchableOpacity>
         </View>
@@ -79,7 +78,7 @@ const CompanyDetailBuy: React.FC<any> = ({ navigation }) => {
                 <Text style={{fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center'}}>구매하기</Text>
               </TouchableOpacity>
               <TouchableOpacity style={Styles.cartButton}>
-                <Image style={{width: '50%', height: '90%', resizeMode: 'contain'}} source={require('./resource/shoppingcart.png')}></Image>
+                <Image style={{width: '50%', height: '90%', resizeMode: 'contain'}} source={require('../../Resource/Icon/shoppingcart.png')}></Image>
               </TouchableOpacity>
             </View>
             <View style={Styles.buyInfo}>
@@ -87,7 +86,7 @@ const CompanyDetailBuy: React.FC<any> = ({ navigation }) => {
               <Text style={{fontSize: StylesText.sizeMedium.fontSize}}>오늘의 최고가는 [     ]원 입니다!</Text>
               <Text style={{fontSize: StylesText.sizeMedium.fontSize}}>오늘의 최저가는 [     ]원 입니다!</Text>
             </View>
-            <Image style={{width: '15%', height: '20%', resizeMode: 'contain', marginRight: '75%'}} source={require('./resource/JamStock_Pig2.png')}></Image>
+            <Image style={{width: '15%', height: '20%', resizeMode: 'contain', marginRight: '75%'}} source={require('../../Resource/Icon/JamStock_Pig2.png')}></Image>
           </View>
 
           {/* 내용 2 */}

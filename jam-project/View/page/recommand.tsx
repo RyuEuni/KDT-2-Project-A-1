@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { Styles } from "./styles";
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
+import { Styles } from "../style/styles";
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 
 // type walletProps = {
 //   navigation: any;

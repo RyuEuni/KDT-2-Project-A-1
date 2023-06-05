@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 
 
@@ -28,7 +28,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       {/* 회원가입 타이틀 */}
       <View style={Styles.signUpTitleWrap}>
         <Text style={Styles.signUpTitle}>Sign Up</Text>
-        <Image style={Styles.signUpImage} source={require('./resource/JamStock_Pig.png')}></Image>
+        <Image style={Styles.signUpImage} source={require('../../Resource/Icon/JamStock_Pig.png')}></Image>
       </View>
       
       {/* 회원가입 입력창 */}

@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList, View, Text } from "react-native";
-import { Styles, StylesColors } from "./styles";
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
+import { Styles, StylesColors } from "../style/styles";
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 import Icon from "react-native-vector-icons/AntDesign"
 
 // flaylist 용 아래 함수에 들어갈 매개변수타입 작성
@@ -85,7 +85,7 @@ const WalletScreen: React.FC<any> = ({ navigation }) => {
               접수
             </Text>
           </View>
-          <Icon name="right" size={20} color={StylesColors.subColorDeep.color} />
+          <Icon name="right" size={20} color={StylesColors.subColorDeep.backgroundColor} />
           <View style={Styles.walletProcessStep}>
             <View style={{ width: '100%', height: '70%' }}>
 
@@ -94,7 +94,7 @@ const WalletScreen: React.FC<any> = ({ navigation }) => {
               처리 중
             </Text>
           </View>
-          <Icon name="right" size={20} color={StylesColors.subColorDeep.color} />
+          <Icon name="right" size={20} color={StylesColors.subColorDeep.backgroundColor} />
 
           <View style={Styles.walletProcessStep}>
             <View style={{ width: '100%', height: '70%' }}>

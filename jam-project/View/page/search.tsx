@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesColors, StylesText } from './styles';
-import TopMenu from './topMenu';
-import BottomMenu from './bottomMenu';
+import { Styles, StylesColors, StylesText } from '../style/styles';
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 // import afterSearch from './afterSearch';
 import { text } from 'body-parser';
 
@@ -35,27 +35,27 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
           <View style={Styles.myLoveCpy}>
             <Text style={{ marginTop: '5%', marginRight: '62%', fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center',}}>검색 결과 화면</Text>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>네이버</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>삼성전자</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>유한양행</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>카카오</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>포스코건설</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
@@ -89,27 +89,27 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
           <View style={Styles.myLoveCpy}>
             <Text style={{ marginTop: '5%', marginRight: '62%', fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center',}}>내가 찜한 기업</Text>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>네이버</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>삼성전자</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>유한양행</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>카카오</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.myLoveListWrap}>
-              <Image style={Styles.myLoveImage} source={require('./resource/heart.png')}></Image>
+              <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
               <Text style={Styles.searchListText}>포스코건설</Text>
               <Text style={Styles.searchListText}>금액 표시</Text>
             </TouchableOpacity>

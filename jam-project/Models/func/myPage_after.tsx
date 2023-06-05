@@ -1,8 +1,8 @@
 import React from "react";
 import { View, TextInput, Text, Image, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native"
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
-import { Styles, StylesText } from "./styles";
+import TopMenu from "../../View/fixed/topMenu";
+import BottomMenu from "../../View/fixed/bottomMenu";
+import { Styles, StylesText } from "../../View/style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
 import { MyPageMain } from "./mypageEdit";
 
@@ -16,7 +16,7 @@ export const MyPageScreen: React.FC<any> = ({ navigation }) => {
         <View style={Styles.myPageMain}>
           <View style={Styles.myPagePhoto}>
             <View style={Styles.myPagePhotoView}>
-              <Image style={{ width: "58%", height: "55%" }} source={require('./resource/JamStock_Pig.png')} />
+              <Image style={{ width: "58%", height: "55%" }} source={require('../../Resource/Icon/JamStock_Pig.png')} />
             </View>
 
             <TouchableOpacity style={Styles.myPagePhotoAdd}>

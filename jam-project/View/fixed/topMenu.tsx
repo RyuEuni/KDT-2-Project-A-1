@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 
 
 const TopMenu: React.FC<any> = ({ navigation }) => {
@@ -12,7 +12,7 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
         <Text style={Styles.logoText}>JamStock</Text>
         <Image
           style={Styles.logoImage}
-          source={require('./resource/JamStock_Pig.png')}
+          source={require('../../Resource/Icon/JamStock_Pig.png')}
         />
       </TouchableOpacity>
       <View style={Styles.topWrap}>
@@ -20,7 +20,7 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate('cart')}>
           <Image
             style={Styles.logoImage}
-            source={require('./resource/shoppingcart.png')}
+            source={require('../../Resource/Icon/shoppingcart.png')}
           />
         </TouchableOpacity>
         {/* 햄버거 메뉴 이동 */}

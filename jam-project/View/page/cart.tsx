@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/EvilIcons'
-import TopMenu from './topMenu';
-import BottomMenu from './bottomMenu';
-
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 export const CartScreen: React.FC<any> = ({ navigation }) => {
 
   interface Stockdata {

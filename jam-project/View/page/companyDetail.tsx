@@ -1,10 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesColors, StylesText } from './styles';
-import TopMenu from './topMenu';
-import BottomMenu from './bottomMenu';
-
+import { Styles, StylesColors, StylesText } from '../style/styles';
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 
 const CompanyDetail: React.FC<any> = ({ navigation }) => {
   
@@ -17,10 +16,10 @@ const CompanyDetail: React.FC<any> = ({ navigation }) => {
         {/* 기업 명 */}
         <View style={{width: '100%', height: '12%',}}>
           <TouchableOpacity style={Styles.companyInfo}>
-            {/* <Image style={Styles.companyTitleImg} source={require('./resource/heart.png')}></Image> */}
+            {/* <Image style={Styles.companyTitleImg} source={require('../../Resource/Icon/heart.png')}></Image> */}
             <View style={Styles.companyTitleImg}></View>
             <Text style={Styles.companyTitile}>CJ제일제당</Text>
-            <Image style={Styles.companyHeartImg} source={require('./resource/heart.png')}></Image>
+            <Image style={Styles.companyHeartImg} source={require('../../Resource/Icon/heart.png')}></Image>
             <Text style={Styles.companyMoney}>금액 표시</Text>
           </TouchableOpacity>
         </View>

@@ -1,8 +1,8 @@
 import React from "react";
 import { View, TextInput, Text, Image, TouchableOpacity } from "react-native"
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
-import { Styles } from "./styles";
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
+import { Styles } from "../style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
 
 
@@ -10,11 +10,11 @@ export const MyPageScreen: React.FC<any> = ({ navigation }) => {
   return (
     <View style={Styles.myPageBox}>
 
-      <TopMenu />
+      <TopMenu navigation={navigation} />
 
       <View style={Styles.myPagePhoto}>
         <View style={Styles.myPagePhotoView}>
-          <Image style={{ width: "60%", height: "65%" }} source={require('./resource/JamStock_Pig.png')} />
+          <Image style={{ width: "60%", height: "65%" }} source={require('../../Resource/Icon/JamStock_Pig.png')} />
         </View>
 
         <TouchableOpacity style={Styles.myPagePhotoAdd}>
@@ -54,7 +54,7 @@ export const MyPageScreen: React.FC<any> = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <BottomMenu />
+      <BottomMenu navigation={navigation} />
 
     </View>
   )

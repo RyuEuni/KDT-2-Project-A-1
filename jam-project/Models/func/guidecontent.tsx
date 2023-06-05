@@ -1,6 +1,6 @@
 import React from "react";
-import { Styles } from "./styles";
 import { View, Text, Image, ScrollView } from "react-native";
+import { Styles } from "../../View/style/styles";
 
 
 export const guideContent = (keyword: string) => {
@@ -11,7 +11,7 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 매도/매수가 뭐야? </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
@@ -19,7 +19,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 주식을 사는 게 매수,{"\n"}
               파는 게 매도야! </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
@@ -27,7 +27,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 1주, 2주하던데,{"\n"}
               주가 뭐야?</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
@@ -35,14 +35,14 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 주식도 세는 단위가 있어.{"\n"}
               이걸 '주'라고 표현해 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 주식을 산다고 주문하면{"\n"}
               바로 체결되는 게 아니야? </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -53,7 +53,7 @@ export const guideContent = (keyword: string) => {
               2. 사거나 팔려는 사람에 반대되는 사람이 더 많아서 내 순위가 밀려난 경우
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -64,34 +64,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -99,7 +99,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -110,34 +110,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -145,7 +145,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -156,34 +156,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -191,7 +191,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -202,34 +202,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -237,7 +237,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -248,34 +248,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -283,7 +283,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -294,34 +294,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -329,7 +329,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -340,34 +340,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -375,7 +375,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -386,34 +386,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -421,7 +421,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -432,34 +432,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -467,7 +467,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )
@@ -478,34 +478,34 @@ export const guideContent = (keyword: string) => {
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
 
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문</Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRight}>
           <View style={Styles.guideSayRight}>
             <Text style={Styles.guideText}> 답변 </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRight} />
         </View>
         <View style={Styles.guideLift}>
           <View style={Styles.guideSayleft}>
             <Text style={Styles.guideText}> 질문 </Text>
           </View>
-          <Image source={require('./resource/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
+          <Image source={require('../../Resource/Icon/JamStock_Pig2.png')} style={Styles.guidePigLeft} />
         </View>
 
         <View style={Styles.guideRightBig}>
@@ -513,7 +513,7 @@ export const guideContent = (keyword: string) => {
             <Text style={Styles.guideText}> 좀 긴 답변. 짧은 답변으로 더 할거면 스타일 변경 필요.
             </Text>
           </View>
-          <Image source={require('./resource/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
+          <Image source={require('../../Resource/Icon/JamStock_pig_pink.png')} style={Styles.guidePigRightBig} />
         </View>
       </View>
     )

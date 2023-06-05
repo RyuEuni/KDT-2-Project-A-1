@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
-import { Styles } from "./styles";
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
+import { Styles } from "../style/styles";
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 import Icon from "react-native-vector-icons/AntDesign";
-import { realtimedata } from "./realtimedata";
+import { realtimedata } from "../../Models/func/realtimedata";
 
 
 interface Companydata {

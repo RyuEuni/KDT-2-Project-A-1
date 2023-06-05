@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 
 // const Drawer = createDrawerNavigator();

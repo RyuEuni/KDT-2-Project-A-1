@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 
 
 const BottomMenu: React.FC<any> = ({ navigation }) => {
@@ -12,7 +12,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           onPress={() => navigation.navigate('')}
         >
           <Image
-            source={require('./resource/realtime.png')}
+            source={require('../../Resource/Icon/realtime.png')}
             style={Styles.bottomImg}
           />
           <Text style={Styles.bottomText}>실시간</Text>
@@ -24,7 +24,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           onPress={() => navigation.navigate('recommand')}
         >
           <Image
-            source={require('./resource/recommand.png')}
+            source={require('../../Resource/Icon/recommand.png')}
             style={Styles.bottomImg}
           />
           <Text style={Styles.bottomText}>주식 추천</Text>
@@ -36,7 +36,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           onPress={() => navigation.navigate('search')}
         >
           <Image
-            source={require('./resource/search.png')}
+            source={require('../../Resource/Icon/search.png')}
             style={Styles.bottomImg}
           />
           <Text style={Styles.bottomText}>검색</Text>
@@ -48,7 +48,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           onPress={() => navigation.navigate('guide')}
         >
           <Image
-            source={require('./resource/guide.png')}
+            source={require('../../Resource/Icon/guide.png')}
             style={Styles.bottomImg}
           />
           <Text style={Styles.bottomText}>가이드</Text>
@@ -60,7 +60,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
           onPress={() => navigation.navigate('wallet')}
         >
           <Image
-            source={require('./resource/wallet.png')}
+            source={require('../../Resource/Icon/wallet.png')}
             style={Styles.bottomImg}
           />
           <Text style={Styles.bottomText}>지갑</Text>

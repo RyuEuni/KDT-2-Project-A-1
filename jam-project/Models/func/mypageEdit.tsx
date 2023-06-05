@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TextInput, Text, Image, TouchableOpacity } from "react-native"
-import { Styles, StylesText } from "./styles";
+import { Styles, StylesText } from "../../View/style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
 
 export const MyPageMain = (state: string) => {
@@ -9,7 +9,7 @@ export const MyPageMain = (state: string) => {
       <View style={Styles.myPageMain}>
         <View style={Styles.myPagePhoto}>
           <View style={Styles.myPagePhotoView}>
-            <Image style={{ width: "58%", height: "55%" }} source={require('./resource/JamStock_Pig.png')} />
+            <Image style={{ width: "58%", height: "55%" }} source={require('../../Resource/Icon/JamStock_Pig.png')} />
           </View>
           {/* 생각해보면 수정 들어가야 +가 보이는 거 아닌가..?! */}
           <TouchableOpacity style={Styles.myPagePhotoAdd}>
@@ -58,7 +58,7 @@ export const MyPageMain = (state: string) => {
       <View style={Styles.myPageMain}>
         <View style={Styles.myPagePhoto}>
           <View style={Styles.myPagePhotoView}>
-            <Image style={{ width: "58%", height: "55%" }} source={require('./resource/JamStock_Pig.png')} />
+            <Image style={{ width: "58%", height: "55%" }} source={require('../../Resource/Icon/JamStock_Pig.png')} />
           </View>
 
           <TouchableOpacity style={Styles.myPagePhotoAdd}>

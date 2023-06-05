@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
-import TopMenu from './topMenu';
-import BottomMenu from './bottomMenu';
+import { Styles, StylesText } from '../style/styles';
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {

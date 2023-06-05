@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import { Styles } from "./styles";
-import TopMenu from "./topMenu";
-import BottomMenu from "./bottomMenu";
+import { Styles } from "../style/styles";
+import TopMenu from '../fixed/topMenu';
+import BottomMenu from '../fixed/bottomMenu';
 import { TouchableOpacity, View, Text, Image, ScrollView } from "react-native";
-import { guideContent } from "./guidecontent";
+import { guideContent } from "../../Models/func/guidecontent";
 
 export const GuideScreen: React.FC<any> = ({ navigation }) => {
 

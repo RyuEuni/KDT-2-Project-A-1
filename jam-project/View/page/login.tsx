@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 
 
@@ -21,7 +21,7 @@ const LoginScreen: React.FC<any> = ({ navigation }) => {
       <Icon name="left" size = {25} color = '#A5C7FB' style={{marginTop: '50%'}}/>
       </TouchableOpacity>
       <Text style={Styles.loginTitle}>Login</Text>
-      <Image style={Styles.loginImage} source={require('./resource/JamStock_Pig_bukkeu.png')}></Image>
+      <Image style={Styles.loginImage} source={require('../../Resource/Icon/JamStock_Pig_bukkeu.png')}></Image>
       
       {/* ID, PW 입력창 */}
       <View style={Styles.idPwWrap}>

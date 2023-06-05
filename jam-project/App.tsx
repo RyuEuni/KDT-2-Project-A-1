@@ -3,23 +3,23 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Styles, StylesColors } from './styles';
-import LoginScreen from './login';
-import HomeScreen from './home';
-import SignupScreen from './signUp';
-import TopScreen from './topMenu'
-import BottomScreen from './bottomMenu';
-import WalletScreen from './wallet';
-import RecommandScreen from './recommand'
-// import {RealtimeScreen} from './realtime'
-import { GuideScreen } from './guide';
-import HambergerScreen from './hamberger';
-import FindAccountScreen from './findAccount';
-import SearchScreen from './search';
-import CompanyDetailScreen from './companyDetail';
-import CompanyDetailBuyScreen from './companyDetailBuy';
-import { MyPageScreen } from './myPage';
-import { CartScreen } from './cart';
+import { Styles, StylesColors } from './View/style/styles';
+import LoginScreen from './View/page/login';
+import HomeScreen from './View/page/home';
+import SignupScreen from './View/page/signUp';
+import TopScreen from './View/fixed/topMenu'
+import BottomScreen from './View/fixed/bottomMenu';
+import WalletScreen from './View/page/wallet';
+import RecommandScreen from './View/page/recommand'
+// import {RealtimeScreen} from './View/page/realtime'
+import { GuideScreen } from './View/page/guide';
+import HambergerScreen from './View/fixed/hamberger';
+import FindAccountScreen from './View/page/findAccount';
+import SearchScreen from './View/page/search';
+import CompanyDetailScreen from './View/page/companyDetail';
+import CompanyDetailBuyScreen from './View/page/companyDetailBuy';
+import { MyPageScreen } from './View/page/myPage';
+import { CartScreen } from './View/page/cart';
 
 const Stack = createNativeStackNavigator();
 

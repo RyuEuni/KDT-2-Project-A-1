@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from './styles';
+import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 
 
@@ -28,7 +28,7 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
       {/* ID찾기 타이틀 */}
       <View style={Styles.signUpTitleWrap}>
         <Text style={Styles.accountTitle}>아이디를 찾으시나요?</Text>
-        <Image style={Styles.signUpImage} source={require('./resource/JamStock_Pig.png')}></Image>
+        <Image style={Styles.signUpImage} source={require('../../Resource/Icon/JamStock_Pig.png')}></Image>
       </View>
       
       {/* 입력창 */}
@@ -65,7 +65,7 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
       {/* PW찾기 타이틀 */}
       <View style={Styles.signUpTitleWrap}>
         <Text style={Styles.accountTitle}>비밀번호를 잊으셨나요?</Text>
-        <Image style={Styles.signUpImage} source={require('./resource/JamStock_Pig.png')}></Image>
+        <Image style={Styles.signUpImage} source={require('../../Resource/Icon/JamStock_Pig.png')}></Image>
       </View>
       
       {/* 입력창 */}
