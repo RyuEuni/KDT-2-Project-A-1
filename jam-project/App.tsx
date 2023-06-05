@@ -14,6 +14,10 @@ import RecommandScreen from './recommand'
 // import {RealtimeScreen} from './realtime'
 import { GuideScreen } from './guide';
 import HambergerScreen from './hamberger';
+import FindAccountScreen from './findAccount';
+import SearchScreen from './search';
+import CompanyDetailScreen from './companyDetail';
+import CompanyDetailBuyScreen from './companyDetailBuy';
 import { MyPageScreen } from './myPage';
 import { CartScreen } from './cart';
 
@@ -34,6 +38,10 @@ export default function App() {
         <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
         {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
         <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
 

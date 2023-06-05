@@ -48,7 +48,7 @@ const LoginScreen: React.FC<any> = ({ navigation }) => {
         <TouchableOpacity style={Styles.loginPageBtn} onPress={() => navigation.navigate('signUp')}>
           <Text style={Styles.loginPageBtnText}>회원가입</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={Styles.loginPageBtn} onPress={() => navigation.navigate('home')}>
+        <TouchableOpacity style={Styles.loginPageBtn} onPress={() => navigation.navigate('account')}>
           <Text style={Styles.loginPageBtnText}>계정찾기</Text>
         </TouchableOpacity>
       </View>

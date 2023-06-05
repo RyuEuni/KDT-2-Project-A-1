@@ -39,10 +39,10 @@ export const StylesColors = StyleSheet.create({
 });
 
 export const StylesText = StyleSheet.create({
-  sizeSmall: {
+  sizeExtraSmall: {
     fontSize: 12
   },
-  sizeExtraSmall: {
+  sizeSmall: {
     fontSize: 16
   },
   sizeMedium: {
@@ -73,7 +73,8 @@ export const Styles = StyleSheet.create({
   topRoot: {
     width: '100%',
     height: '7%',
-    padding: 10,
+    marginTop: '2%',
+    padding: '2%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -148,8 +149,8 @@ export const Styles = StyleSheet.create({
     borderRadius: 20,
   },
   serchButtonText: {
-    marginTop: 5,
-    fontSize: StylesText.sizeExtraSmall.fontSize,
+    marginTop: '15%',
+    fontSize: StylesText.sizeSmall.fontSize,
     textAlign: 'center',
     color: StylesColors.whiteColor.backgroundColor,
     fontWeight: StylesText.weightExtraBold.fontWeight
@@ -317,7 +318,7 @@ export const Styles = StyleSheet.create({
     width: '40%',
     marginTop: 10,
     marginLeft: 10,
-    fontSize: StylesText.sizeExtraSmall.fontSize,
+    fontSize: StylesText.sizeSmall.fontSize,
     fontWeight: StylesText.weightExtraBold.fontWeight,
 
   },
@@ -523,7 +524,7 @@ export const Styles = StyleSheet.create({
   signUpListText: {
     width: '30%',
     height: '65%',
-    fontSize: StylesText.sizeExtraSmall.fontSize,
+    fontSize: StylesText.sizeSmall.fontSize,
     fontWeight: StylesText.weightBold.fontWeight,
     textAlign: 'center',
 
@@ -567,6 +568,292 @@ export const Styles = StyleSheet.create({
 
   },
 
+  //! 계정찾기 페이지
+  accountTitle:{
+    width: '75%',
+    height: '50%',
+    fontSize: 33,
+    textAlign: 'center',
+    marginLeft: '5%',
+  },
+  accountBtn:{
+    width: '35%',
+    height: '5%',
+    marginTop: '5%',
+    marginLeft: '50%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+  },
+
+  //! 주식 검색화면
+  myLoveCpy: {
+    width: '100%',
+    height: '45%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+  userLoveCpy: {
+    width: '100%',
+    height: '45%',
+    marginTop: '4%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+  searchListText: {
+    // width: '40%',
+    height: '80%',
+    fontSize: StylesText.sizeMedium.fontSize,
+    textAlign: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red'
+
+  },
+  myLoveImage:{
+    width: '10%',
+    height: '90%',
+    resizeMode: 'contain',
+
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+  myLoveListWrap:{
+    width: '95%',
+    height: '13%',
+    marginTop: '3%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    
+    
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+  userLoveListWrap:{
+    width: '95%',
+    height: '13%',
+    marginTop: '3%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    
+    borderWidth: 1,
+    borderColor: 'red'
+  },
+
+  //! 주식종목 상세 페이지
+  cpyDetailBox: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '10%',
+
+    borderWidth: 1,
+    borderColor: 'blue',
+  },
+  companyInfo:{
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    // justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: '2%',
+    paddingRight: '2%',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyTitleImg:{
+    width: '15%',
+    height: '60%',
+    resizeMode: 'contain',
+    backgroundColor: StylesColors.grayColor.backgroundColor,
+    borderRadius: 50,
+
+  },
+  companyTitile: {
+    height: '40%',
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center',
+    marginLeft: '2%',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyHeartImg: {
+    width: '10%',
+    height: '40%',
+    resizeMode: 'contain',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyMoney:{
+    height: '40%',
+    fontSize: StylesText.sizeLarge.fontSize,
+    textAlign: 'center',
+    marginLeft: '5%',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyTabWrap: {
+    width: '100%', 
+    height: '15%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyTabBtn: {
+    width: '24%',
+    height: '70%',
+    borderRadius:10,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  companyTabText: {
+    height: '40%', 
+    fontSize: StylesText.sizeLarge.fontSize, 
+    textAlign: 'center',
+    marginTop: '20%',
+  },
+
+  //! 회사 소개 부분
+  companyIntroWrap: {
+    width: '100%', 
+    height: '40%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+
+  //! 회사 재무 부분
+  companyFinanceWrap: {
+    width: '100%', 
+    height: '40%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+
+  //! 회사 이자 내역 부분
+  companyInterestWrap: {
+    width: '100%', 
+    height: '40%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  
+  //! 종목 상세화면 - 구매
+  buyWrap: {
+    width: '100%', 
+    height: '40%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  buyInputWrap: {
+    width: '95%', 
+    height: '15%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  buyInput:{
+    width: '25%',
+    height: '70%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+
+  },
+  buyButton: {
+    width: '60%',
+    height: '100%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cartButton: {
+    width: '30%',
+    height: '100%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buyInfo: {
+    height: '40%', 
+    backgroundColor: StylesColors.subColorDeep.backgroundColor, 
+    borderRadius: 20, 
+    display:'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'space-around', 
+    alignItems: 'center',
+    marginLeft: '15%',
+    padding: '3%'
+  },
+  
   // ! 장바구니 
   cartBox: {
     width: "100%",
@@ -699,7 +986,7 @@ export const Styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center"
   },
-  cartButton: {
+  cartButtons: {
     width: "100%",
     height: "15%",
     display: "flex",

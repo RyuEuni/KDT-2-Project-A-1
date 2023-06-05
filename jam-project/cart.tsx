@@ -98,7 +98,7 @@ export const CartScreen: React.FC<any> = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={Styles.cartButton}>
+        <View style={Styles.cartButtons}>
           <TouchableOpacity style={Styles.cartButtonBox}>
             <Text>한번에 구매하기</Text>
           </TouchableOpacity>
@@ -132,7 +132,7 @@ export const CartScreen: React.FC<any> = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={Styles.cartButton}>
+        <View style={Styles.cartButtons}>
           <TouchableOpacity style={Styles.cartButtonBox}>
             <Text>한번에 판매하기</Text>
           </TouchableOpacity>
