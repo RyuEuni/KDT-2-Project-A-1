@@ -11,7 +11,24 @@ const LoginScreen: React.FC<any> = ({ navigation }) => {
 
   const loginResult = () => {
     console.log("id: ", loginText, " pw: ", passwordText);
-    // Perform search logic or any other operations with the entered text
+
+    fetch('http://192.168.30.76:3080/home',{
+      method:'post',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({'id':loginText})
+    })
+    .then((response)=>response.json())
+    .then((result)=>{
+      if(result.success){
+        console.log('됨?')
+      }else{
+        console.log('안됨')
+      }
+    }).catch((err)=>{
+      console.error(err)
+    })
   };
 
   return (
