@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SignUpCheck from '../../Models/func/signUpCheck';
 
+
+// const signUpDbSave = (idText:string, passwordText:string, nicknameText:string, birthdayText:string, emailText:string) => {
+
+//   const signUpObj = {
+//     id: idText,
+//     password: passwordText,
+//     nickname: nicknameText,
+//     birthday: birthdayText,
+//     email: emailText,
+//   }
+
+//   useEffect(() => {
+//     fetch('http://172.30.1.55:3000/signUp',
+//     {
+//       method: "POST",
+//       body: JSON.stringify(signUpObj),
+//     })
+//     .then(response => response.json())
+//     .catch(error => {
+//       console.error('회원가입 에러가 발생했습니다::: ', error);
+//     });
+//   }, []);
+// }
 
 const SignupScreen: React.FC<any> = ({ navigation }) => {
   const [idText, setIdText] = useState('');
@@ -49,6 +72,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
   let brt:boolean = false;
   let em:boolean = false;
 
+  
   const IdChecking = () => {
 
     //! 아이디 유효성 검사
@@ -156,19 +180,37 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
   
   const checking = () => {
     // console.log("dddd: ", id , pw , pwCk , nick , brt , em)
-    let allCheck;
 
     if(id && pw && pwCk && nick && brt && em){
-      allCheck = true;
+      // signUpDbSave(idText, passwordText, nicknameText, birthdayText, emailText)
+
+      return true;
     }
     else{
-      allCheck = false;
+      return false;
     }
 
-    // console.log('생일: ', allCheck)
-    return allCheck;
   }
 
+  const signUpObj = {
+    id: idText,
+    password: passwordText,
+    nickname: nicknameText,
+    birthday: birthdayText,
+    email: emailText,
+  }
+
+  useEffect(() => {
+    fetch('http://localhost:3000/signUp',
+    {
+      method: "POST",
+      body: JSON.stringify(signUpObj),
+    })
+    .then(response => response.json())
+    .catch(error => {
+      console.error('회원가입 에러가 발생했습니다::: ', error);
+    });
+  }, []);
 
   return (
     <View style={Styles.loginBox}>
@@ -267,8 +309,22 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       {/* 회원가입 완료 버튼 */}
       <TouchableOpacity style={Styles.signUpNFindBtn} onPress={() => 
         {
+          // if(id && pw && pwCk && nick && brt && em){
+
+          //   useEffect(() => {
+          //     fetch('http://172.30.1.55:3000/signUp',
+          //     {
+          //       method: "POST",
+          //       body: JSON.stringify(signUpObj),
+          //     })
+          //     .then(response => response.json())
+          //     .catch(error => {
+          //       console.error('회원가입 에러가 발생했습니다::: ', error);
+          //     });
+          //   }, []);
+          // }
+          // signUpDbSave(idText, passwordText, nicknameText, birthdayText, emailText)
           if(checking()){
-            
             navigation.navigate('login')
           }
           

@@ -1,18 +1,21 @@
-import express from 'express';
+const express = require('express');
+const signUpDB = require('./signUp');
+
+const http = require('http');
+
 const app = express();
 
-app.post('/home', (req, res) => {
-  // DB에서 데이터 조회 등의 로직 수행
-  let body = "";
-  request.on("data", function (data) {
-    body = body + data;
-  });
-  request.on("end", function () {
-    
-  });
-  // res.json(data);
+const server = http.createServer(function (request, response) {
+  signUpDB(request, response);
 });
 
-app.listen(3008, () => {
-  console.log('Server is listening on port 3000');
+// 서버 포트 설정
+server.listen(3000, function (error) {
+  if (error) {
+    console.error("서버 안돌아감");
+  } else {
+    console.log("서버 돌아감");
+  }
 });
+
+module.exports = server;
