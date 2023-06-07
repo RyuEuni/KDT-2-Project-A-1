@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SignUpCheck from '../../Models/func/signUpCheck';
+import { response } from 'express';
 
 
 // const signUpDbSave = (idText:string, passwordText:string, nicknameText:string, birthdayText:string, emailText:string) => {
@@ -74,26 +75,46 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   
   const IdChecking = () => {
-
     //! 아이디 유효성 검사
-      if(idText.length >= inputLength.nicknameLength.min && idText.length <= inputLength.nicknameLength.max){
-        const result = pattern.test(idText);
+    if(idText.length >= inputLength.nicknameLength.min && idText.length <= inputLength.nicknameLength.max){
+      const result = pattern.test(idText);
 
-        if(result){
-          setIdValidation('유효한 값입니다.')
-          id = true;
-        }
-        else{
-          setIdValidation('입력하신 ID의 값이 형식에 맞지 않습니다.')
-        }
+      if(result){
+        fetch('http://192.168.100.81:3000/checkSignUp',
+        {
+          method: "POST",
+          body: JSON.stringify({idText}),
+        })
+        .then((response) => {
+          return response.json()})
+        .then((data) => {
+          // console.log(data)
+          if(data){
+            setIdValidation('유효한 값입니다.')
+            id = true;
+          }
+          else{
+            setIdValidation('이미 사용중인 ID입니다. 다른 ID를 입력해주세요.')
+
+          }
+        })
+        .catch(error => {
+          console.error('회원가입 에러가 발생했습니다::: ', error);
+        });
+        
       }
       else{
-        setIdValidation('입력하신 ID의 길이가 유효하지 않습니다.')
-    
+        setIdValidation('입력하신 ID의 값이 형식에 맞지 않습니다.')
       }
+    }
+    else{
+      setIdValidation('입력하신 ID의 길이가 유효하지 않습니다.')
+  
+    }
     
   };
   const pwChecking = () => {
+    //! 비밀번호 유효성 검사
       if(passwordText.length >= inputLength.pwcharLength.min && passwordText.length <= inputLength.pwcharLength.max){
         const result = pattern.test(passwordText);
 
@@ -112,6 +133,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   };
   const rePwChecking = () => {
+    //! 비밀번호 확인
     if(passwordCheckText == passwordText){
       setPasswordCheckValidation('password와 동일합니다.')
       pwCk = true;
@@ -123,12 +145,29 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   };
   const nickNameChecking = () => {
+    //! 닉네임 유효성 검사
       if(nicknameText.length >= inputLength.nicknameLength.min && nicknameText.length <= inputLength.nicknameLength.max){
         const result = patternNincName.test(nicknameText);
 
         if(result){
-          setNicknameValidation('유효한 값입니다.')
-          nick = true;
+          fetch('http://192.168.100.81:3000/checkSignUp',
+          {
+            method: "POST",
+            body: JSON.stringify({nicknameText}),
+          })
+          .then((response) => {
+            return response.json()})
+          .then((data) => {
+            // console.log(data)
+            if(data){
+              setNicknameValidation('유효한 값입니다.')
+              nick = true;
+            }
+            else{
+              setNicknameValidation('이미 사용중인 닉네임입니다. 다른 닉네임을 입력해주세요.')
+
+            }
+          })
         }
         else{
           setNicknameValidation('입력하신 nickname의 값이 형식에 맞지 않습니다.')
@@ -141,6 +180,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   };
   const birthdayChecking = () => {
+    //! 생일 유효성 검사
     if(patternBirthday.test(birthdayText)){
   
       // 생년월일 유효성 검사 (예: 2023-06-05인 경우 2023년 6월 5일이 있는지 확인)
@@ -166,6 +206,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   };
   const emailChecking = () => {
+    //! 이메일 유효성 검사
     const result = patternEmail.test(emailText);
     if(result){
       setEmailValidation('유효한 값입니다.')
@@ -179,10 +220,8 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
   };
   
   const checking = () => {
-    // console.log("dddd: ", id , pw , pwCk , nick , brt , em)
-
+    console.log("dddd: ", id , pw , pwCk , nick , brt , em)
     if(id && pw && pwCk && nick && brt && em){
-      // signUpDbSave(idText, passwordText, nicknameText, birthdayText, emailText)
 
       return true;
     }
@@ -192,25 +231,6 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   }
 
-  const signUpObj = {
-    id: idText,
-    password: passwordText,
-    nickname: nicknameText,
-    birthday: birthdayText,
-    email: emailText,
-  }
-
-  useEffect(() => {
-    fetch('http://localhost:3000/signUp',
-    {
-      method: "POST",
-      body: JSON.stringify(signUpObj),
-    })
-    .then(response => response.json())
-    .catch(error => {
-      console.error('회원가입 에러가 발생했습니다::: ', error);
-    });
-  }, []);
 
   return (
     <View style={Styles.loginBox}>
@@ -233,7 +253,9 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
             onChangeText={text => setIdText(text)}
             value={idText}
             onSubmitEditing={IdChecking}
-            keyboardType="visible-password"
+            keyboardType="default"
+            autoCorrect={false}
+            autoCapitalize="none"
             placeholder=""
         />
       </View>
@@ -246,7 +268,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
             onChangeText={text => setPasswordText(text)}
             value={passwordText}
             onSubmitEditing={pwChecking}
-            keyboardType="visible-password"
+            keyboardType="default"
             placeholder=""
         />
       </View>
@@ -259,7 +281,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
             onChangeText={text => setPasswordCheckText(text)}
             value={passwordCheckText}
             onSubmitEditing={rePwChecking}
-            keyboardType="visible-password"
+            keyboardType="default"
             placeholder=""
         />
       </View>
@@ -272,7 +294,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
             onChangeText={text => setNicknameText(text)}
             value={nicknameText}
             onSubmitEditing={nickNameChecking}
-            keyboardType="visible-password"
+            keyboardType="default"
             placeholder=""
         />
       </View>
@@ -299,7 +321,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
             onChangeText={text => setEmailText(text)}
             value={emailText}
             onSubmitEditing={emailChecking}
-            keyboardType="visible-password"
+            keyboardType="default"
             placeholder=""
         />
       </View>
@@ -309,23 +331,17 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       {/* 회원가입 완료 버튼 */}
       <TouchableOpacity style={Styles.signUpNFindBtn} onPress={() => 
         {
-          // if(id && pw && pwCk && nick && brt && em){
-
-          //   useEffect(() => {
-          //     fetch('http://172.30.1.55:3000/signUp',
-          //     {
-          //       method: "POST",
-          //       body: JSON.stringify(signUpObj),
-          //     })
-          //     .then(response => response.json())
-          //     .catch(error => {
-          //       console.error('회원가입 에러가 발생했습니다::: ', error);
-          //     });
-          //   }, []);
-          // }
-          // signUpDbSave(idText, passwordText, nicknameText, birthdayText, emailText)
           if(checking()){
-            navigation.navigate('login')
+            fetch('http://192.168.100.81:3000/resultSignUp',
+            {
+              method: "POST",
+              // body: JSON.stringify(signUpObj),
+              body: JSON.stringify({idText, passwordText, nicknameText, birthdayText, emailText}),
+            })
+            .catch(error => {
+              console.error('회원가입 에러가 발생했습니다::: ', error);
+            });
+              navigation.navigate('login')
           }
           
         }

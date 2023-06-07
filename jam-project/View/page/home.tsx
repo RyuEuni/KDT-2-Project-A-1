@@ -17,7 +17,8 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://172.30.1.55:5000/api/data')
+    // fetch('http://172.30.1.55:5000/api/data') //우리집 노트북 주소
+    fetch('http://192.168.100.81:5000/api/data')
       .then(response => response.json())
       .then(json => {
         console.log(json)
