@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
@@ -13,6 +13,21 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
     setSearchText('검색'); // 검색 완료 후 텍스트를 '검색'으로 설정
     // Perform search logic or any other operations with the entered text
   };
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // fetch('http://172.30.1.55:5000/api/data') //우리집 노트북 주소
+    fetch('http://192.168.100.81:5000/api/data')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json)
+        setData(json);
+      })
+      .catch(error => {
+        console.error('에러가 발생했습니다::: ', error);
+      });
+  }, []);
 
   return (
     <View style={Styles.homeRoot}>
@@ -36,9 +51,14 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('companyDetail')}>
               <Text style={Styles.rankText}>🥇 삼성전자</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            {data && (
+              <View>
+                <Text style={Styles.rankText}>{data['종목이름']}</Text>
+              </View>
+            )}
+            {/* <TouchableOpacity>
               <Text style={Styles.rankText}>🥈 엘지화학</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <TouchableOpacity>
               <Text style={Styles.rankText}>🥉 SK하이닉스</Text>
             </TouchableOpacity>

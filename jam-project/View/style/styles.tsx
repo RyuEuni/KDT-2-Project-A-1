@@ -546,6 +546,12 @@ export const Styles = StyleSheet.create({
     elevation: 4,
 
   },
+  //! 회원가입 - 유효성 검사 멘트
+  signUpValidation:{
+    fontSize: StylesText.sizeSmall.fontSize, 
+    textAlign: 'center', 
+    marginTop: 9
+  },
   //! 회원가입, 계정찾기 쪽 버튼
   signUpNFindBtn: {
     width: '35%',

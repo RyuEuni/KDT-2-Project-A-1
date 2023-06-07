@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 // import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Styles, StylesColors } from './View/style/styles';
@@ -21,9 +22,11 @@ import CompanyDetailBuyScreen from './View/page/companyDetailBuy';
 import { MyPageScreen } from './View/page/myPage';
 import { CartScreen } from './View/page/cart';
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -49,5 +52,6 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
 
 

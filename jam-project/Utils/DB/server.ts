@@ -1,13 +1,11 @@
-import express, { Request, Response } from 'express';
+import express, {Request, Response} from 'express';
+import {signCheck, signResult} from './signUp';
 import { DBInfo } from './DBConnect';
 
 const app = express();
-
 DBInfo.connect(()=>{
   console.log('Database open! port is 3306')
 })
-// DB 연결
-
 
 app.post('/login', (req: Request, res: Response) => {
   // DB에서 데이터 조회 등의 로직 수행
@@ -41,6 +39,16 @@ app.post('/login', (req: Request, res: Response) => {
   });
 });
 
+app.post('/checkSignUp',(request:Request, response:Response) => {
+  signCheck(request, response);
+
+});
+app.post('/resultSignUp',(request:Request, response:Response) => {
+  signResult(request, response);
+
+});
+
+// 서버 포트 설정
 app.listen(3080, () => {
-  console.log('Server is listening on port 3080');
+  console.log("서버 돌아감");
 });
