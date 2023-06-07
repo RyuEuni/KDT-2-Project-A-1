@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "concurrently \"expo start\" \"ts-node ./Utils/DB/server.ts\"",
+    "start": "run-p db:start expo:start",
+    "db:start": "ts-node ./Utils/DB/server.ts",
+    "expo:start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
