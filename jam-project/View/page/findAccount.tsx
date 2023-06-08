@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
+import { findID } from '../../Models/func/findID';
 
 
 const FindAccountScreen: React.FC<any> = ({ navigation }) => {
@@ -11,12 +12,8 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
   const [nicknameText, setNicknameText] = useState('');
   const [birthdayText, setBirthdayText] = useState('');
   const [emailText, setEmailText] = useState('');
-  // const [passwordText, setPasswordText] = useState('');
 
-  const loginResult = () => {
-    console.log("id: ", idText, " pw: ", passwordText, "Check: ", passwordCheckText, "nickname: ", nicknameText, "birthday: ", birthdayText, "email: ", emailText,);
-    // Perform search logic or any other operations with the entered text
-  };
+
 
   return (
     <View style={Styles.loginBox}>
@@ -36,8 +33,8 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
         <Text style={Styles.signUpListText}>Email</Text>
         <TextInput
             style={Styles.signUpInput}
-            onChangeText={text => setIdText(text)}
-            value={idText}
+            onChangeText={text => setEmailText(text)}
+            value={emailText}
             placeholder=""
         />
       </View>
@@ -54,8 +51,8 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
       {/* 아이디 찾기 버튼 */}
       <TouchableOpacity style={Styles.accountBtn} onPress={() => 
         {
-          loginResult() 
-          navigation.navigate('login')
+          // 아이디 찾기 버튼을 클릭하면 값이 DB로 전송 및 DB에서 데이터 받아서 검증 로직
+
         }
       }>
         <Text style={{fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center', marginTop: 9}}>아이디 찾기</Text>
