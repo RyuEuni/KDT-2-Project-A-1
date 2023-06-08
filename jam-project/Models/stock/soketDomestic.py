@@ -137,8 +137,8 @@ async def connect():
     stockcode = '403550'  # 테스트용 임시 종목 설정, 삼성전자
     htsid = '$1550134'  # 체결통보용 htsid 입력
     custtype = 'P'  # customer type, 개인:'P' 법인 'B'
-    # url = 'ws://ops.koreainvestment.com:21000'
-    url = 'ws://ops.koreainvestment.com:31000'
+    url = 'ws://ops.koreainvestment.com:21000'
+    # url = 'ws://ops.koreainvestment.com:31000' #모의투자 주소
 
     g_approval_key = get_approval(g_appkey, g_appsceret)
     print("approval_key [%s]" % (g_approval_key))
