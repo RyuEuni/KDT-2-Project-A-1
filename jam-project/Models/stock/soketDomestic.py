@@ -33,6 +33,9 @@ def get_approval(key, secret):
     # url = https://openapivts.koreainvestment.com:29443' # 모의투자계좌     
     url = 'https://openapi.koreainvestment.com:9443' # 실전투자계좌
     headers = {"content-type": "application/json"}
+    # body = {"grant_type": "client_credentials",
+    #         "appkey": key,
+    #         "secretkey": secret}
     body = {"grant_type": "client_credentials",
             "appkey": key,
             "secretkey": secret}
