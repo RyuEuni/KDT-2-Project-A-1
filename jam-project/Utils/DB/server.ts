@@ -8,7 +8,6 @@ DBInfo.connect(()=>{
 })
 
 app.post('/login', (req: Request, res: Response) => {
-  // DB에서 데이터 조회 등의 로직 수행
 
   let body = "";
 
@@ -17,20 +16,13 @@ app.post('/login', (req: Request, res: Response) => {
   });
 
   req.on("end", () => {
-    // console.log("확인중" + body)
-
-    // console.log(typeof body)
-    // console.log(JSON.parse(body))
-    // console.log(JSON.parse(body).id)
 
     // 넘겨받은 아이디와 비밀번호를 변수에 담기
     let loginDataid = JSON.parse(body).id
-    let loginDatapw = JSON.parse(body).pw
 
-    // console.log(loginDataid)
 
     // 쿼리문으로 해당 아이디가 유저 목록에 있는지 확인
-    DBInfo.query(`select * from testID where ID='${loginDataid}'`, (error, result) => {
+    DBInfo.query(`select * from userinfo where ID='${loginDataid}'`, (error, result) => {
       // console.log(result)
       
       // 결과값을 전달.
@@ -39,14 +31,36 @@ app.post('/login', (req: Request, res: Response) => {
   });
 });
 
-app.post('/checkSignUp',(request:Request, response:Response) => {
-  signCheck(request, response);
+app.post('/checkSignUp',(req:Request, res:Response) => {
+  signCheck(req, res);
 
 });
-app.post('/resultSignUp',(request:Request, response:Response) => {
-  signResult(request, response);
+
+app.post('/resultSignUp',(req:Request, res:Response) => {
+  signResult(req, res);
 
 });
+
+app.post('/findID',(req:Request, res:Response)=>{
+  let datas=''
+  req.on('data',(data)=>{
+    datas +=data
+  })
+
+  req.on('end',()=>{
+
+    const finderEmail = JSON.parse(datas).email
+    const finderBirthdauy = JSON.parse(datas).birthday
+
+    DBInfo.query(`select ID from userinfo where email='${finderEmail}' and birthday='${finderBirthdauy}'`,(err,result)=>{
+      if(err) console.error(err)
+      
+      res.json(JSON.stringify(result))
+    })
+
+  })
+
+})
 
 // 서버 포트 설정
 app.listen(3080, () => {

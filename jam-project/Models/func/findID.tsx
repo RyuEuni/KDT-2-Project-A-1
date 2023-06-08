@@ -2,22 +2,23 @@ import { response } from "express";
 import React from "react";
 import { Alert } from "react-native";
 
-export const findID=(email:string,birthday:number)=>{
+export const findID=(email:string,birthday:string)=>{
   let findID={
     email:email,
     birthday:birthday
   }
 
-  fetch('/findID',{
-  method:'post',
+  console.log('여기는 findID입니다.'+findID)
+
+  fetch('http://192.168.30.76:3080/findID',{
+  method:'POST',
   body:JSON.stringify(findID)
   })
-  .then(response=>response.json())
-  .then(data=>{
-    console.log(data)
+  .then((response)=> {return response.json()})
+  .then((data)=>{
     // DB에서 받은 결과 도출
-    if(typeof data==='string'){
-      Alert.alert('잼픽이가 찾은 아이디!',`고객님의 아이디는 ${data}입니다!`)
+    if(typeof data[0]==='object'){
+      Alert.alert('잼픽이가 찾은 아이디!',`고객님의 아이디는 ${data.ID}입니다!`)
     }else{
       Alert.alert('','입력하신 정보가 일치하지 않습니다.')
     }
