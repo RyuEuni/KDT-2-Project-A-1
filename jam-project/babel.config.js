@@ -3,15 +3,7 @@ module.exports = function(api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      'react-native-reanimated/plugin',
-      {
-          moduleName: '@env',
-          path: '.env',
-          blacklist: null,
-          whitelist: null,
-          safe: false,
-          allowUndefined: true,
-      }
+      'react-native-reanimated/plugin'
     ],
   };
 };

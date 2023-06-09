@@ -4,7 +4,7 @@ declare namespace NodeJS {
     APISecret: string
     APIAccNo: string
 
-    MysqlPort: number
+    MysqlPort: string
     MysqlHost: string
     MysqlUser: string
     MysqlPassword: string
