@@ -488,7 +488,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-
   },
   signUpTitle: {
     width: '30%',
@@ -496,16 +495,12 @@ export const Styles = StyleSheet.create({
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
-
   },
   signUpImage: {
     width: '10%',
     height: '50%',
     resizeMode: 'contain',
     marginLeft: '2%',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
 
   //! 회원가입 목록
@@ -517,9 +512,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   signUpListText: {
     width: '30%',
