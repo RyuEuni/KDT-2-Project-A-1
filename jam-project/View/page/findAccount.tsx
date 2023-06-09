@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 import { findID } from '../../Models/func/findID';
+import { ResetPassword } from '../../Models/func/resetPassword';
 
 
 const FindAccountScreen: React.FC<any> = ({ navigation }) => {
@@ -11,6 +12,7 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
   const [passwordCheckText, setPasswordCheckText] = useState('');
   const [birthdayText, setBirthdayText] = useState('');
   const [emailText, setEmailText] = useState('');
+  const [pwemailText, setPWEmailText] = useState('');
 
 
 
@@ -61,7 +63,7 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
 
       {/* PW찾기 타이틀 */}
       <View style={Styles.signUpTitleWrap}>
-        <Text style={Styles.accountTitle}>비밀번호를 잊으셨나요?</Text>
+        <Text style={[Styles.accountTitle,{fontSize:30}]}>비밀번호를 잊으셨나요?</Text>
         <Image style={Styles.signUpImage} source={require('../../Resource/Icon/JamStock_Pig.png')}></Image>
       </View>
 
@@ -79,8 +81,8 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
         <Text style={Styles.signUpListText}>Email</Text>
         <TextInput
           style={Styles.signUpInput}
-          onChangeText={text => setPasswordText(text)}
-          value={passwordText}
+          onChangeText={text => setPWEmailText(text)}
+          value={pwemailText}
           placeholder=""
         />
       </View>
@@ -97,14 +99,19 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
         <Text style={Styles.signUpListText}>Password check</Text>
         <TextInput
           style={Styles.signUpInput}
-          onChangeText={text => setPasswordText(text)}
-          value={passwordText}
+          onChangeText={text => setPasswordCheckText(text)}
+          value={passwordCheckText}
           placeholder=""
         />
       </View>
 
       {/* 비밀번호 재설정 버튼 */}
       <TouchableOpacity style={Styles.accountBtn} onPress={() => {
+        ResetPassword(idText,pwemailText,passwordText)
+        setIdText("")
+        setPWEmailText("")
+        setPasswordText("")
+        setPasswordCheckText("")
       }
       }>
         <Text style={{ fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center', marginTop: 9 }}>비밀번호 재설정</Text>
