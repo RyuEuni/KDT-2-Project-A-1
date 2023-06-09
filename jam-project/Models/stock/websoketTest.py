@@ -429,7 +429,8 @@ async def connect():
     #             ['1','HDFSASP1','DHKS00003'],['1','HDFSCNT0','DHKS00003'],['1','H0GSCNI0','HTS ID를 입력하세요'],
     #             ['1','H0IFASP0','101S12'],['1','H0IFCNT0','101S12'],['1','H0IOASP0','201S12315'],['1','H0IOCNT0','201S12322'], ['1','H0IFCNI0','HTS ID를 입력하세요'],
     #             ['1','HDFFF020','FCAZ22'],['1','HDFFF010','FCAZ22'],['1','HDFFF020','OESH23 C3900'],['1','HDFFF010','OESH23 C3900'],['1','HDFFF2C0','HTS ID를 입력하세요']]
-    code_list = [['1','H0STASP0','005930'],['1','H0STCNT0','005930'],['1','H0STASP0','005930']]
+    # code_list = [['1','H0STASP0','005930'],['1','H0STCNT0','005930'],['1','H0STCNT0','005930']]
+    code_list = [['1','H0STCNT0','005930'],['1','H0STCNT0','005930'],['1','H0STCNT0','005930']]
 
     
     senddata_list=[]
@@ -444,6 +445,8 @@ async def connect():
             await websocket.send(senddata)
             time.sleep(0.5)
             print(f"Input Command is :{senddata}")
+
+        data_cnt = 1
 
         while True:
 
@@ -577,6 +580,7 @@ async def connect():
                         print("### SEND [PINGPONG] [%s]" % (data))
 
             except websockets.ConnectionClosed:
+                await asyncio.sleep(5)
                 continue
                     
                     

@@ -28,7 +28,7 @@ broker = mojito.KoreaInvestment(api_key=key, api_secret=secret, acc_no=acc_no)
 
 # print(resp)
 
-result = broker._fetch_today_1m_ohlcv("005930","14:30:00")
+result = broker._fetch_today_1m_ohlcv("005930","10:00:00")
 print(result)
 
 df = pd.DataFrame(result['output2'])

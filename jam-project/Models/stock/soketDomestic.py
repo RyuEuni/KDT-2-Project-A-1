@@ -5,6 +5,8 @@ import requests
 import os
 import asyncio
 import time
+from flask import Flask, jsonify
+
 
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
@@ -30,7 +32,7 @@ def aes_cbc_base64_dec(key, iv, cipher_text):
 # 웹소켓 접속키 발급
 def get_approval(key, secret):
     
-    # url = https://openapivts.koreainvestment.com:29443' # 모의투자계좌     
+    # url = 'https://openapivts.koreainvestment.com:29443' # 모의투자계좌     
     url = 'https://openapi.koreainvestment.com:9443' # 실전투자계좌
     headers = {"content-type": "application/json"}
     # body = {"grant_type": "client_credentials",
@@ -129,15 +131,18 @@ def stocksigningnotice(data, key, iv):
         print("%s  [%s]" % (menu, pValue[i]))
         i += 1
 
+count = 0
 
-async def connect():
+async def connect(target):
     # 웹 소켓에 접속.( 주석은 koreainvest test server for websocket)
     ## 시세데이터를 받기위한 데이터를 미리 할당해서 사용한다.
 
+    count = 0
     g_appkey = 'PSqY0usw7Qno1EZq5htoLFGSMghmflV4sSOK'
     g_appsceret = 'tPzkiC4pW43WHREcTXm7rPBRodtAWioxndwBTilX6E3uB1ef6s66jcTyc/dvBG70jrByEWE9uZCG0zbT+XhGydFjJBWgw+huQqRvpl1QYFZiF0I/C1sSfBxXhPI7YhZY7eb04A0E0TAsAvhP4DuA8INfVfYgvxsrMr9UVz3UsWk6yAxYpmE='
 
-    stockcode = '403550'  # 테스트용 임시 종목 설정, 삼성전자
+    # stockcode = '403550'  # 테스트용 임시 종목 설정, 삼성전자
+    stockcode = target  # 테스트용 임시 종목 설정, 삼성전자
     htsid = '$1550134'  # 체결통보용 htsid 입력
     custtype = 'P'  # customer type, 개인:'P' 법인 'B'
     url = 'ws://ops.koreainvestment.com:21000'
@@ -152,7 +157,8 @@ async def connect():
         """
         print("1.주식호가, 2.주식호가해제, 3.주식체결, 4.주식체결해제, 5.주식체결통보(고객), 6.주식체결통보해제(고객), 7.주식체결통보(모의), 8.주식체결통보해제(모의)")
         print("Input Command :")
-        cmd = input()
+        # cmd = input()
+        cmd = '1'
 
         # 입력값 체크 step
         if cmd < '0' or cmd > '9':
@@ -215,6 +221,7 @@ async def connect():
                     if trid0 == "H0STASP0":  # 주식호가tr 일경우의 처리 단계
                         print("#### 주식호가 ####")
                         stockhoka(recvstr[3])
+                        count += 1
                         time.sleep(1)
 
                     elif trid0 == "H0STCNT0":  # 주식체결 데이터 처리
@@ -250,8 +257,72 @@ async def connect():
                 elif trid == "PINGPONG":
                     print("### RECV [PINGPONG] [%s]" % (data))
                     print("### SEND [PINGPONG] [%s]" % (data))
+            
+            if count == 1:
+                price = recvstr[3].split('^')
+                print("re: ", price)
+                return price
+                break;
 
 
-# 비동기로 서버에 접속한다.
-asyncio.get_event_loop().run_until_complete(connect())
-asyncio.get_event_loop().close()
+try:
+    # API 호출
+    res = requests.get('http://192.168.100.81:3080/stockCodeData')
+
+    if res.status_code == 200:
+        data = res.json()
+        print(data)
+        pData = [item['code'] for item in data]
+        print(pData)
+        # 비동기로 서버에 접속한다.
+        for i in pData:
+            print(i)
+            priceData = asyncio.get_event_loop().run_until_complete(connect(i))
+            asyncio.get_event_loop().close()
+
+            priceObj = {
+                'code': priceData[0],
+                "askPrice1": [priceData[12], priceData[32]],
+                "askPrice2": [priceData[11], priceData[31]],
+                "askPrice3": [priceData[10], priceData[30]],
+                "askPrice4": [priceData[9], priceData[29]],
+                "askPrice5": [priceData[8], priceData[28]],
+                "askPrice6": [priceData[7], priceData[27]],
+                "askPrice7": [priceData[6], priceData[26]],
+                "askPrice8": [priceData[5], priceData[25]],
+                "askPrice9": [priceData[4], priceData[24]],
+                "askPrice10": [priceData[3], priceData[23]],
+                "bidPrice1": [priceData[13], priceData[33]],
+                "bidPrice2": [priceData[14], priceData[34]],
+                "bidPrice3": [priceData[15], priceData[35]],
+                "bidPrice4": [priceData[16], priceData[36]],
+                "bidPrice5": [priceData[17], priceData[37]],
+                "bidPrice6": [priceData[18], priceData[38]],
+                "bidPrice7": [priceData[19], priceData[39]],
+                "bidPrice8": [priceData[20], priceData[40]],
+                "bidPrice9": [priceData[21], priceData[41]],
+                "bidPrice10": [priceData[22], priceData[42]],
+                "accuVolume": [priceData[53]],
+                "allAskVolume": [priceData[43]],
+                "allBidVolume": [priceData[44]],
+                }
+
+            DBurl = 'http://192.168.100.81:3080/priceData'
+
+            # 데이터를 JSON 형식으로 변환
+            payload = json.dumps(priceObj)
+
+            # POST 요청 보내기
+            response = requests.post(DBurl, data=payload)
+
+            # 응답 확인
+            if response.status_code == 200:
+                print('데이터 전송 성공')
+            else:
+                print(f'데이터 전송 실패: {response.status_code}')
+except requests.exceptions.RequestException as e:
+    # 네트워크 오류 등으로 인한 API 호출 실패
+    print(f"API 호출 실패: {e}")
+
+
+

@@ -1,6 +1,8 @@
 import express, {Request, Response} from 'express';
 import {signCheck, signResult} from './signUp';
 import { DBInfo } from './DBConnect';
+import {bidAskPriceInsert, stockCodeSend} from './bidAskPrice';
+
 
 const app = express();
 DBInfo.connect(()=>{
@@ -45,6 +47,16 @@ app.post('/checkSignUp',(request:Request, response:Response) => {
 });
 app.post('/resultSignUp',(request:Request, response:Response) => {
   signResult(request, response);
+
+});
+app.post('/priceData',(request:Request, response:Response) => {
+  //주식의 매수호가, 매도호가 저장
+  bidAskPriceInsert(request, response);
+
+});
+app.get('/stockCodeData',(request:Request, response:Response) => {
+  //주식의 매수호가, 매도호가 저장
+  stockCodeSend(request, response);
 
 });
 
