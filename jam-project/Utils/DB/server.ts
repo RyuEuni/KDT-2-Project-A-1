@@ -48,13 +48,15 @@ app.post('/findID',(req:Request, res:Response)=>{
   })
 
   req.on('end',()=>{
-
+    
     const finderEmail = JSON.parse(datas).email
     const finderBirthdauy = JSON.parse(datas).birthday
 
+    console.log(finderEmail, finderBirthdauy)
+
     DBInfo.query(`select ID from userinfo where email='${finderEmail}' and birthday='${finderBirthdauy}'`,(err,result)=>{
       if(err) console.error(err)
-      
+      console.log(result)
       res.json(JSON.stringify(result))
     })
 

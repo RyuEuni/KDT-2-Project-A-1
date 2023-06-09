@@ -1,9 +1,9 @@
 import mysql from 'mysql2'
 import dotenv from 'dotenv'
 
-dotenv.config({ path: '../../.env' })
+dotenv.config()
 
-// console.log(process.env.MysqlHost)
+console.log(process.env.MysqlHost)
 
 export const DBInfo = mysql.createConnection({
   host: process.env.MysqlHost,
