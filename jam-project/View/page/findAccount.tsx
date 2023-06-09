@@ -4,6 +4,7 @@ import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 import { findID } from '../../Models/func/findID';
 import { ResetPassword } from '../../Models/func/resetPassword';
+import {pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/func/RegExp'
 
 
 const FindAccountScreen: React.FC<any> = ({ navigation }) => {
@@ -13,8 +14,42 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
   const [birthdayText, setBirthdayText] = useState('');
   const [emailText, setEmailText] = useState('');
   const [pwemailText, setPWEmailText] = useState('');
+  const [passwordValidation, setPasswordValidation] = useState('비밀번호는 영어 소문자와 숫자를 이용해 최소 1자~최대 10자');
+  const [passwordCheckValidation, setPasswordCheckValidation] = useState('비밀번호 한번 더 입력');
 
 
+  let password = false;
+
+
+  const pwChecking = () => {
+    //! 비밀번호 유효성 검사
+      if(passwordText.length >= inputLength.pwcharLength.min && passwordText.length <= inputLength.pwcharLength.max){
+        const result = pattern.test(passwordText);
+
+        if(result){
+          setPasswordValidation('유효한 값입니다.')
+          password = true;
+        }
+        else{
+          setPasswordValidation('입력하신 password의 값이 형식에 맞지 않습니다.')
+        }
+      }
+      else{
+        setPasswordValidation('입력하신 password의 길이가 유효하지 않습니다.')
+    
+      }
+
+  };
+  const rePwChecking = () => {
+    //! 비밀번호 확인
+    if(passwordCheckText == passwordText){
+      setPasswordCheckValidation('password와 동일합니다.')
+    }
+    else{
+      ('입력하신 값과 password가 동일하지 않습니다.')
+    }
+
+  };
 
   return (
     <View style={Styles.loginBox}>
@@ -92,7 +127,7 @@ const FindAccountScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setPasswordText(text)}
           value={passwordText}
-          placeholder=""
+          placeholder={passwordCheckText}
         />
       </View>
       <View style={Styles.signUpListWrap}>
