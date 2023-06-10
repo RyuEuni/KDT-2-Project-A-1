@@ -5,3 +5,4 @@ jam-project/assets
 jam-project/node_modules
 jam-project/.env
 Jamstock
+.env
