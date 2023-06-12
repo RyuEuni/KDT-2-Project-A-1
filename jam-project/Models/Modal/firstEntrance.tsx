@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Modal, View, Image, Text,TouchableOpacity } from "react-native";
+import { Modal, View, Image, Text, TouchableOpacity } from "react-native";
 import { Styles } from "../../View/style/styles";
 import { response } from "express";
-import  Icon  from "react-native-vector-icons/AntDesign";
+import Icon from "react-native-vector-icons/AntDesign";
 
 fetch('/entrance', {
   method: 'POST',
@@ -34,9 +34,9 @@ const Entrance = () => {
         저는 JamStock의 마스코트 쨈픽입니다!
       </Text>
       <TouchableOpacity
-        
+
       >
-        <Icon name="doubleright"/>
+        <Icon name="doubleright" />
       </TouchableOpacity>
     </Modal>
 
