@@ -284,8 +284,8 @@ export const Styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
-    width: '50%',
-    height: '100%',
+    width: '1000%',
+    height: '1780%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -293,8 +293,12 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position: 'relative',
-    flex: 1
+    flex: 1,
+    position: 'absolute',
+    transition: 'left 0.6s ease',
+    zIndex: 2,
+    right: -17,
+    top: -46
   },
   hamTop: {
     width: '100%',
