@@ -3,24 +3,13 @@ import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 
-// const Drawer = createDrawerNavigator();
-
-// const Hamberger = () => {
-//   return (
-//     <Drawer.Navigator>
-//       <Drawer.Screen name="Login" component={Login} options={{ drawerLabel: 'Login' }} />
-//       <Drawer.Screen name="SignUp" component={SignUp} options={{ drawerLabel: 'SignUp' }} />
-//     </Drawer.Navigator>
-//   );
-// }
-
-// export default Hamberger;
 
 type HambergerProps = {
   navigation: any;
 }
 
 const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
+
   return (
     <View style={Styles.hamBox}>
       <View style={Styles.hamTop}>
@@ -38,19 +27,19 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
           <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
             <Text style={Styles.hamListText}>마이페이지</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap}>
-            <Text style={Styles.hamListText}>나의 잔고</Text>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('wallet')}>
+            <Text style={Styles.hamListText}>나의 지갑</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
             <Text style={Styles.hamListText}>실시간 정보</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('recommand')}>
             <Text style={Styles.hamListText}>주식 추천</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('search')}>
             <Text style={Styles.hamListText}>종목 검색</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('guide')}>
             <Text style={Styles.hamListText}>용어 가이드</Text>
           </TouchableOpacity>
         </View>
