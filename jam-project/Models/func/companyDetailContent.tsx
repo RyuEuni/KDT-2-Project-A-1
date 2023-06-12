@@ -6,14 +6,6 @@ import {Styles, StylesColors, StylesText} from '../../View/style/styles'
 
 export default function ContentReturn(activeTab: string, buyText:string, countText:string, setbuyText:CallableFunction, setcountText:CallableFunction) {
 
-  // const [buyText, setbuyText] = useState('');
-  // const [countText, setcountText] = useState('');
-
-  // const BuyResult = () => {
-  //   console.log("구매액: ", buyText, "개수: ", countText);
-  //   // Perform search logic or any other operations with the entered text
-  // };
-
   switch (activeTab) {
     case 'info':
       console.log("정보 진입")
