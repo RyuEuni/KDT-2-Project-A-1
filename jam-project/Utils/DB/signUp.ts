@@ -38,7 +38,6 @@ export function signCheck(request: Request, response: Response) {
       })
 
   });
-  // res.json(data);
 
 }
 
@@ -58,11 +57,10 @@ export function signResult(request: Request, response: Response) {
       bodySplit.push(bodycarrier[i]);
     }
 
-    DBInfo.query(`INSERT INTO userinfo(ID,password,nickname,email,birthday) values ('${bodySplit[0]}', '${bodySplit[1]}', '${bodySplit[2]}', '${bodySplit[4]}', '${bodySplit[3]}')`)
+    DBInfo.query(`INSERT INTO userinfo(ID,password,nickname,email,birthday,firstentrance) values ('${bodySplit[0]}', '${bodySplit[1]}', '${bodySplit[2]}', '${bodySplit[4]}', '${bodySplit[3]}',0)`)
     response.writeHead(200);
     response.end();
 
-    // conn.end();
 
   });
 
