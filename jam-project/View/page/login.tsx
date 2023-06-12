@@ -21,7 +21,7 @@ const LoginScreen: React.FC<any> = ({ navigation }) => {
     }
 
     // 패치 시 주소는 실행하는 컴터 ip
-    fetch('http://121.184.34.150:3080/login', {
+    fetch('http://192.168.100.81:3080/login', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
