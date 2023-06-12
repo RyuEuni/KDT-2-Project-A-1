@@ -5,7 +5,8 @@ import requests
 import os
 import asyncio
 import time
-from flask import Flask, jsonify
+import asyncio
+# from flask import Flask, jsonify
 
 
 from Crypto.Cipher import AES
@@ -15,7 +16,7 @@ from base64 import b64decode
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
 key_bytes = 32
-
+price = []
 
 # AES256 DECODE
 def aes_cbc_base64_dec(key, iv, cipher_text):
@@ -131,7 +132,19 @@ def stocksigningnotice(data, key, iv):
         print("%s  [%s]" % (menu, pValue[i]))
         i += 1
 
-count = 0
+pData = []
+try:
+    # API 호출
+    res = requests.get('http://192.168.100.81:3080/stockCodeData')
+
+    if res.status_code == 200:
+        data = res.json()
+        # print(data)
+        pData = [item['code'] for item in data]
+        
+except requests.exceptions.RequestException as e:
+    # 네트워크 오류 등으로 인한 API 호출 실패
+    print(f"API 호출 실패: {e}")
 
 async def connect(target):
     # 웹 소켓에 접속.( 주석은 koreainvest test server for websocket)
@@ -205,12 +218,14 @@ async def connect(target):
         print('Input Command is :', senddata)
 
         await websocket.send(senddata)
-        time.sleep(0.5)
+        # time.sleep(0.5)
+        time.sleep(0.1)
 
+        
         # 데이터가 오기만 기다린다.
         while True:
             data = await websocket.recv()
-            time.sleep(0.5)
+            time.sleep(0.1)
             print("Recev Command is :", data)
             if data[0] == '0' or data[0] == '1':  # 실시간 데이터일 경우
                 trid = jsonObject["header"]["tr_id"]
@@ -257,72 +272,114 @@ async def connect(target):
                 elif trid == "PINGPONG":
                     print("### RECV [PINGPONG] [%s]" % (data))
                     print("### SEND [PINGPONG] [%s]" % (data))
-            
             if count == 1:
                 price = recvstr[3].split('^')
                 print("re: ", price)
+                # continue
                 return price
-                break;
 
+#단일 실행
+priceData = asyncio.get_event_loop().run_until_complete(connect('000050'))
+asyncio.get_event_loop().close()
 
-try:
-    # API 호출
-    res = requests.get('http://192.168.100.81:3080/stockCodeData')
+priceObj = {
+    'code': priceData[0],
+    "askPrice1": [priceData[12], priceData[32]],
+    "askPrice2": [priceData[11], priceData[31]],
+    "askPrice3": [priceData[10], priceData[30]],
+    "askPrice4": [priceData[9], priceData[29]],
+    "askPrice5": [priceData[8], priceData[28]],
+    "askPrice6": [priceData[7], priceData[27]],
+    "askPrice7": [priceData[6], priceData[26]],
+    "askPrice8": [priceData[5], priceData[25]],
+    "askPrice9": [priceData[4], priceData[24]],
+    "askPrice10": [priceData[3], priceData[23]],
+    "bidPrice1": [priceData[13], priceData[33]],
+    "bidPrice2": [priceData[14], priceData[34]],
+    "bidPrice3": [priceData[15], priceData[35]],
+    "bidPrice4": [priceData[16], priceData[36]],
+    "bidPrice5": [priceData[17], priceData[37]],
+    "bidPrice6": [priceData[18], priceData[38]],
+    "bidPrice7": [priceData[19], priceData[39]],
+    "bidPrice8": [priceData[20], priceData[40]],
+    "bidPrice9": [priceData[21], priceData[41]],
+    "bidPrice10": [priceData[22], priceData[42]],
+    "accuVolume": [priceData[53]],
+    "allAskVolume": [priceData[43]],
+    "allBidVolume": [priceData[44]],
+    }
 
-    if res.status_code == 200:
-        data = res.json()
-        print(data)
-        pData = [item['code'] for item in data]
-        print(pData)
-        # 비동기로 서버에 접속한다.
-        for i in pData:
-            print(i)
-            priceData = asyncio.get_event_loop().run_until_complete(connect(i))
-            asyncio.get_event_loop().close()
+DBurl = 'http://192.168.100.81:3080/priceData'
 
-            priceObj = {
-                'code': priceData[0],
-                "askPrice1": [priceData[12], priceData[32]],
-                "askPrice2": [priceData[11], priceData[31]],
-                "askPrice3": [priceData[10], priceData[30]],
-                "askPrice4": [priceData[9], priceData[29]],
-                "askPrice5": [priceData[8], priceData[28]],
-                "askPrice6": [priceData[7], priceData[27]],
-                "askPrice7": [priceData[6], priceData[26]],
-                "askPrice8": [priceData[5], priceData[25]],
-                "askPrice9": [priceData[4], priceData[24]],
-                "askPrice10": [priceData[3], priceData[23]],
-                "bidPrice1": [priceData[13], priceData[33]],
-                "bidPrice2": [priceData[14], priceData[34]],
-                "bidPrice3": [priceData[15], priceData[35]],
-                "bidPrice4": [priceData[16], priceData[36]],
-                "bidPrice5": [priceData[17], priceData[37]],
-                "bidPrice6": [priceData[18], priceData[38]],
-                "bidPrice7": [priceData[19], priceData[39]],
-                "bidPrice8": [priceData[20], priceData[40]],
-                "bidPrice9": [priceData[21], priceData[41]],
-                "bidPrice10": [priceData[22], priceData[42]],
-                "accuVolume": [priceData[53]],
-                "allAskVolume": [priceData[43]],
-                "allBidVolume": [priceData[44]],
-                }
+# 데이터를 JSON 형식으로 변환
+payload = json.dumps(priceObj)
 
-            DBurl = 'http://192.168.100.81:3080/priceData'
+# POST 요청 보내기
+response = requests.post(DBurl, data=payload)
 
-            # 데이터를 JSON 형식으로 변환
-            payload = json.dumps(priceObj)
+# 응답 확인
+if response.status_code == 200:
+    print('데이터 전송 성공')
+else:
+    print(f'데이터 전송 실패: {response.status_code}')
 
-            # POST 요청 보내기
-            response = requests.post(DBurl, data=payload)
+#====================================================================
 
-            # 응답 확인
-            if response.status_code == 200:
-                print('데이터 전송 성공')
-            else:
-                print(f'데이터 전송 실패: {response.status_code}')
-except requests.exceptions.RequestException as e:
-    # 네트워크 오류 등으로 인한 API 호출 실패
-    print(f"API 호출 실패: {e}")
+#반복실행
+# async def main():
+# async def main():
+#     global pData
 
+#     for i in pData:
+#         print("값: ", i)
+#         # priceData = asyncio.get_event_loop().run_until_complete(connect(i))
+#         # asyncio.get_event_loop().close()
+#         priceData = await connect(i)
+#         print('price: ', priceData)
 
+#         # priceData = price
+#         priceObj = {
+#             'code': priceData[0],
+#             "askPrice1": [priceData[12], priceData[32]],
+#             "askPrice2": [priceData[11], priceData[31]],
+#             "askPrice3": [priceData[10], priceData[30]],
+#             "askPrice4": [priceData[9], priceData[29]],
+#             "askPrice5": [priceData[8], priceData[28]],
+#             "askPrice6": [priceData[7], priceData[27]],
+#             "askPrice7": [priceData[6], priceData[26]],
+#             "askPrice8": [priceData[5], priceData[25]],
+#             "askPrice9": [priceData[4], priceData[24]],
+#             "askPrice10": [priceData[3], priceData[23]],
+#             "bidPrice1": [priceData[13], priceData[33]],
+#             "bidPrice2": [priceData[14], priceData[34]],
+#             "bidPrice3": [priceData[15], priceData[35]],
+#             "bidPrice4": [priceData[16], priceData[36]],
+#             "bidPrice5": [priceData[17], priceData[37]],
+#             "bidPrice6": [priceData[18], priceData[38]],
+#             "bidPrice7": [priceData[19], priceData[39]],
+#             "bidPrice8": [priceData[20], priceData[40]],
+#             "bidPrice9": [priceData[21], priceData[41]],
+#             "bidPrice10": [priceData[22], priceData[42]],
+#             "accuVolume": [priceData[53]],
+#             "allAskVolume": [priceData[43]],
+#             "allBidVolume": [priceData[44]],
+#             }
+
+#         DBurl = 'http://192.168.100.81:3080/priceData'
+
+#         # 데이터를 JSON 형식으로 변환
+#         payload = json.dumps(priceObj)
+
+#         # POST 요청 보내기
+#         response = requests.post(DBurl, data=payload)
+
+#         # 응답 확인
+#         if response.status_code == 200:
+#             print('데이터 전송 성공')
+#         else:
+#             print(f'데이터 전송 실패: {response.status_code}')
+#     # return
+# asyncio.run(main())
+# # asyncio.get_event_loop().run_until_complete(main())
+# # asyncio.get_event_loop().close()
 
