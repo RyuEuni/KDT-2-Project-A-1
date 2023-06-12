@@ -1,10 +1,15 @@
 import mojito;
 import json
 from flask import Flask, jsonify
+import dotenv
+import os
 
-key = "PSqY0usw7Qno1EZq5htoLFGSMghmflV4sSOK"
-secret = "tPzkiC4pW43WHREcTXm7rPBRodtAWioxndwBTilX6E3uB1ef6s66jcTyc/dvBG70jrByEWE9uZCG0zbT+XhGydFjJBWgw+huQqRvpl1QYFZiF0I/C1sSfBxXhPI7YhZY7eb04A0E0TAsAvhP4DuA8INfVfYgvxsrMr9UVz3UsWk6yAxYpmE="
-acc_no = "50087039-01"
+dotenv_file=dotenv.find_dotenv()
+dotenv.load_dotenv(dotenv_file)
+
+key = os.environ['APIKey']
+secret = os.environ['APISecret']
+acc_no = os.environ['APIAccNo']
 broker = mojito.KoreaInvestment(api_key=key, api_secret=secret, acc_no=acc_no)
 
 resp = broker.fetch_price("005930")
