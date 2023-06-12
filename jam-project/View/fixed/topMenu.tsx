@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
+import Hamberger from '../fixed/hamberger';
 
 
 const TopMenu: React.FC<any> = ({ navigation }) => {
+
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator>
     <View style={Styles.topRoot}>
       <TouchableOpacity style={Styles.logoWrap} onPress={() => navigation.navigate('home')}>
         <Text style={Styles.logoText}>JamStock</Text>
@@ -26,16 +32,18 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
         {/* 햄버거 메뉴 이동 */}
         <TouchableOpacity
           style={Styles.hambergerWrap}
-          onPress={() => navigation.navigate('hamberger')}
+          onPress={handleToggleMenu}
         >
           <View style={Styles.hambergerBar}></View>
           <View style={Styles.hambergerBar}></View>
           <View style={Styles.hambergerBar}></View>
+          {isMenuOpen && (
+            <Hamberger navigation={navigation} />
+          )}
+          
         </TouchableOpacity>
       </View>
     </View>
-    //   </Stack.Navigator>
-    // </NavigationContainer>
   );
 };
 

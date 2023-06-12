@@ -284,8 +284,8 @@ export const Styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
-    width: '50%',
-    height: '100%',
+    width: '1000%',
+    height: '1780%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -293,8 +293,12 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position: 'relative',
-    flex: 1
+    flex: 1,
+    position: 'absolute',
+    transition: 'left 0.6s ease',
+    zIndex: 2,
+    right: -17,
+    top: -46
   },
   hamTop: {
     width: '100%',
@@ -488,7 +492,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-
   },
   signUpTitle: {
     width: '30%',
@@ -496,16 +499,12 @@ export const Styles = StyleSheet.create({
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
-
   },
   signUpImage: {
     width: '10%',
     height: '50%',
     resizeMode: 'contain',
     marginLeft: '2%',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
 
   //! 회원가입 목록
@@ -517,9 +516,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   signUpListText: {
     width: '30%',

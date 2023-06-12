@@ -1,4 +1,4 @@
-import mojito
+import mojito;
 import json
 from flask import Flask, jsonify
 
@@ -34,6 +34,7 @@ app = Flask(__name__)
 
 def get_data():
     my_object = myObject()
+    print("서버 동작")
 
     for i in range(len(symbols)):
         key = symbols['한글명'][i]
