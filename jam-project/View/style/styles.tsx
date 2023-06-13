@@ -1472,7 +1472,7 @@ export const Styles = StyleSheet.create({
   },
   myPagePhotoView: {
     width: "40%",
-    height: "60%",
+    height: "77%",
     borderRadius: 80,
     backgroundColor: StylesColors.whiteColor.backgroundColor,
     display: "flex",
