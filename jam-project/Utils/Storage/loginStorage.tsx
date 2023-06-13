@@ -2,10 +2,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 // 로그인 시 AsyncStorage에 아이디 저장
-const saveLogin = async (userId: string) => {
+const saveLogin = async (userId: string, nickname:string) => {
   try {
     await AsyncStorage.setItem('login', userId);
-    await AsyncStorage.setItem('nickname', userId);
+    await AsyncStorage.setItem('nickname', nickname);
     console.log(userId, '등록완료~')
   } catch (error) {
     console.log('AsyncStorage에 저장 중 오류 발생:', error);
@@ -16,6 +16,7 @@ const saveLogin = async (userId: string) => {
 const removeLogin = async () => {
   try {
     await AsyncStorage.removeItem('login');
+    await AsyncStorage.removeItem('nickname');
   } catch (error) {
     console.log('AsyncStorage에서 제거 중 오류 발생:', error);
   }
@@ -24,10 +25,8 @@ const removeLogin = async () => {
 // 앱 실행 시 AsyncStorage에서 아이디 가져오기
 const getLoginInfo = async () => {
   try {
-    const UserId = await AsyncStorage.getItem('login').then(UserId => {
-      console.log('get될거야?', UserId)
-    })
-    return UserId;
+    const Usernickname = await AsyncStorage.getItem('nickname')
+    return Usernickname;
   } catch (error) {
     console.log('AsyncStorage에서 값 가져오는 중 오류 발생:', error);
     return null;
