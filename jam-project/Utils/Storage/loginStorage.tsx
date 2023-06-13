@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const saveLogin = async (userId: string) => {
   try {
     await AsyncStorage.setItem('login', userId);
+    await AsyncStorage.setItem('nickname', userId);
     console.log(userId, '등록완료~')
   } catch (error) {
     console.log('AsyncStorage에 저장 중 오류 발생:', error);

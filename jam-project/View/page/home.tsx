@@ -4,8 +4,10 @@ import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 
-
 const HomeScreen: React.FC<any> = ({ navigation }) => {
+
+  
+
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -18,18 +20,19 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 
   useEffect(() => {
     // fetch('http://172.30.1.55:5000/api/data') //우리집 노트북 주소
-    fetch('http://192.168.100.81:5000/api/data')
+    fetch('http://192.168.30.76:5000/api/data')
       .then(response => response.json())
       .then(json => {
         console.log(json)
         setData(json);
+        
       })
       .catch(error => {
         console.error('에러가 발생했습니다::: ', error);
       });
   }, []);
-
   return (
+    
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}

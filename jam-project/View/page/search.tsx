@@ -4,7 +4,6 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesColors, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
-// import afterSearch from './afterSearch';
 import { text } from 'body-parser';
 
 

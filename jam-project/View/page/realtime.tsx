@@ -5,6 +5,7 @@ import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import Icon from "react-native-vector-icons/AntDesign";
 import { realtimedata } from "../../Models/func/realtimedata";
+import { getLoginInfo } from '../../Utils/Storage/loginStorage';
 
 
 interface Companydata {
@@ -36,6 +37,7 @@ export const RealtimeScreen: React.FC<any> = ({ navigation }) => {
     console.log('과연뭘까')
   }
 
+  getLoginInfo()
   return (
     <View style={Styles.rankingBox}>
       <TopMenu navigation={navigation} />

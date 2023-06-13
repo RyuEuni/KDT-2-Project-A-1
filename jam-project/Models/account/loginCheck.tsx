@@ -43,7 +43,7 @@ export const loginResult = (data:logindata, navigation:any) => {
           
           Alert.alert('환영합니다!','잼픽이와 함께 하는 JamStock에 오신 것을 환영합니다!')
 
-          
+          console.log(datas.split(`"`)[13])
           navigation.navigate('home')
           saveLogin(datas.split(`"`)[5])
           getLoginInfo()
