@@ -2,7 +2,7 @@ from pykis import *
 import dotenv
 import mojito;
 import json
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import os
 import json
 from prettytable import PrettyTable
@@ -14,6 +14,14 @@ dotenv.load_dotenv(dotenv_file)
 key = os.environ['APIKey']
 secret = os.environ['APISecret']
 acc_no = os.environ['APIAccNo']
+
+class myObject:
+    def __init__(self):
+        self.data = {}
+    def __str__(self):
+        return str(self.data)
+
+app = Flask(__name__)
 
 kis = PyKis(
     # 앱 키  예) Pa0knAM6JLAjIa93Miajz7ykJIXXXXXXXXXX
@@ -34,117 +42,114 @@ kis = PyKis(
 
 
 
-#종목 상세 - 현재가 조회
-# stock = kis.stock('000660')
-# price = stock.price()
+############ 주식 현재가 출력 #########
+@app.route('/stock/stockPrice', methods=['POST'])
+def post_stockPrice():
+    my_object = myObject()
+    print("서버 동작")
 
-# print(stock.code, stock.name)
-# print(f'전일대비율: {price.prdy_ctrt:.2f}%')
-# print(f'현재가: {price.stck_prpr:,}원')
-# print(f'최저가: {price.stck_lwpr:,}원')
-# print(f'최고가: {price.stck_hgpr:,}원')
-# print(f'전일대비: {price.prdy_vrss:,}원')
-# print(f'전일대비거래량비율: {price.prdy_vrss_vol_rate:.2f}%')
-# print(f'거래대금: {price.acml_tr_pbmn:,}원')
+    data = request.get_json()  # POST 요청으로부터 JSON 데이터를 가져옴
+    code = data.get('code')
+    print("body: ", code)
 
-# class myObject:
-#     def __init__(self):
-#         self.data = {}
+    stock = kis.stock(code)
+    price = stock.price()
 
-#     def __str__(self):
-#         return str(self.data)
+    key = stock.name
+    value = {
+        'code': stock.code, #종목코드
+        'name': stock.name, #종목이름
+        'prpr': price.stck_prpr, #종목 현재가
+    }
+    my_object.data[key] = value
 
-
-
-# app = Flask(__name__)
-
-# @app.route('/api/data', methods=['GET'])
-
-# def get_data():
-#     my_object = myObject()
-#     print("서버 동작")
-
-#     key = stock.name
-#     value = {
-#         'name': stock.name,
-#         'code': stock.code,
-#         'prpr': price.stck_prpr
-#     }
-#     my_object.data[key] = value
-
-#     data = my_object.data[key]
-#     return jsonify(data)
-
-# if(__name__) == '__main__':
-#     app.run(host='0.0.0.0', port=5000)
+    data = my_object.data[key]
+    return jsonify(data)
+#######################################################
 
 
+############ 주식 호가 출력 #########
+@app.route('/stock/buySell', methods=['POST'])
+def post_buySell():
+    my_object = myObject()
+    print("서버 동작")
 
-table = PrettyTable(field_names=[
-        '순위',
-        '종목코드',
-        '종목명',
-        '등락율',
-        '거래량',
-        '거래대금(만)'
-    ],
-    align='r',
-)
+    data = request.get_json()  # POST 요청으로부터 JSON 데이터를 가져옴
+    code = data.get('code')
+    print("body: ", code)
 
-def add_split(name: str):
-    table.add_row([
-        '- - - -' if e != 0 else name for e in range(len(table.field_names))
-    ])
+    stock = kis.stock(code)
+    price = stock.price()
+    askp = stock.asking_price()
+
+    sellP = []
+    sellC = []
+    buyP = []
+    buyC = []
+
+    for i in range(9, -1, -1):
+        print(f'SELL {i+1:3d}: {askp.askp[i]:8d}원 {askp.askp_rsqn[i]:8d}주')
+        sellP.append(askp.askp[i])
+        sellC.append(askp.askp_rsqn[i])
+        
+    for i in range(10):
+        print(f'BUY  {i+1:3d}: {askp.bidp[i]:8d}원 {askp.bidp_rsqn[i]:8d}주')
+        buyP.append(askp.bidp[i])
+        buyC.append(askp.bidp_rsqn[i])
+
+    key = stock.name
+    value = {
+        'code': stock.code, #종목코드
+        'name': stock.name, #종목이름
+        'prpr': price.stck_prpr, #종목 현재가
+        'lwpr': price.stck_lwpr, #종목 최저가
+        'hgpr': price.stck_hgpr, #종목 최고가
+        'sellPrice': sellP, #매수 호가
+        'sellCount': sellC, #매수 잔량
+        'buyPrice': sellC, #매도 호가
+        'buyCount': sellC, #매도 잔량
+    }
+    my_object.data[key] = value
+
+    data = my_object.data[key]
+    return jsonify(data)
+####################################################
+
+
+######## 거래 상위 기업 출력 ########
+cmpCode = []
+cmpName = []
 
 def add_rank(rank: list, p: bool = False):
+    global cmpCode
+    global cmpName
     for i, item in enumerate(rank):
         item: KRXRank
+        cmpCode.append(item.isu_cd)
+        cmpName.append(item.isu_abbrv)
 
-        table.add_row([
-            i+1,
-            item.isu_cd,
-            item.isu_abbrv,
-            item.fluc_rt,
-            item.acc_trdvol,
-            item.acc_trdval / 10000 if p else item.acc_trdval // 10000
-        ])
-        symbols[i] = item.isu_cd, item.isu_abbrv
-
-
-add_split('거래상위')
 rank = KRXFluctRank.fetch(table='거래상위')[:8]
 add_rank(rank)
 
-print(table)
-print(table[1])
+print(cmpCode, cmpName)
 
-# class myObject:
-#     def __init__(self):
-#         self.data = {}
+@app.route('/stock/data', methods=['GET'])
+def get_rank():
+    my_object = myObject()
+    print("서버 동작")
 
-#     def __str__(self):
-#         return str(self.data)
+    key = '거래상위'
+    value = {
+        'name': cmpName,
+        'code': cmpCode,
+    }
+    my_object.data[key] = value
+
+    # print(my_object.data)
+    data = my_object.data
+    return jsonify(data)
+####################################################
 
 
-
-# app = Flask(__name__)
-
-# @app.route('/api/data', methods=['GET'])
-
-# def get_data():
-#     my_object = myObject()
-#     print("서버 동작")
-
-#     key = '거래상위'
-#     value = {
-#         'name': item.isu_abbrv,
-#         'code': item.isu_cd,
-#     }
-#     my_object.data[key] = value
-
-#     # print(my_object)
-#     data = my_object.data['한솔제지']
-#     return jsonify(data)
-
-# if(__name__) == '__main__':
-#     app.run(host='0.0.0.0', port=5000)
+if(__name__) == '__main__':
+    app.run(host='0.0.0.0', port=5000)
