@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
-import { findID } from '../../Models/func/findID';
-import { ResetPassword } from '../../Models/func/resetPassword';
-import {pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/func/RegExp'
+import { findID } from '../../Models/account/findID';
+import { ResetPassword } from '../../Models/account/resetPassword';
+import {pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/account/RegExp'
 
 
 const FindAccountScreen: React.FC<any> = ({ navigation }) => {

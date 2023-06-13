@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign';
-import SignUpCheck from '../../Models/func/signUpCheck';
+import SignUpCheck from '../../Models/account/signUpCheck';
 import { response } from 'express';
-import { pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/func/RegExp';
+import { pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/account/RegExp';
 
 
 const SignupScreen: React.FC<any> = ({ navigation }) => {
