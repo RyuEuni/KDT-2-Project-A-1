@@ -1,6 +1,5 @@
 import { Alert } from "react-native";
 import { getLoginInfo, saveLogin } from "../../Utils/Storage/loginStorage";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 // logindata 에 대한 타입 지정
@@ -13,7 +12,7 @@ interface logindata{
 export const loginResult = (data:logindata, navigation:any) => {
 
     // 패치 시 주소는 실행하는 컴터 ip
-    fetch('http://192.168.30.76:3080/login', {
+    fetch('http://121.184.34.150:3080/login', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -32,10 +31,10 @@ export const loginResult = (data:logindata, navigation:any) => {
         // 데이터 변수에 json화 한 값을 담는다.
         const datas = JSON.stringify(json)
 
-        if (datas.split(`"`)[5] === undefined) {
+        if (datas.split(`"`)[3] === undefined) {
           // 아이디가 없음
           Alert.alert('아이디 실패', '아이디가 일치하지 않습니다.')
-        } else if (datas.split(`"`)[9] !== data.password) {
+        } else if (datas.split(`"`)[7] !== data.password) {
           // 비밀번호 틀림
           Alert.alert('비밀번호 실패', '비밀번호가 일치하지 않습니다.')
         } else {
@@ -43,10 +42,8 @@ export const loginResult = (data:logindata, navigation:any) => {
           
           Alert.alert('환영합니다!','잼픽이와 함께 하는 JamStock에 오신 것을 환영합니다!')
 
-          console.log(datas.split(`"`)[13])
           navigation.navigate('home')
-          saveLogin(datas.split(`"`)[5])
-          getLoginInfo()
+          saveLogin(datas.split(`"`)[3], datas.split(`"`)[11])
         }
       }
       ).catch(() => {
