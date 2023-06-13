@@ -1,4 +1,7 @@
 import { Alert } from "react-native";
+import { getLoginInfo, saveLogin } from "../../Utils/Storage/loginStorage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 // logindata 에 대한 타입 지정
 interface logindata{
@@ -39,7 +42,11 @@ export const loginResult = (data:logindata, navigation:any) => {
           // 아이디 비번 있으니까 입장~
           
           Alert.alert('환영합니다!','잼픽이와 함께 하는 JamStock에 오신 것을 환영합니다!')
+
+          
           navigation.navigate('home')
+          saveLogin(datas.split(`"`)[5])
+          getLoginInfo()
         }
       }
       ).catch(() => {
