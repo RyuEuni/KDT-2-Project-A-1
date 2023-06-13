@@ -31,6 +31,7 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
     checkLogin();
   }, []);
 
+
   return (
     <View style={Styles.hamBox}>
       {/* 상단부 함수로 호출 */}

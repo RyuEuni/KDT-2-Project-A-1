@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { Styles, StylesText } from '../style/styles';
-
+import { Styles } from '../style/styles';
+import { getLoginInfo } from '../../Utils/Storage/loginStorage';
 
 const BottomMenu: React.FC<any> = ({ navigation }) => {
+
+  const [menuState, SetmenuState] = useState(true)
+
+  useEffect(() => {
+    const checkLogin = async () => {
+      const loginCheck = await getLoginInfo();
+      console.log("여긴 하단부",loginCheck)
+      if (loginCheck !== null) {
+        SetmenuState(false);
+        // 로그인 후 스토리지에서 닉네임 가져오기
+      } else {
+        SetmenuState(true);
+      }
+    };
+
+    checkLogin();
+  }, []);
+
   return (
     <View style={Styles.bottomBox}>
       <View style={Styles.bottomView}>
@@ -21,6 +39,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
       <View style={Styles.bottomView}>
         <TouchableOpacity
           style={Styles.bottomTouch}
+          disabled={menuState}
           onPress={() => navigation.navigate('recommand')}
         >
           <Image
@@ -57,6 +76,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
       <View style={Styles.bottomView}>
         <TouchableOpacity
           style={Styles.bottomTouch}
+          disabled={menuState}
           onPress={() => navigation.navigate('wallet')}
         >
           <Image
