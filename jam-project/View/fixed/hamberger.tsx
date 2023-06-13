@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
-import { Styles, StylesText } from '../style/styles';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Styles } from '../style/styles';
 import { getLoginInfo } from '../../Utils/Storage/loginStorage';
-
+import { hambergerTop } from '../../Models/account/hambergerTop';
 
 type HambergerProps = {
   navigation: any;
@@ -11,14 +10,19 @@ type HambergerProps = {
 
 const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
 
-  const [loginState, SetloginState] = useState(['login',true])
+  // 로그인 유무에 따라 접근제한용
+  // 로그인 하기 전 접근 제한 페이지들 접근불가.
   const [menuState, SetmenuState] = useState(true)
+  const [loginCheck,SetloginCheck] = useState('')
 
   useEffect(() => {
     const checkLogin = async () => {
       const loginCheck = await getLoginInfo();
       if (loginCheck !== null) {
         SetmenuState(false);
+        // 로그인 후 스토리지에서 닉네임 가져오기
+        SetloginCheck(`${loginCheck}`)
+
       } else {
         SetmenuState(true);
       }
@@ -29,15 +33,8 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
 
   return (
     <View style={Styles.hamBox}>
-      <View style={Styles.hamTop}>
-        {/* <Text style={Styles.hamName}>쨈픽 님</Text> */}
-        <TouchableOpacity style={Styles.hamButton} disabled={menuState} onPress={() => navigation.navigate('signUp')}>
-          <Text style={Styles.hamButtonText}>회원가입</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={Styles.hamButton} disabled={menuState} onPress={() => navigation.navigate('login')}>
-          <Text style={Styles.hamButtonText}>로그인</Text>
-        </TouchableOpacity>
-      </View>
+      {/* 상단부 함수로 호출 */}
+      {hambergerTop(menuState,navigation,loginCheck)}
 
       <View style={Styles.hamCategory}>
         <View style={Styles.hamCategoryList}>
