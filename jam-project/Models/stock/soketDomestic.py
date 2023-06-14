@@ -327,7 +327,6 @@ else:
 
 #반복실행
 # async def main():
-# async def main():
 #     global pData
 
 #     for i in pData:
@@ -380,6 +379,6 @@ else:
 #             print(f'데이터 전송 실패: {response.status_code}')
 #     # return
 # asyncio.run(main())
-# # asyncio.get_event_loop().run_until_complete(main())
-# # asyncio.get_event_loop().close()
+# asyncio.get_event_loop().run_until_complete(main())
+# asyncio.get_event_loop().close()
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
 
 
@@ -35,6 +35,12 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
       setSellCountText('')
     }
   };
+  
+  const askingView = () => {
+    for(let i = 0; i < 10; i++){
+      
+    }
+  }
 
   const fetchData = () => {
     fetch('http://192.168.100.81:5000/stock/buySell',{
@@ -65,7 +71,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     case 'info':
       console.log("정보 진입")
       return (
-        <View style={{width: '100%', height: '100%', position: 'relative', top: '-3%', backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, borderColor: 'green',}}>
+        <View style={Styles.companyCont}>
           {/* 내용 1 */}
           <View style={Styles.companyIntroWrap}></View>
 
@@ -80,7 +86,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     case 'buy':
       console.log("구매 진입")
       return (
-        <View style={{width: '100%', height: '100%', position: 'relative', top: '-3%', backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, borderColor: 'green',}}>
+        <View style={Styles.companyCont}>
           {/* 내용 1 */}
           <View style={Styles.buyWrap}>
             <View style={Styles.buyInputWrap}>
@@ -118,7 +124,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <View style={Styles.companyFinanceWrap}></View>
+          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}></View>
 
           {/* 내용 3 */}
           <View style={Styles.companyInterestWrap}></View>
@@ -127,7 +133,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     case 'sell':
       console.log("판매 진입")
       return (
-        <View style={{width: '100%', height: '100%', position: 'relative', top: '-3%', backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, borderColor: 'green',}}>
+        <View style={Styles.companyCont}>
           {/* 내용 1 */}
           <View style={Styles.buyWrap}>
             <View style={Styles.buyInputWrap}>
@@ -173,7 +179,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
       );
     case 'community':
       return (
-        <View style={{width: '100%', height: '100%', position: 'relative', top: '-3%', backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, borderColor: 'green',}}>
+        <View style={Styles.companyCont}>
           {/* 내용 1 */}
           <View style={Styles.companyIntroWrap}></View>
 

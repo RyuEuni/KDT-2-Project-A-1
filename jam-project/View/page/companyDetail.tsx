@@ -5,6 +5,7 @@ import { Styles, StylesColors, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import DetailReturn from '../../Models/func/companyDetailContent';
+import changeCurrency from '../../Models/func/changeCurrency'
 
 const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
 
@@ -25,13 +26,7 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
       .then(response => response.json())
       .then(json => {
         console.log(json);
-
-        // 숫자를 통화 형식으로 변환
-        // const formattedNumber = new Intl.NumberFormat('ko-KR', {
-        //   style: 'currency',
-        //   currency: 'KRW'
-        // }).format(json['prpr']);
-        setPriceText(json['prpr'])
+        setPriceText(changeCurrency(json['prpr']))
       })
       .catch(error => {
         console.error('에러가 발생했습니다:', error);
@@ -64,21 +59,20 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
       {/*========== 기업정보 상세 영역 =========*/}
       <View style={Styles.cpyDetailBox}>
         {/* 기업 명 */}
-        <View style={{width: '100%', height: '12%',}}>
-          <TouchableOpacity style={Styles.companyInfo}>
-            {/* <Image style={Styles.companyTitleImg} source={require('../../Resource/Icon/heart.png')}></Image> */}
-            {/* <View style={Styles.companyTitleImg}></View> */}
+        <View style={{width: '100%', height: '10%',}}>
+          <View style={Styles.companyInfo}>
             <Text style={Styles.companyTitile}>{name}</Text>
-            <Image style={Styles.companyHeartImg} source={require('../../Resource/Icon/heart.png')}></Image>
+            <TouchableOpacity style={{width: '10%', height: '40%',marginLeft: '1%', marginTop:'1%'}}>
+              <Image style={Styles.companyHeartImg} source={require('../../Resource/Icon/heart.png')}></Image>
+            </TouchableOpacity>
             <Text style={Styles.companyMoney}>{priceText}원</Text>
-          </TouchableOpacity>
+          </View>
         </View>
 
         {/* 구분 탭 */}
         <View style={Styles.companyTabWrap}>
           <TouchableOpacity 
-            style={Styles.companyTabBtn} 
-            onPress={() => setActiveTab('info')}>
+            style={Styles.companyTabBtn} onPress={() => setActiveTab('info')}>
             <Text style={Styles.companyTabText}>정보</Text>
 
           </TouchableOpacity>

@@ -7,6 +7,7 @@ import os
 import json
 from prettytable import PrettyTable
 import requests
+from pykis.utlis import *
 
 dotenv_file = dotenv.find_dotenv()
 dotenv.load_dotenv(dotenv_file)
@@ -35,10 +36,10 @@ kis = PyKis(
 )
 
 #코스피, 코스닥 종목 검색 코드
-# for market, stocks in kis.market.stock_search("에너지").items():
-#     print(f' - - - {market} - - - ')
-#     for stock in stocks:
-#         print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
+for market, stocks in kis.market.stock_search("에너지").items():
+    print(f' - - - {market} - - - ')
+    for stock in stocks:
+        print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
 
 
 
@@ -68,7 +69,7 @@ def post_stockPrice():
 #######################################################
 
 
-############ 주식 호가 출력 #########
+############ 주식 호가 출력 ###########
 @app.route('/stock/buySell', methods=['POST'])
 def post_buySell():
     my_object = myObject()
@@ -116,22 +117,17 @@ def post_buySell():
 ####################################################
 
 
-######## 거래 상위 기업 출력 ########
+############ 거래 상위 기업 출력 ############
 cmpCode = []
 cmpName = []
 
-def add_rank(rank: list, p: bool = False):
-    global cmpCode
-    global cmpName
-    for i, item in enumerate(rank):
-        item: KRXRank
-        cmpCode.append(item.isu_cd)
-        cmpName.append(item.isu_abbrv)
+rankTrade = KRXFluctRank.fetch(table='거래상위')[:8]
+for i, item in enumerate(rankTrade):
+    item: KRXRank
+    cmpCode.append(item.isu_cd)
+    cmpName.append(item.isu_abbrv)
 
-rank = KRXFluctRank.fetch(table='거래상위')[:8]
-add_rank(rank)
-
-print(cmpCode, cmpName)
+print("거래상위: ", cmpCode, cmpName)
 
 @app.route('/stock/data', methods=['GET'])
 def get_rank():
@@ -149,6 +145,66 @@ def get_rank():
     data = my_object.data
     return jsonify(data)
 ####################################################
+
+
+##############실시간 체결가 조회###############
+rankTopVlm = KRXFluctRank.fetch(table='상한가', market='코스피', sort='거래량')
+rankTopTrd = KRXFluctRank.fetch(table='상한가', market='코스피', sort='거래대금')
+rankDown = KRXFluctRank.fetch(table='하락', market='코스피', sort='등락율')
+rankUp = KRXFluctRank.fetch(table='상승', market='코스피', sort='등락율')
+
+@app.route('/stock/realTime', methods=['POST'])
+def post_realTime():
+    my_object = myObject()
+    print("서버 동작")
+
+    data = request.get_json()  # POST 요청으로부터 JSON 데이터를 가져옴
+    dataType = data.get('type')
+    print("body: ", dataType)
+
+    resData = []
+    resName = []
+    resCode = []
+
+    #상승율
+    if(dataType == 'up'):
+        for i, item in enumerate(rankUp):
+            resName.append(item.isu_abbrv)
+            resData.append(item.fluc_rt)
+            resCode.append(item.isu_cd)
+    #하락율
+    if(dataType == 'down'):
+        for i, item in enumerate(rankDown):
+            resName.append(item.isu_abbrv)
+            resData.append(item.fluc_rt)
+            resCode.append(item.isu_cd)
+
+    #거래량
+    if(dataType == 'TopVlm'):
+        for i, item in enumerate(rankTopVlm):
+            resName.append(item.isu_abbrv)
+            resData.append(item.acc_trdvol)
+            resCode.append(item.isu_cd)
+
+    #거래대금
+    if(dataType == 'TopTrd'):
+        for i, item in enumerate(rankTopTrd):
+            resName.append(item.isu_abbrv)
+            resData.append(item.acc_trdval / 10000 if False else item.acc_trdval // 10000)
+            resCode.append(item.isu_cd)
+
+    key = 'realTime'
+    value = {
+        'name': resName,
+        'data': resData,
+        'code': resCode
+    }
+    my_object.data[key] = value
+
+    data = my_object.data[key]
+    return jsonify(data)
+#############################################
+
 
 
 if(__name__) == '__main__':
