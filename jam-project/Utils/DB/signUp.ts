@@ -1,6 +1,5 @@
 import mysql from 'mysql2';
 import express, { Request, Response } from 'express';
-import { json } from 'body-parser';
 import { DBInfo } from './DBConnect';
 
 
