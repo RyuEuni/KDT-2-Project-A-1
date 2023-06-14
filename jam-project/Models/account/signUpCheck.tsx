@@ -2,14 +2,7 @@ import {pattern, patternBirthday, patternEmail, patternNincName, inputLength } f
 
 export default function SignUpCheck(inputType:string, value: string, reValue: string){
   
-  // let idCheck = false;
   let pwCheck = false;
-  // let rePwCheck = false;
-  // let nicknameCheck = false;
-  // let birthdayCheck = false;
-  // let emailCheck = false;
-
-  // let errorMsg = '';
 
   //! 아이디 유효성 검사
   if(inputType == 'id'){
@@ -97,22 +90,5 @@ export default function SignUpCheck(inputType:string, value: string, reValue: st
     return patternEmail.test(value);
 
   }
-  // if(!emailCheck){
-  //   // errorMsg = "이메일의 입력 형식이 유효하지 않습니다."
-  // }
-
-  // if(idCheck && pwCheck && rePwCheck && nicknameCheck && birthdayCheck && emailCheck){
-  //   return true;
-  // }
-  // else{
-  //   return false;
-  // }
-  // return ({
-  //   idCheck: idCheck,
-  //   pwCheck: pwCheck,
-  //   rePwCheck: rePwCheck,
-  //   nicknameCheck: nicknameCheck,
-  //   birthdayCheck: birthdayCheck,
-  //   emailCheck: emailCheck
-  // });
+  
 }
