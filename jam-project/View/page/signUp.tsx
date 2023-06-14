@@ -235,6 +235,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           value={passwordText}
           onEndEditing={pwChecking}
           keyboardType="default"
+          secureTextEntry={true}
           placeholder=""
         />
       </View>
@@ -248,6 +249,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           value={passwordCheckText}
           onEndEditing={rePwChecking}
           keyboardType="default"
+          secureTextEntry={true}
           placeholder=""
         />
       </View>
