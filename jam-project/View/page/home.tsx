@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
+import Url from '../../Models/func/fetchURL'
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {
 
@@ -19,8 +20,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
   const [data, setData] = useState(null);
 
   useEffect(()=>{
-    fetch('http://192.168.100.81:5000/stock/data')
-    // fetch('http://192.168.100.81:5000/api/data')
+    fetch(`${Url}:5000/stock/data`)
     .then(response => response.json())
     .then(json => {
       console.log("구매 인기 정상적으로 가져옴")

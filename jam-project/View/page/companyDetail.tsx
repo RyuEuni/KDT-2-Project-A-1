@@ -6,6 +6,9 @@ import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import DetailReturn from '../../Models/func/companyDetailContent';
 import changeCurrency from '../../Models/func/changeCurrency'
+import like from '../../Models/func/companyLike'
+import Url from '../../Models/func/fetchURL'
+
 
 const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
 
@@ -18,7 +21,7 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
     "code": code
   }
   const fetchData = () => {
-    fetch('http://192.168.100.81:5000/stock/stockPrice',{
+    fetch(`${Url}:5000/stock/stockPrice`,{
       method: "POST",
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(codeObj)
@@ -34,8 +37,9 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
   };
   useEffect(()=>{
     fetchData()
-  },[])
+    like(code, name);
 
+  },[])
 
   const renderContent = () => {
     switch (activeTab) {
@@ -51,6 +55,8 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
         return null;
     }
   };
+
+  
 
   return (
     <View style={Styles.homeRoot}>

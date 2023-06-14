@@ -1,5 +1,6 @@
 import { Alert } from "react-native";
 import { getLoginInfo, saveLogin } from "../../Utils/Storage/loginStorage";
+import Url from '../func/fetchURL'
 
 
 // logindata 에 대한 타입 지정
@@ -12,7 +13,7 @@ interface logindata{
 export const loginResult = (data:logindata, navigation:any) => {
 
     // 패치 시 주소는 실행하는 컴터 ip
-    fetch('http://121.184.34.150:3080/login', {
+    fetch(`${Url}:3080/login`,{
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

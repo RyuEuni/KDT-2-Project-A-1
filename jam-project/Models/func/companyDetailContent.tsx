@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
+import Url from './fetchURL'
 
 
 export default function ContentReturn(activeTab: string, cmpCode:string, cmpName:string, cmpPr:string, navigation: any) {
@@ -43,7 +44,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
   }
 
   const fetchData = () => {
-    fetch('http://192.168.100.81:5000/stock/buySell',{
+    fetch(`${Url}:5000/stock/buySell`,{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(codeObj)

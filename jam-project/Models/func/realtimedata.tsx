@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
 import changeCurrency from './changeCurrency'
+import Url from './fetchURL'
 
 
 interface Companydata {
@@ -23,7 +24,7 @@ export default function realtimeContent({navigation}, activeTab: string) {
   },[])
 
   const fetchData = () => {
-    fetch('http://192.168.100.81:5000/stock/realTime',{
+    fetch(`${Url}:5000/stock/realTime`,{
       method: "POST",
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(codeObj)
@@ -64,7 +65,7 @@ export default function realtimeContent({navigation}, activeTab: string) {
     }
     else if(activeTab === 'TopVlm'){
       return (<Text style={Styles.rankingCompanyText}>
-        {changeCurrency(data.price)}만원
+        {changeCurrency(data.price)}개
       </Text> )
     }
     else if(activeTab === 'TopTrd'){

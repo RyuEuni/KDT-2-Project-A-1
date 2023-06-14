@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { signCheck, signResult } from '../../Models/DB/signUp';
 import { DBInfo } from './DBConnect';
 import {bidAskPriceInsert, stockCodeSend} from '../../Models/DB/bidAskPrice';
-
+import {loveCheck, loveInput} from '../../Models/DB/companyLove';
 
 const app = express();
 DBInfo.connect(() => {
@@ -128,6 +128,15 @@ app.post('/resetPassword', (req: Request, res: Response) => {
   })
 
 })
+
+app.post('/likeCheck', (req: Request, res: Response) => {
+  loveCheck(req, res);
+
+});
+app.post('/companyLike', (req: Request, res: Response) => {
+  loveInput(req, res);
+
+});
 
 // 서버 포트 설정
 app.listen(3080, () => {
