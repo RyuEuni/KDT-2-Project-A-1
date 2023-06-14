@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Styles, StylesColors } from './View/style/styles';
@@ -18,7 +15,6 @@ import HambergerScreen from './View/fixed/hamberger';
 import FindAccountScreen from './View/page/findAccount';
 import SearchScreen from './View/page/search';
 import CompanyDetailScreen from './View/page/companyDetail';
-import CompanyDetailBuyScreen from './View/page/companyDetailBuy';
 import { MyPageScreen } from './View/page/myPage';
 import { CartScreen } from './View/page/cart';
 
@@ -44,7 +40,6 @@ export default function App() {
         <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
         <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
         <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
 
