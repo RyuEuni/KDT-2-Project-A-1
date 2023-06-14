@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SignUpCheck from '../../Models/func/signUpCheck';
-import { response } from 'express';
 import { pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/func/RegExp';
 
+
+let id: boolean ;
+let pass: boolean ;
+let rePass: boolean ;
+let nickname: boolean ;
+let birthday: boolean ;
+let email: boolean ;
 
 const SignupScreen: React.FC<any> = ({ navigation }) => {
   const [idText, setIdText] = useState('');
@@ -14,7 +20,6 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
   const [nicknameText, setNicknameText] = useState('');
   const [birthdayText, setBirthdayText] = useState('');
   const [emailText, setEmailText] = useState('');
-  // const [passwordText, setPasswordText] = useState('');
 
   const [idValidation, setIdValidation] = useState('ID는 영어 소문자와 한글을 이용해 최소 1자~최대 10자');
   const [passwordValidation, setPasswordValidation] = useState('비밀번호는 영어 소문자와 숫자를 포함해 최소 1자~최대 15자');
@@ -22,18 +27,6 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
   const [nicknameValidation, setNicknameValidation] = useState('닉네임은 영어 소문자와 한글을 이용해 최소 1자~최대 10자');
   const [birthdayValidation, setBirthdayValidation] = useState('생년월일은 19990808 형식')
   const [emailValidation, setEmailValidation] = useState('이메일 주소 입력');
-
-  const SignUpResult = () => {
-    console.log("id: ", idText, " pw: ", passwordText, "Check: ", passwordCheckText, "nickname: ", nicknameText, "birthday: ", birthdayText, "email: ", emailText);
-  };
-
-  let id: boolean = false;
-  let pw: boolean = false;
-  let pwCk: boolean = false;
-  let nick: boolean = false;
-  let brt: boolean = false;
-  let em: boolean = false;
-
 
   const IdChecking = () => {
     //! 아이디 유효성 검사
@@ -52,10 +45,13 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           .then((data) => {
             // console.log(data)
             if (data) {
+              console.log('아이디성공', id, pass, rePass, nickname, birthday, email)
+              
               setIdValidation('유효한 값입니다.')
               id = true;
             }
             else {
+              id = false
               setIdValidation('이미 사용중인 ID입니다. 다른 ID를 입력해주세요.')
 
             }
@@ -66,10 +62,12 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
       }
       else {
+        id = false
         setIdValidation('입력하신 ID의 값이 형식에 맞지 않습니다.')
       }
     }
     else {
+      id = false
       setIdValidation('입력하신 ID의 길이가 유효하지 않습니다.')
 
     }
@@ -81,31 +79,34 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       const result = pattern.test(passwordText);
 
       if (result) {
+        pass = true;
+        console.log('비밀번호성공', id, pass, rePass, nickname, birthday, email)
         setPasswordValidation('유효한 값입니다.')
-        pw = true;
       }
       else {
+        pass = false
         setPasswordValidation('입력하신 password의 값이 형식에 맞지 않습니다.')
       }
     }
     else {
+      pass = false
       setPasswordValidation('입력하신 password의 길이가 유효하지 않습니다.')
-
     }
 
   };
   const rePwChecking = () => {
     //! 비밀번호 확인
     if (passwordCheckText == passwordText) {
+      rePass = true;
+      console.log('비밀번호성공', id, pass, rePass, nickname, birthday, email)
       setPasswordCheckValidation('password와 동일합니다.')
-      pwCk = true;
     }
     else {
+      rePass = false
       setPasswordCheckValidation('입력하신 값과 password가 동일하지 않습니다.')
-
     }
-
   };
+
   const nickNameChecking = () => {
     //! 닉네임 유효성 검사
     if (nicknameText.length >= inputLength.nicknameLength.min && nicknameText.length <= inputLength.nicknameLength.max) {
@@ -123,32 +124,32 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           .then((data) => {
             // console.log(data)
             if (data) {
+              nickname = true;
+              console.log('닉네임성공', id, pass, rePass, nickname, birthday, email)
               setNicknameValidation('유효한 값입니다.')
-              nick = true;
             }
             else {
+              nickname = false
               setNicknameValidation('이미 사용중인 닉네임입니다. 다른 닉네임을 입력해주세요.')
-
             }
           })
       }
       else {
+        nickname = false
         setNicknameValidation('입력하신 nickname의 값이 형식에 맞지 않습니다.')
       }
     }
     else {
+      nickname = false
       setNicknameValidation('입력하신 nickname의 길이가 유효하지 않습니다.')
 
     }
 
   };
   const birthdayChecking = () => {
-    console.log(birthdayText)
-    console.log(patternBirthday.test(birthdayText))
-
     //! 생일 유효성 검사
     if (patternBirthday.test(birthdayText)) {
-      
+
       // 생년월일 유효성 검사 (예: 2023-06-05인 경우 2023년 6월 5일이 있는지 확인)
       const year = parseInt(birthdayText.slice(0, 4), 10);
       const month = parseInt(birthdayText.slice(4, 6), 10);
@@ -158,12 +159,13 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
       if (date.getFullYear() !== year || date.getMonth() + 1 !== month || date.getDate() !== day) {
         // 생년월일이 유효하지 않을 경우
+        birthday = false
         setBirthdayValidation('입력하신 birthday의 값이 존재하지 않는 날짜입니다.')
       }
       else {
+        birthday = true;
+        console.log('생일성공', id, pass, rePass, nickname, birthday, email)
         setBirthdayValidation('유효한 값입니다.')
-        brt = true;
-
       }
     }
     else {
@@ -175,24 +177,46 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
     //! 이메일 유효성 검사
     const result = patternEmail.test(emailText);
     if (result) {
+      email = true;
+      console.log('이메일성공', id, pass, rePass, nickname, birthday, email)
       setEmailValidation('유효한 값입니다.')
-      em = true;
-
     }
     else {
+      email = false
       setEmailValidation('입력하신 email값이 형식에 맞지 않습니다.')
     }
 
   };
 
   const checking = () => {
-    console.log("dddd: ", id, pw, pwCk, nick, brt, em)
-    if (id && pw && pwCk && nick && brt && em) {
-
+    if (id && pass && rePass && nickname && birthday && email) {
       return true;
     }
     else {
+      console.log(id, pass, rePass, nickname, birthday, email)
       return false;
+    }
+
+  }
+
+  const signUpCheck = () => {
+    if (checking()) {
+      fetch('http://192.168.12.52:3080/resultSignUp',
+        {
+          method: "POST",
+          body: JSON.stringify({ idText, passwordText, nicknameText, birthdayText, emailText }),
+        }).then(json => {
+          setIdText('')
+          setPasswordText('')
+          setPasswordCheckText('')
+          setBirthdayText('')
+          setEmailText('')
+          setNicknameText('')
+        })
+        .catch(error => {
+          console.error('회원가입 에러가 발생했습니다::: ', error);
+        });
+      navigation.navigate('login')
     }
 
   }
@@ -261,7 +285,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setNicknameText(text)}
           value={nicknameText}
-          onEndEditing={nickNameChecking}
+          onEndEditing={()=>{nickNameChecking()}}
           keyboardType="default"
           placeholder=""
         />
@@ -298,21 +322,9 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
       {/* 회원가입 완료 버튼 */}
       <TouchableOpacity style={Styles.signUpNFindBtn} onPress={() => {
-        if (checking()) {
-          fetch('http://192.168.12.52:3080/resultSignUp',
-            {
-              method: "POST",
-              // body: JSON.stringify(signUpObj),
-              body: JSON.stringify({ idText, passwordText, nicknameText, birthdayText, emailText }),
-            })
-            .catch(error => {
-              console.error('회원가입 에러가 발생했습니다::: ', error);
-            });
-          navigation.navigate('login')
-        }
+        signUpCheck()
 
-      }
-      }>
+      }}>
         <Text style={{ fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center', marginTop: 9 }}>가입 완료</Text>
       </TouchableOpacity>
 
