@@ -9,6 +9,7 @@ DBInfo.connect(() => {
   console.log('Database open! port is 3306')
 })
 
+
 app.post('/login', (req: Request, res: Response) => {
 
   let body = "";
@@ -127,6 +128,17 @@ app.post('/resetPassword', (req: Request, res: Response) => {
 
   })
 
+})
+
+app.post('/myPage',(req:Request,res:Response)=>{
+  let datas=''
+  req.on('data',(data)=>{
+    datas +=data
+  })
+  req.on('end',()=>{
+    console.log('DB입니당',JSON.parse(datas))
+    
+  })
 })
 
 // 서버 포트 설정

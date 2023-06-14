@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, TextInput, Text, Image, TouchableOpacity } from "react-native"
 import { Styles, StylesText } from "../../View/style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
+import { getLoginInfo } from "../../Utils/Storage/loginStorage";
 
-export const MyPageMain = (state: string, Setstate:any) => {
+let name = ''
+export const MyPageMain = (state: string, Setstate: any) => {
+
+  const [nickname, setNickname] = useState('')
+
+  useEffect(() => {
+    const checkLogin = async () => {
+      const loginCheck = await getLoginInfo();
+      console.log("여긴 마이페이지야", loginCheck)
+      setNickname(`${loginCheck}`)
+    };
+    checkLogin();
+  }, []);
+
+  fetch('http://192.168.12.52:3080/myPage',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(nickname)
+  })
+  .then(response=>response.json())
+  .then(data=>{
+    console.log('뭐 오긴하니?',data)
+  }).catch(err=>{
+    console.error('망했다?', err)
+  })
+
   if (state === 'before') {
+
     return (
       <View style={Styles.myPageMain}>
         <View style={Styles.myPagePhoto}>
@@ -49,7 +78,7 @@ export const MyPageMain = (state: string, Setstate:any) => {
         <View style={Styles.myPageEdits}>
           <TouchableOpacity
             style={Styles.myPageEdit}
-            onPress={()=>{Setstate('after')}}
+            onPress={() => { Setstate('after') }}
           >
             <Text style={{ fontSize: StylesText.sizeMedium.fontSize }}>수정하기</Text>
           </TouchableOpacity>
@@ -110,7 +139,7 @@ export const MyPageMain = (state: string, Setstate:any) => {
         </View>
 
         <View style={Styles.myPageEditing}>
-          <TouchableOpacity style={Styles.myPageEditDone} onPress={()=>{Setstate('before')}}>
+          <TouchableOpacity style={Styles.myPageEditDone} onPress={() => { Setstate('before') }}>
             <Text style={{ fontSize: StylesText.sizeMedium.fontSize }}>완료</Text>
           </TouchableOpacity>
         </View>
