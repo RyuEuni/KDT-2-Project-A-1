@@ -41,7 +41,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       const result = pattern.test(idText);
 
       if (result) {
-        fetch('http://192.168.100.81:3080/checkSignUp',
+        fetch('http://192.168.12.52:3080/checkSignUp',
           {
             method: "POST",
             body: JSON.stringify({ idText }),
@@ -112,7 +112,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       const result = patternNincName.test(nicknameText);
 
       if (result) {
-        fetch('http://192.168.100.81:3080/checkSignUp',
+        fetch('http://192.168.12.52:3080/checkSignUp',
           {
             method: "POST",
             body: JSON.stringify({ nicknameText }),
@@ -143,9 +143,12 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   };
   const birthdayChecking = () => {
+    console.log(birthdayText)
+    console.log(patternBirthday.test(birthdayText))
+
     //! 생일 유효성 검사
     if (patternBirthday.test(birthdayText)) {
-
+      
       // 생년월일 유효성 검사 (예: 2023-06-05인 경우 2023년 6월 5일이 있는지 확인)
       const year = parseInt(birthdayText.slice(0, 4), 10);
       const month = parseInt(birthdayText.slice(4, 6), 10);
@@ -215,7 +218,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setIdText(text)}
           value={idText}
-          onSubmitEditing={IdChecking}
+          onEndEditing={IdChecking}
           keyboardType="default"
           autoCorrect={false}
           autoCapitalize="none"
@@ -230,7 +233,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setPasswordText(text)}
           value={passwordText}
-          onSubmitEditing={pwChecking}
+          onEndEditing={pwChecking}
           keyboardType="default"
           placeholder=""
         />
@@ -243,7 +246,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setPasswordCheckText(text)}
           value={passwordCheckText}
-          onSubmitEditing={rePwChecking}
+          onEndEditing={rePwChecking}
           keyboardType="default"
           placeholder=""
         />
@@ -256,7 +259,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setNicknameText(text)}
           value={nicknameText}
-          onSubmitEditing={nickNameChecking}
+          onEndEditing={nickNameChecking}
           keyboardType="default"
           placeholder=""
         />
@@ -269,7 +272,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setBirthdayText(text)}
           value={birthdayText}
-          onSubmitEditing={birthdayChecking}
+          onEndEditing={birthdayChecking}
           placeholder=""
           keyboardType="numeric"
           maxLength={8}
@@ -283,7 +286,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
           style={Styles.signUpInput}
           onChangeText={text => setEmailText(text)}
           value={emailText}
-          onSubmitEditing={emailChecking}
+          onEndEditing={emailChecking}
           keyboardType="default"
           placeholder=""
         />
@@ -294,7 +297,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       {/* 회원가입 완료 버튼 */}
       <TouchableOpacity style={Styles.signUpNFindBtn} onPress={() => {
         if (checking()) {
-          fetch('http://192.168.100.81:3080/resultSignUp',
+          fetch('http://192.168.12.52:3080/resultSignUp',
             {
               method: "POST",
               // body: JSON.stringify(signUpObj),
