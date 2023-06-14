@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
-import { signCheck, signResult } from './signUp';
+import { signCheck, signResult } from '../../Models/DB/signUp';
 import { DBInfo } from './DBConnect';
-import {bidAskPriceInsert, stockCodeSend} from './bidAskPrice';
+import {bidAskPriceInsert, stockCodeSend} from '../../Models/DB/bidAskPrice';
 
 
 const app = express();

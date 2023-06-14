@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { json } from 'body-parser';
-import { DBInfo } from './DBConnect';
+import { DBInfo } from '../../Utils/DB/DBConnect';
 
 export function bidAskPriceInsert(request: Request, response: Response) {
 

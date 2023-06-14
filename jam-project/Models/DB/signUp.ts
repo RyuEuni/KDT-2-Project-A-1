@@ -1,6 +1,6 @@
 import mysql from 'mysql2';
 import express, { Request, Response } from 'express';
-import { DBInfo } from './DBConnect';
+import { DBInfo } from '../../Utils/DB/DBConnect';
 
 
 export function signCheck(request: Request, response: Response) {
