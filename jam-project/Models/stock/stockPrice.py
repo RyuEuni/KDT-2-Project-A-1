@@ -121,7 +121,7 @@ def post_buySell():
 cmpCode = []
 cmpName = []
 
-rankTrade = KRXFluctRank.fetch(table='거래상위')[:8]
+rankTrade = KRXFluctRank.fetch(table='거래상위',market='코스피')[:8]
 for i, item in enumerate(rankTrade):
     item: KRXRank
     cmpCode.append(item.isu_cd)
@@ -202,6 +202,7 @@ def post_realTime():
     my_object.data[key] = value
 
     data = my_object.data[key]
+    print(data)
     return jsonify(data)
 #############################################
 

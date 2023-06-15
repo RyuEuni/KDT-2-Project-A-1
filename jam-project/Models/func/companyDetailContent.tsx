@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
-import Url from './fetchURL'
+import urlIpt from './fetchURL'
 
 
 export default function ContentReturn(activeTab: string, cmpCode:string, cmpName:string, cmpPr:string, navigation: any) {
 
+  const _URL = `${urlIpt}:5000/stock/buySell`
 
   const [buyText, setbuyText] = useState('');
   const [sellText, setsellText] = useState('');
@@ -36,15 +37,9 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
       setSellCountText('')
     }
   };
-  
-  const askingView = () => {
-    for(let i = 0; i < 10; i++){
-      
-    }
-  }
 
   const fetchData = () => {
-    fetch(`${Url}:5000/stock/buySell`,{
+    fetch(_URL,{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(codeObj)
