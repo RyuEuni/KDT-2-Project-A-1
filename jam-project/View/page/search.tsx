@@ -20,13 +20,7 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
   };
 
   function afterSearch() {
-    // useEffect(() => {
-    //   after.addEventListener('click', navigation.pop());
-  
-    //   // return () => {
-    //   //   document.removeEventListener('mousemove', onMouseMove);
-    //   // }
-    // }, [])
+
     return (
       <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',}}>
 

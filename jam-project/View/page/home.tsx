@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
+import Url from '../../Models/func/fetchURL'
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {
 
@@ -18,19 +19,20 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    // fetch('http://172.30.1.55:5000/api/data') //우리집 노트북 주소
-    fetch('http://192.168.30.76:5000/api/data')
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
-        setData(json);
-        
-      })
-      .catch(error => {
-        console.error('에러가 발생했습니다::: ', error);
-      });
-  }, []);
+  useEffect(()=>{
+    fetch(`${Url}:5000/stock/data`)
+    .then(response => response.json())
+    .then(json => {
+      console.log("구매 인기 정상적으로 가져옴")
+      setData(json);
+    })
+    .catch(error => {
+      console.error('에러가 발생했습니다::: ', error);
+    });
+  },[])
+  
+  
+
   return (
     
     <View style={Styles.homeRoot}>
@@ -51,26 +53,58 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
         <View style={Styles.homeWrap}>
           <View style={Styles.homePopular}>
             <Text style={Styles.titleText}>Today 구매 인기 기업</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('companyDetail')}>
-              <Text style={Styles.rankText}>🥇 삼성전자</Text>
-            </TouchableOpacity>
             {data && (
-              <View>
-                <Text style={Styles.rankText}>{data['종목이름']}</Text>
-              </View>
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+                name: data["거래상위"]["name"][0],
+                code: data["거래상위"]["code"][0]
+              })}>
+                <View>
+                  <Text style={Styles.rankText}>🥇 {data["거래상위"]["name"][0]}</Text>
+                </View>
+              </TouchableOpacity>
             )}
-            {/* <TouchableOpacity>
-              <Text style={Styles.rankText}>🥈 엘지화학</Text>
-            </TouchableOpacity> */}
-            <TouchableOpacity>
-              <Text style={Styles.rankText}>🥉 SK하이닉스</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={Styles.rankText}>4등 SG리테일</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={Styles.rankText}>5등 유한양행</Text>
-            </TouchableOpacity>
+            {data && (
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+                name: data["거래상위"]["name"][1],
+                code: data["거래상위"]["code"][1]
+              })}>
+                <View>
+                  <Text style={Styles.rankText}>🥈 {data["거래상위"]["name"][1]}</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+            
+            {data && (
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+                name: data["거래상위"]["name"][2],
+                code: data["거래상위"]["code"][2]
+              })}>
+                <View>
+                  <Text style={Styles.rankText}>🥉 {data["거래상위"]["name"][2]}</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+            {data && (
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+                name: data["거래상위"]["name"][3],
+                code: data["거래상위"]["code"][3]
+              })}>
+                <View>
+                  <Text style={Styles.rankText}>4등 {data["거래상위"]["name"][3]}</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+            {data && (
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+                name: data["거래상위"]["name"][4],
+                code: data["거래상위"]["code"][4]
+              })}>
+                <View>
+                  <Text style={Styles.rankText}>5등 {data["거래상위"]["name"][4]}</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+            
           </View>
           <View style={Styles.homeLove}>
             <Text style={Styles.titleText}>Today 사랑받는 기업</Text>

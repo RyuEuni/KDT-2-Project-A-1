@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import SignUpCheck from '../../Models/account/signUpCheck';
 import { response } from 'express';
 import { pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/account/RegExp';
+import Url from '../../Models/func/fetchURL'
 
 
 let id: boolean ;
@@ -35,7 +36,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       const result = pattern.test(idText);
 
       if (result) {
-        fetch('http://192.168.12.52:3080/checkSignUp',
+        fetch(`${Url}:3080/checkSignUp`,
           {
             method: "POST",
             body: JSON.stringify({ idText }),
@@ -114,7 +115,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       const result = patternNincName.test(nicknameText);
 
       if (result) {
-        fetch('http://192.168.12.52:3080/checkSignUp',
+        fetch(`${Url}:3080/checkSignUp`,
           {
             method: "POST",
             body: JSON.stringify({ nicknameText }),
@@ -202,7 +203,7 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
 
   const signUpCheck = () => {
     if (checking()) {
-      fetch('http://192.168.12.52:3080/resultSignUp',
+      fetch(`${Url}:3080/resultSignUp`,
         {
           method: "POST",
           body: JSON.stringify({ idText, passwordText, nicknameText, birthdayText, emailText }),
