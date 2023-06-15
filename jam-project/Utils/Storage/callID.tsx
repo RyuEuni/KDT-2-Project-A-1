@@ -14,6 +14,7 @@ export const callUser = () =>{
       // 해당 아이디를 setID에 할당.
       setID(`${loginID}`)
 
+      // 스토리지내의 닉네임값을 불러옴
       const loginNickname = await getLoginInfo()
 
       setNickname(`${loginNickname}`)

@@ -2,26 +2,13 @@ import React, { useEffect, useState } from "react";
 import { View, TextInput, Text, Image, TouchableOpacity } from "react-native"
 import { Styles, StylesText } from "../../View/style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
-import { getLoginInfoID } from "../../Utils/Storage/loginStorage";
 import { myPageInfo } from "../DB/myPageInfo";
-
+import { callUser } from "../../Utils/Storage/callID";
 
 export const MyPageMain = (state: string, Setstate: any) => {
 
-  // 스토리지 내의 아이디값을 받을 변수
-  const [id, setID] = useState('')
-  
-  useEffect(() => {
-    const checkLogin = async () => {
-      // 스토리지내의 아이디값을 불러옴
-      const loginID = await getLoginInfoID();
-      // 해당 아이디를 setID에 할당.
-      setID(`${loginID}`)
-    };
-    
-    checkLogin();
-  }, []);
-  
+  let id = callUser()[0]
+
   const userData = myPageInfo(id)
   
   // 마이페이지 접속했을 때
