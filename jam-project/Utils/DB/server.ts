@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import { signCheck, signResult } from '../../Models/DB/signUp';
 import { DBInfo } from './DBConnect';
-import {bidAskPriceInsert, stockCodeSend} from '../../Models/DB/bidAskPrice';
-import {loveCheck, loveInput} from '../../Models/DB/companyLove';
+import { bidAskPriceInsert, stockCodeSend } from '../../Models/DB/bidAskPrice';
+import { loveCheck, loveInput } from '../../Models/DB/companyLove';
 
 const app = express();
 DBInfo.connect(() => {
@@ -43,12 +43,12 @@ app.post('/resultSignUp', (req: Request, res: Response) => {
   signResult(req, res);
 
 });
-app.post('/priceData',(request:Request, response:Response) => {
+app.post('/priceData', (request: Request, response: Response) => {
   //주식의 매수호가, 매도호가 저장
   bidAskPriceInsert(request, response);
 
 });
-app.get('/stockCodeData',(request:Request, response:Response) => {
+app.get('/stockCodeData', (request: Request, response: Response) => {
   //주식의 매수호가, 매도호가 저장
   stockCodeSend(request, response);
 
@@ -139,16 +139,32 @@ app.post('/companyLike', (req: Request, res: Response) => {
 
 });
 
-app.post('/myPage',(req:Request,res:Response)=>{
-  let datas=''
-  req.on('data',(data)=>{
-    datas +=data
+app.post('/myPage', (req: Request, res: Response) => {
+  let datas = ''
+  req.on('data', (data) => {
+    datas += data
   })
-  req.on('end',()=>{
-    console.log('DB입니당',JSON.parse(datas))
-    
+  req.on('end', () => {
+    console.log('DB입니당', JSON.parse(datas))
+
+    let userData = {}
+
+    DBInfo.query(`select nickname, email, birthday from userinfo where id='${JSON.parse(datas)}'`, (err, result:any) => {
+      if (err) console.log(err)
+      Object.assign(userData, result[0])
+      
+      DBInfo.query(`select upperlimit, lowerlimit from useroption where id='${JSON.parse(datas)}'`, (err, result:any) => {
+        if (err) console.log(err)
+        Object.assign(userData, result[0])
+        console.log(userData)
+        res.json(JSON.stringify(userData))
+      })
+    })
+
   })
 })
+
+
 
 // 서버 포트 설정
 app.listen(3080, () => {
