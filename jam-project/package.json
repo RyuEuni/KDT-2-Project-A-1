@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "run-p db:start expo:start",
+    "start": "run-p db:start expo:start python:start",
     "db:start": "ts-node ./Utils/DB/server.ts",
     "expo:start": "expo start",
+    "python:start":"python ./Models/stock/stockPrice.py",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"

@@ -1616,6 +1616,16 @@ export const Styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 20,
     marginTop: 20
-  }
+  },
+
+  // ! 첫 입장 모달창
+  entranceBox:{
+    width:400,
+    height:300,
+    display:'flex',
+    flexDirection:'column',
+    // alignItems:''
+  },
+  
 
 });
