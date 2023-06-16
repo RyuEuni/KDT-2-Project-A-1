@@ -17,6 +17,7 @@ import { GuideScreen } from './View/page/guide';
 import HambergerScreen from './View/fixed/hamberger';
 import FindAccountScreen from './View/page/findAccount';
 import SearchScreen from './View/page/search';
+import AfterSearchScreen from './View/page/afterSearch';
 import CompanyDetailScreen from './View/page/companyDetail';
 import { MyPageScreen } from './View/page/myPage';
 import { CartScreen } from './View/page/cart';
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
         <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="afterSearch" component={AfterSearchScreen} options={{ headerShown: false }} />
         <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
         <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />

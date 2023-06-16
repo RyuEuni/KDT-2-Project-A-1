@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, FlatList } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
 import urlIpt from './fetchURL'
 
+interface Companydata {
+  sellCount: number
+  sellPrice: number
+  buyCount: number
+  buyPrice: number
+}
 
 export default function ContentReturn(activeTab: string, cmpCode:string, cmpName:string, cmpPr:string, navigation: any) {
-
+  
+  
   const _URL = `${urlIpt}:5000/stock/buySell`
 
   const [buyText, setbuyText] = useState('');
@@ -18,6 +25,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
   const [buyC, setBuyC] = useState('');
   const [hight, sethight] = useState('');
   const [low, setlow] = useState('');
+  const askingData = [] as any
 
   const codeObj = {
     "code": cmpCode
@@ -53,7 +61,18 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
       setBuyC(json['buyCount'])
       sethight(json['hgpr'])
       setlow(json['lwpr'])
-      // setData(json);
+
+      askingData.length = 0
+      for(let i = 0; i < json["buyCount"].length; i++){
+        let val = {
+          sellCount: json["sellCount"][i],
+          sellPrice: json["sellPrice"][i],
+          buyCount: json["buyCount"][i],
+          buyPrice: json["buyPrice"][i]
+        }
+        askingData.push(val)
+      }
+      console.log("호가 정보: ", askingData)
     })
     .catch(error => {
       console.error('에러가 발생했습니다:', error);
@@ -63,6 +82,49 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     fetchData()
   },[activeTab])
 
+  const buyList = (data: Companydata) => {
+    console.log("flat value: ", data)
+
+    return (
+      <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+        <View>
+          <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 살까?</Text>
+        </View>
+        <View>
+          <View>
+            <Text style={Styles.rankingCompanyText}>구매 금액</Text>
+            <Text style={Styles.rankingCompanyText}>{data.buyPrice}</Text>
+          </View>
+          <View style={Styles.rankingCompanyPrice}>
+            <Text style={Styles.rankingCompanyText}>구매 가능 수량</Text>
+            <Text style={Styles.rankingCompanyText}>{data.buyCount}</Text>
+          </View>
+        </View>
+        
+      </View>
+    )
+    
+  }
+  const sellList = (data: Companydata) => {
+    console.log("flat value: ", data)
+    return (
+      <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+        <View>
+          <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 팔까?</Text>
+        </View>
+        <View>
+          <View>
+            <Text style={Styles.rankingCompanyText}>판매 금액</Text>
+            <Text style={Styles.rankingCompanyText}>{data.sellPrice}</Text>
+          </View>
+          <View style={Styles.rankingCompanyPrice}>
+            <Text style={Styles.rankingCompanyText}>판매 가능 수량</Text>
+            <Text style={Styles.rankingCompanyText}>{data.sellCount}</Text>
+          </View>
+        </View>
+      </View>
+    )
+  }
   switch (activeTab) {
     case 'info':
       console.log("정보 진입")
@@ -120,10 +182,12 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}></View>
+            <FlatList
+            data={askingData}
+            renderItem={({ item }) => buyList(item)} />
 
           {/* 내용 3 */}
-          <View style={Styles.companyInterestWrap}></View>
+          {/* <View style={Styles.companyInterestWrap}></View> */}
         </View>
       );
     case 'sell':
@@ -167,10 +231,12 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <View style={Styles.companyFinanceWrap}></View>
+          <FlatList
+          data={askingData}
+          renderItem={({ item }) => sellList(item)} />
 
           {/* 내용 3 */}
-          <View style={Styles.companyInterestWrap}></View>
+          {/* <View style={Styles.companyInterestWrap}></View> */}
         </View>
       );
     case 'community':

@@ -742,6 +742,7 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor, 
     borderWidth: 1, 
     borderColor: 'green',
+    flex: 1
   },
 
   //! 회사 소개 부분

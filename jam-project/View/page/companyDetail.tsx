@@ -19,7 +19,6 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
   const [priceText, setPriceText] = useState('');
   const [userName, setUserName] = useState('')
   const [imgUrl, setimgUrl] = useState(require('../../Resource/Icon/Empty_heart.png'))
-  let AAAA:any
 
   const codeObj = {
     "code": code
