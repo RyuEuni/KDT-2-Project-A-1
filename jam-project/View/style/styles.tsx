@@ -601,12 +601,13 @@ export const Styles = StyleSheet.create({
   //! 주식 검색화면
   myLoveCpy: {
     width: '100%',
-    height: '45%',
+    height: '100%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
     alignItems: 'center',
+    flex:1,
 
     borderWidth: 1,
     borderColor: 'red'
