@@ -8,7 +8,6 @@ import DetailReturn from '../../Models/func/companyDetailContent';
 import changeCurrency from '../../Models/func/changeCurrency'
 import {getLoginInfo} from '../../Utils/Storage/loginStorage'
 import LoveCheck from '../../Models/func/companyLikeCheck'
-import LoveInsert from '../../Models/func/companyLike'
 import urlIpt from '../../Models/func/fetchURL'
 
 
@@ -68,14 +67,11 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
     })
     .then(response => response.json())
     .then(json => {
-      //console.log("나나나나나: ", json);
       if(json.type){
         setimgUrl(require('../../Resource/Icon/heart.png'))
-        // imgCom = '../../Resource/Icon/heart.png'
       }
       else{
         setimgUrl(require('../../Resource/Icon/Empty_heart.png'))
-        // imgCom = '../../Resource/Icon/Empty_heart.png'
       }
     })
     .catch(error => {
@@ -114,7 +110,6 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
             <Text style={Styles.companyTitile}>{name}</Text>
             <TouchableOpacity style={{width: '10%', height: '40%',marginLeft: '1%', marginTop:'1%'}} onPress={()=> {LoveInsert()}}>
               {LoveCheck(code, name, imgUrl)}
-            {/* <Image style={Styles.companyHeartImg} source={imgUrl}></Image> */}
             </TouchableOpacity>
             <Text style={Styles.companyMoney}>{priceText}원</Text>
           </View>
