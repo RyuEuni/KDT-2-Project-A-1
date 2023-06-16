@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -11,19 +9,20 @@ import TopScreen from './View/fixed/topMenu'
 import BottomScreen from './View/fixed/bottomMenu';
 import WalletScreen from './View/page/wallet';
 import RecommandScreen from './View/page/recommand'
-// import {RealtimeScreen} from './View/page/realtime'
+import {RealtimeScreen} from './View/page/realtime'
 import { GuideScreen } from './View/page/guide';
 import HambergerScreen from './View/fixed/hamberger';
 import FindAccountScreen from './View/page/findAccount';
 import SearchScreen from './View/page/search';
 import CompanyDetailScreen from './View/page/companyDetail';
-import CompanyDetailBuyScreen from './View/page/companyDetailBuy';
 import { MyPageScreen } from './View/page/myPage';
 import { CartScreen } from './View/page/cart';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -36,12 +35,11 @@ export default function App() {
         <Stack.Screen name="wallet" component={WalletScreen} options={{ headerShown: false }} />
         <Stack.Screen name="recommand" component={RecommandScreen} options={{ headerShown: false }} />
         <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
+        <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
         <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
         <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
         <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
 
@@ -49,5 +47,6 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
 
 

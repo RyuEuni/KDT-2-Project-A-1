@@ -4,7 +4,6 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesColors, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
-// import afterSearch from './afterSearch';
 import { text } from 'body-parser';
 
 
@@ -21,13 +20,7 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
   };
 
   function afterSearch() {
-    // useEffect(() => {
-    //   after.addEventListener('click', navigation.pop());
-  
-    //   // return () => {
-    //   //   document.removeEventListener('mousemove', onMouseMove);
-    //   // }
-    // }, [])
+
     return (
       <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',}}>
 

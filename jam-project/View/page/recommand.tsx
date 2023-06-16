@@ -4,10 +4,6 @@ import { Styles } from "../style/styles";
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 
-// type walletProps = {
-//   navigation: any;
-// }
-
 const RecommandScreen: React.FC<any> = ({ navigation }) => {
   return (
     <View style={Styles.recommandBox}>

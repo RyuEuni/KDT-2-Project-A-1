@@ -149,7 +149,7 @@ export const Styles = StyleSheet.create({
     borderRadius: 20,
   },
   serchButtonText: {
-    marginTop: '15%',
+    marginTop: '10%',
     fontSize: StylesText.sizeSmall.fontSize,
     textAlign: 'center',
     color: StylesColors.whiteColor.backgroundColor,
@@ -284,8 +284,8 @@ export const Styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     marginLeft: '50%',
     marginBottom: Constants.BottomTabBarHeight,
-    width: '50%',
-    height: '100%',
+    width: '1000%',
+    height: '1780%',
     backgroundColor: StylesColors.mainColor.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
@@ -293,8 +293,12 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
-    position: 'relative',
-    flex: 1
+    flex: 1,
+    position: 'absolute',
+    transition: 'left 0.6s ease',
+    zIndex: 2,
+    right: -17,
+    top: -46
   },
   hamTop: {
     width: '100%',
@@ -488,7 +492,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-
   },
   signUpTitle: {
     width: '30%',
@@ -496,16 +499,12 @@ export const Styles = StyleSheet.create({
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
-
   },
   signUpImage: {
     width: '10%',
     height: '50%',
     resizeMode: 'contain',
     marginLeft: '2%',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
 
   //! 회원가입 목록
@@ -517,9 +516,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   signUpListText: {
     width: '30%',
@@ -545,6 +541,12 @@ export const Styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 4,
 
+  },
+  //! 회원가입 - 유효성 검사 멘트
+  signUpValidation:{
+    fontSize: StylesText.sizeSmall.fontSize, 
+    textAlign: 'center', 
+    marginTop: 9
   },
   //! 회원가입, 계정찾기 쪽 버튼
   signUpNFindBtn: {
@@ -675,57 +677,36 @@ export const Styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'absolute',
-    top: '10%',
+    top: '8%',
 
-    borderWidth: 1,
-    borderColor: 'blue',
   },
   companyInfo:{
-    width: '100%',
     height: '100%',
     display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'center',
     alignItems: 'center',
-    paddingLeft: '2%',
-    paddingRight: '2%',
-
-    borderWidth: 1,
-    borderColor: 'red',
-  },
-  companyTitleImg:{
-    width: '15%',
-    height: '60%',
-    resizeMode: 'contain',
-    backgroundColor: StylesColors.grayColor.backgroundColor,
-    borderRadius: 50,
 
   },
   companyTitile: {
-    height: '40%',
     fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
     marginLeft: '2%',
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
   companyHeartImg: {
-    width: '10%',
-    height: '40%',
+    width: '100%',
+    height: '100%',
     resizeMode: 'contain',
+    
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
   companyMoney:{
-    height: '40%',
     fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
-    marginLeft: '5%',
+    marginLeft: '2%',
+    position: 'absolute',
+    left: '71%',
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
   companyTabWrap: {
     width: '100%', 
@@ -733,7 +714,7 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'flex-end',
+    // alignItems: 'flex-end',
 
     borderWidth: 1,
     borderColor: 'red',
@@ -752,6 +733,15 @@ export const Styles = StyleSheet.create({
     fontSize: StylesText.sizeLarge.fontSize, 
     textAlign: 'center',
     marginTop: '20%',
+  },
+  companyCont: {
+    width: '100%', 
+    height: '100%', 
+    position: 'absolute', 
+    top: '18%', 
+    backgroundColor: StylesColors.subColorLight.backgroundColor, 
+    borderWidth: 1, 
+    borderColor: 'green',
   },
 
   //! 회사 소개 부분
@@ -1236,6 +1226,8 @@ export const Styles = StyleSheet.create({
     height: '5%',
     display: 'flex',
     flexDirection: 'row',
+    paddingLeft: '2%',
+    paddingRight: '2%'
   },
   rankingMenuButton: {
     width: '25%',
@@ -1243,6 +1235,7 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
 
   rankingList: {
@@ -1269,9 +1262,8 @@ export const Styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   rankingCompanyText: {
-    width: "50%",
-    textAlign: 'center',
-    fontSize: StylesText.sizeMedium.fontSize
+    margin: '5%',
+    fontSize: StylesText.sizeSmall.fontSize
   }
   ,
   // ! 랭킹 회사 랭킹금액
@@ -1470,7 +1462,7 @@ export const Styles = StyleSheet.create({
   },
   myPagePhotoView: {
     width: "40%",
-    height: "60%",
+    height: "77%",
     borderRadius: 80,
     backgroundColor: StylesColors.whiteColor.backgroundColor,
     display: "flex",
