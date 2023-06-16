@@ -11,7 +11,7 @@ export function loveCheck(request: Request, response: Response) {
     body = body + data;
   });
   request.on("end", function () {
-    console.log('유저 결과1: ', body)
+    //console.log('유저 결과1: ', body)
     let bodySplit = body.split('"')
     const code = bodySplit[3]
     const name = bodySplit[7]
@@ -24,7 +24,7 @@ export function loveCheck(request: Request, response: Response) {
         if(err) throw err;
         else{
           let like:any = data;
-          console.log("data: ", like)
+          //console.log("data: ", like)
           let postLikeCount:any;
           let likeRe = {};
 
@@ -32,7 +32,7 @@ export function loveCheck(request: Request, response: Response) {
           (err, data:any) => {
             if(err) throw err;
             else{
-              console.log("data2: ", data)
+              //console.log("data2: ", data)
               postLikeCount = data[0].like_count
               // console.log("dangstar like count: ", data[0].like_count)
               // postLikeCount = data[0].like_count;
@@ -50,7 +50,7 @@ export function loveCheck(request: Request, response: Response) {
               else{
                 const likeUserArr = like[0].userID.likeUser;
 
-                console.log("야로로롤: ", likeUserArr, postLikeCount)
+                //console.log("야로로롤: ", likeUserArr, postLikeCount)
                 if (likeUserArr.includes(id)) {
                   likeRe = {
                     'type': true,
@@ -85,13 +85,13 @@ export function loveInput(request: Request, response: Response) {
     body = body + data;
   });
   request.on("end", function () {
-    console.log('결과2: ', body)
+    //console.log('결과2: ', body)
 
     let bodySplit = body.split('"')
     const code = bodySplit[3]
     const name = bodySplit[7]
     const id = bodySplit[11]
-    console.log("aljsdlajudl: ",code,name,id)
+    console.log("찜 input: ",code,name,id)
 
     DBInfo.query(
       `SELECT * FROM lovecompany WHERE companyname = '${name}'`, 
@@ -100,7 +100,7 @@ export function loveInput(request: Request, response: Response) {
         else {
           const like:any = data;
           let likeResult:boolean;
-          console.log(like);
+          //console.log(like);
 
           // 1. post_like가 null일 경우 새로운 배열을 생성하여 likeUser 추가
           if (like === null || like.length === 0) {
@@ -114,7 +114,7 @@ export function loveInput(request: Request, response: Response) {
             // 2. likeUser 배열에 이미 존재하는 경우 해당 값을 삭제
             if (likeUserArr.includes(id)) {
               let cnt = likeUserArr.indexOf(id);
-              console.log(cnt);
+              //console.log(cnt);
               DBInfo.query(`UPDATE lovecompany SET userID = JSON_REMOVE(userID, '$.likeUser[${cnt}]') WHERE companyname = '${name}'`);
               likeResult = false;
             } 

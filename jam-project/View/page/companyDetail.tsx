@@ -52,7 +52,7 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
   useEffect(()=>{
     const user = async () => {
       const name = await getLoginInfo();
-      console.log("여긴 ",name)
+      //console.log("여긴 ",name)
       setUserName(`${name}`)
     };
     user()
@@ -68,7 +68,7 @@ const CompanyDetail: React.FC<any> = ({ navigation, route }) => {
     })
     .then(response => response.json())
     .then(json => {
-      console.log("나나나나나: ", json);
+      //console.log("나나나나나: ", json);
       if(json.type){
         setimgUrl(require('../../Resource/Icon/heart.png'))
         // imgCom = '../../Resource/Icon/heart.png'
