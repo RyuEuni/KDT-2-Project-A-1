@@ -12,10 +12,25 @@ interface Searchdata {
   price: number
 }
 
+let result = [] as any
+
+const ListStyle = (data: Searchdata) => {
+  console.log("akajsskskks: ", result)
+
+  return (
+    <View style={Styles.myLoveCpy}>
+      <TouchableOpacity style={Styles.myLoveListWrap}>
+        <Text style={Styles.searchListText}>{data.companyname}</Text>
+        <Text style={Styles.searchListText}>{data.price}원</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
 const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
   const { searchText } = route.params;
   const [search, setSearch] = useState(searchText);
-  const result = [] as any
+  
 
   const fetchData = () => {
     const _URL = `${urlIpt}:5000/stock/stockSearch`
@@ -56,18 +71,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
     fetchData()
   }, [])
 
-  const ListStyle = (data: Searchdata) => {
-    console.log("akajsskskks: ", result)
-
-    return (
-      <View style={Styles.myLoveCpy}>
-        <TouchableOpacity style={Styles.myLoveListWrap}>
-          <Text style={Styles.searchListText}>{data.companyname}</Text>
-          <Text style={Styles.searchListText}>{data.price}원</Text>
-        </TouchableOpacity>
-      </View>
-    )
-  }
+  
   
   return (
     <View style={Styles.homeRoot}>
