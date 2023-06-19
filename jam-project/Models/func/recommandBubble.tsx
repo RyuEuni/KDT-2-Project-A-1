@@ -7,7 +7,7 @@ interface Item{
   theme:string
 }
 
-export const recommandbubble = (theme: string) => {
+export const recommandbubble = (theme: string, navigation) => {
 
   const company: Array<Item> = recomandCompany(theme)
 
@@ -29,6 +29,9 @@ export const recommandbubble = (theme: string) => {
         <TouchableOpacity
           key={index}
           style={getStyleBasedOnIndex(index)}
+          onPress={()=>{
+            navigation.navigate('companyDetail',{name:item[theme]})
+          }}
         >
           <Text style={Styles.recommandCompanyName}>{item[theme]}</Text>
         </TouchableOpacity>

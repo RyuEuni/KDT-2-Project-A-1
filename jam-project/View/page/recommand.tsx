@@ -111,8 +111,8 @@ const RecommandScreen: React.FC<any> = ({ navigation }) => {
         </View>
 
         {/* 기업 */}
-        {recommandbubble(theme)}
-        
+        {recommandbubble(theme, navigation)}
+
       </View>
 
       <BottomMenu navigation={navigation} />
