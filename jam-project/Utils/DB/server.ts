@@ -161,11 +161,11 @@ app.post('/myPage', (req: Request, res: Response) => {
 
     let userData = {}
 
-    DBInfo.query(`select nickname, email, birthday from userinfo where id='${JSON.parse(datas)}'`, (err, result:any) => {
+    DBInfo.query(`select nickname, email, birthday from userinfo where id='${JSON.parse(datas)}'`, (err, result: any) => {
       if (err) console.log(err)
       Object.assign(userData, result[0])
-      
-      DBInfo.query(`select upperlimit, lowerlimit from useroption where id='${JSON.parse(datas)}'`, (err, result:any) => {
+
+      DBInfo.query(`select upperlimit, lowerlimit from useroption where id='${JSON.parse(datas)}'`, (err, result: any) => {
         if (err) console.log(err)
         Object.assign(userData, result[0])
         console.log(userData)
@@ -177,20 +177,35 @@ app.post('/myPage', (req: Request, res: Response) => {
 })
 
 // 최초 입장 여부 DB 확인
-app.post('/entrance',(req,res)=>{
+app.post('/entrance', (req, res) => {
   let datas = ''
-  req.on('data', (data)=>{
-    datas+=data
+  req.on('data', (data) => {
+    datas += data
   })
-  req.on('end',()=>{
+  req.on('end', () => {
     const user = JSON.parse(datas)
-    DBInfo.query(`select firstentrance from ${user}`,(err,result)=>{
+    DBInfo.query(`select firstentrance from ${user}`, (err, result) => {
       console.log(result)
       // if(result===0){
       res.json()
       // }
     })
 
+  })
+})
+
+app.post('/recommand', (req, res) => {
+  let datas = ''
+  req.on('data', (data) => {
+    datas += data
+  })
+  req.on('end', () => {
+    DBInfo.query(`select ${JSON.parse(datas)} from recommandcompany`, (err, result) => {
+      if (err) console.error('뭔데:', err)
+      console.log('?? : ', result)
+
+      res.json(result)
+    })
   })
 })
 

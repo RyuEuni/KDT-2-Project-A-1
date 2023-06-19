@@ -1169,11 +1169,12 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
+    flex:1
   },
   recomandCompanyBallBig: {
     width: 110,
     height: 110,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -1183,7 +1184,7 @@ export const Styles = StyleSheet.create({
   recomandCompanyBallMedium: {
     width: 100,
     height: 100,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -1193,12 +1194,17 @@ export const Styles = StyleSheet.create({
   recomandCompanyBallSmall: {
     width: 90,
     height: 90,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 70,
     margin: 5
+  },
+  recommandCompanyName:{
+    width:'100%',
+    fontSize:StylesText.sizeSmall.fontSize,
+    textAlign:'center',
   },
 
   // ! 실시간 페이지
