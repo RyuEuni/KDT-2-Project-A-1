@@ -17,7 +17,6 @@ export default function companyLoveCheck(cmpCode: string, cmpName: string, imgUr
   };
   user()
 
-  const UrlLove = `${Url}:3080/companyLike`
   const _URL = `${Url}:3080/likeCheck`
   const infoObj = {
     "code": cmpCode,

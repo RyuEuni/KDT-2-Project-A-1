@@ -36,11 +36,41 @@ kis = PyKis(
 )
 
 #코스피, 코스닥 종목 검색 코드
-for market, stocks in kis.market.stock_search("에너지").items():
-    print(f' - - - {market} - - - ')
-    for stock in stocks:
-        print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
 
+
+@app.route('/stock/stockSearch', methods=['POST'])
+def post_stockSearch():
+    my_object = myObject()
+    print("서버 동작")
+
+    data = request.get_json()  # POST 요청으로부터 JSON 데이터를 가져옴
+    # code = data.get('code')
+    print("body: ", data)
+    keywoard = data.get('src')
+
+    searchName = []
+    searchPrice = []
+    searchCode = []
+    for market, stocks in kis.market.stock_search(keywoard).items():
+        print(f' - - - {market} - - - ')
+        for stock in stocks:
+            print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
+            stock = kis.stock(stock.mksc_shrn_iscd)
+            price = stock.price()
+            searchName.append(stock.name)
+            searchCode.append(stock.code)
+            searchPrice.append(price.stck_prpr)
+
+    key = "searchResult"
+    value = {
+        'code': searchCode, #종목코드
+        'name': searchName, #종목이름
+        'prpr': searchPrice, #종목 현재가
+    }
+    my_object.data[key] = value
+
+    data = my_object.data[key]
+    return jsonify(data)
 
 
 ############ 주식 현재가 출력 #########
@@ -93,7 +123,7 @@ def post_buySell():
         sellP.append(askp.askp[i])
         sellC.append(askp.askp_rsqn[i])
         
-    for i in range(10):
+    for i in range(9, -1, -1):
         print(f'BUY  {i+1:3d}: {askp.bidp[i]:8d}원 {askp.bidp_rsqn[i]:8d}주')
         buyP.append(askp.bidp[i])
         buyC.append(askp.bidp_rsqn[i])
@@ -107,8 +137,8 @@ def post_buySell():
         'hgpr': price.stck_hgpr, #종목 최고가
         'sellPrice': sellP, #매수 호가
         'sellCount': sellC, #매수 잔량
-        'buyPrice': sellC, #매도 호가
-        'buyCount': sellC, #매도 잔량
+        'buyPrice': buyP, #매도 호가
+        'buyCount': buyC, #매도 잔량
     }
     my_object.data[key] = value
 

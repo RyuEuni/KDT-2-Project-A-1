@@ -586,22 +586,26 @@ export const Styles = StyleSheet.create({
   myLoveCpy: {
     width: '100%',
     height: '45%',
-    backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
+    // justifyContent: 'center',
+    marginTop: '2%',
     alignItems: 'center',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    padding: '1%',
+    flex:1,
   },
   userLoveCpy: {
     width: '100%',
     height: '45%',
-    marginTop: '4%',
+    marginTop: '2%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    flex: 1,
   },
   searchListText: {
-    height: '80%',
     fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'center',
   },
@@ -616,7 +620,7 @@ export const Styles = StyleSheet.create({
     marginTop: '3%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   userLoveListWrap:{
@@ -773,7 +777,53 @@ export const Styles = StyleSheet.create({
     marginLeft: '15%',
     padding: '3%'
   },
-  
+  //! 주식 호가 스타일
+  askingTitleWrap: {
+    width: '100%', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    marginTop:'3%'
+  },
+  askingTitle: {
+    fontSize: StylesText.sizeMedium.fontSize, 
+    fontWeight: StylesText.weightBold.fontWeight
+  },
+  askingNameWrap: {
+    width: '100%', 
+    display: 'flex', 
+    flexDirection: 'row',
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    marginTop:'3%'
+  },
+  askingName: {
+    fontSize: StylesText.sizeSmall.fontSize, 
+    fontWeight: StylesText.weightBold.fontWeight,
+  },
+  askingWrap: {
+    width: '100%', 
+    height: '100%', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    flex: 1,
+
+  },
+  askingPCWrap: {
+    width: '100%', 
+    height: '100%', 
+    display: 'flex', 
+    flexDirection: 'row', 
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginTop: '2%',
+
+    // margin: '1%',
+    flex: 1,
+  },
+  askingPCText: {
+    fontSize: StylesText.sizeSmall.fontSize,
+  },
   // ! 장바구니 
   cartBox: {
     width: "100%",
