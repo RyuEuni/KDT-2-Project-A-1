@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert, FlatList } from 'react-native';
 import {Styles, StylesColors, StylesText} from '../../View/style/styles'
 import urlIpt from './fetchURL'
+import changeCurr from './changeCurrency';
+
 
 interface Companydata {
   sellCount: number
@@ -16,21 +18,13 @@ const buyList = (data: Companydata) => {
   console.log("flat value: ", data)
 
   return (
-    <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+    <View style={Styles.askingPCWrap}>
       <View>
-        <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 살까?</Text>
+        <Text style={Styles.askingPCText}>{changeCurr(data.buyPrice)}원</Text>
       </View>
       <View>
-        <View>
-          <Text style={Styles.rankingCompanyText}>구매 금액</Text>
-          <Text style={Styles.rankingCompanyText}>{data.buyPrice}</Text>
-        </View>
-        <View style={Styles.rankingCompanyPrice}>
-          <Text style={Styles.rankingCompanyText}>구매 가능 수량</Text>
-          <Text style={Styles.rankingCompanyText}>{data.buyCount}</Text>
-        </View>
-      </View>
-      
+        <Text style={Styles.askingPCText}>{changeCurr(data.buyCount)}개</Text>
+      </View>      
     </View>
   )
   
@@ -38,19 +32,12 @@ const buyList = (data: Companydata) => {
 const sellList = (data: Companydata) => {
   console.log("flat value: ", data)
   return (
-    <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+    <View style={Styles.askingPCWrap}>
       <View>
-        <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 팔까?</Text>
+        <Text style={Styles.askingPCText}>{changeCurr(data.sellPrice)}원</Text>
       </View>
       <View>
-        <View>
-          <Text style={Styles.rankingCompanyText}>판매 금액</Text>
-          <Text style={Styles.rankingCompanyText}>{data.sellPrice}</Text>
-        </View>
-        <View style={Styles.rankingCompanyPrice}>
-          <Text style={Styles.rankingCompanyText}>판매 가능 수량</Text>
-          <Text style={Styles.rankingCompanyText}>{data.sellCount}</Text>
-        </View>
+        <Text style={Styles.askingPCText}>{changeCurr(data.sellCount)}개</Text>
       </View>
     </View>
   )
@@ -100,12 +87,13 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     .then(response => response.json())
     .then(json => {
       console.log("디테일: ", json);
+
       setSellP(json['sellPrice'])
       setSellC(json['sellCount'])
       setBuyP(json['buyPrice'])
       setBuyC(json['buyCount'])
-      sethight(json['hgpr'])
-      setlow(json['lwpr'])
+      sethight(changeCurr(json['hgpr']))
+      setlow(changeCurr(json['lwpr']))
 
       for(let i = 0; i < sellP.length; i++){
         let val = {
@@ -126,7 +114,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
     fetchData()
   },[activeTab])
 
-  
+  console.log("호가 정보: ", askingData)
   switch (activeTab) {
     case 'info':
       console.log("정보 진입")
@@ -184,13 +172,20 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
-            <FlatList
-            data={askingData}
-            renderItem={({ item }) => buyList(item)} />
+          <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flex: 1,}}>
+            <View style={Styles.askingTitleWrap}>
+              <Text style={Styles.askingTitle}>다른 사람들은 얼마에 살까?</Text>
+              <View style={Styles.askingNameWrap}>
+                <Text style={[Styles.askingName, {marginRight:'5%'}]}>구매 금액</Text>
+                <Text style={[Styles.askingName,{marginLeft:'15%'}]}>구매 가능 수량</Text>
+              </View>
+            </View>
+            <View style={Styles.askingWrap}>
+              <FlatList
+              data={askingData}
+              renderItem={({ item }) => buyList(item)} />
+            </View>
           </View>
-          {/* 내용 3 */}
-          {/* <View style={Styles.companyInterestWrap}></View> */}
         </View>
       );
     case 'sell':
@@ -234,12 +229,20 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <FlatList
-          data={askingData}
-          renderItem={({ item }) => sellList(item)} />
-
-          {/* 내용 3 */}
-          {/* <View style={Styles.companyInterestWrap}></View> */}
+          <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1}}>
+            <View style={Styles.askingTitleWrap}>
+              <Text style={Styles.askingTitle}>다른 사람들은 얼마에 팔까?</Text>
+              <View style={Styles.askingNameWrap}>
+                <Text style={[Styles.askingName, {marginRight:'5%'}]}>판매 금액</Text>
+                <Text style={[Styles.askingName,{marginLeft:'15%'}]}>판매 가능 수량</Text>
+              </View>
+            </View>
+            <View style={Styles.askingWrap}>
+              <FlatList
+              data={askingData}
+              renderItem={({ item }) => sellList(item)} />
+            </View>
+          </View>
         </View>
       );
     case 'community':
