@@ -158,8 +158,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
     position: 'relative',
     flex: 1
   },
