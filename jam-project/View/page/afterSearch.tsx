@@ -5,21 +5,25 @@ import { Styles, StylesColors, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import urlIpt from '../../Models/func/fetchURL'
-
+import changeCurr from '../../Models/func/changeCurrency';
 
 interface Searchdata {
   companyname: string
   price: number
+  code: string
 }
 
 let result = [] as any
 
-const ListStyle = (data: Searchdata) => {
+const ListStyle = (data: Searchdata, {navigation}) => {
   console.log("akajsskskks: ", result)
 
   return (
     <View style={Styles.myLoveCpy}>
-      <TouchableOpacity style={Styles.myLoveListWrap}>
+      <TouchableOpacity style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center'}} onPress={() => navigation.navigate('companyDetail', { 
+                name: data.companyname,
+                code: data.code
+              })}>
         <Text style={Styles.searchListText}>{data.companyname}</Text>
         <Text style={Styles.searchListText}>{data.price}원</Text>
       </TouchableOpacity>
@@ -30,7 +34,7 @@ const ListStyle = (data: Searchdata) => {
 const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
   const { searchText } = route.params;
   const [search, setSearch] = useState(searchText);
-  
+  const [comData, setComData] = useState('')
 
   const fetchData = () => {
     const _URL = `${urlIpt}:5000/stock/stockSearch`
@@ -46,11 +50,13 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
         .then(response => response.json())
         .then(json => {
           console.log(json);
+          setComData(json)
           result.length = 0
           for (let i = 0; i < json["name"].length; i++) {
             let val = {
               companyname: json.name[i],
-              price: json.prpr[i],
+              price: changeCurr(json.prpr[i]),
+              code: json.code[i]
             }
             result.push(val)
           }
@@ -69,6 +75,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
 
   useEffect(() => {
     fetchData()
+    setSearch('');
   }, [])
 
   
@@ -84,7 +91,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
             <TextInput
               style={Styles.serchBar}
               onChangeText={text => setSearch(text)}
-              value={search}
+              value={searchText}
               placeholder="검색"
             />
             <TouchableOpacity style={Styles.serchButton} onPress={handleSearch}>
@@ -92,12 +99,12 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, borderWidth: 1, borderColor: 'red' }}>
+        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, marginTop:'3%'}}>
 
           {/* 내가 찜한 기업 영역 */}
           <FlatList
             data={result}
-            renderItem={({ item }) => ListStyle(item)} />
+            renderItem={({ item }) => ListStyle(item, {navigation})} />
         </View>
       </View>
       {/*========== search 영역 =========*/}

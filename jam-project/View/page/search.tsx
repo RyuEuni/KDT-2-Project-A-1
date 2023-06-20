@@ -20,52 +20,14 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
   };
 
   
-  // function afterSearch(searchText:string) {
-
-  //   return (
-  //     <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',}}>
-
-  //         {/* 내가 찜한 기업 영역 */}
-  //         <View style={Styles.myLoveCpy}>
-  //           <Text style={{ marginTop: '5%', marginRight: '62%', fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center',}}>검색 결과 화면</Text>
-  //           <TouchableOpacity style={Styles.myLoveListWrap}>
-  //             <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
-  //             <Text style={Styles.searchListText}>searchText</Text>
-  //             <Text style={Styles.searchListText}>금액 표시</Text>
-  //           </TouchableOpacity>
-  //           <TouchableOpacity style={Styles.myLoveListWrap}>
-  //             <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
-  //             <Text style={Styles.searchListText}>삼성전자</Text>
-  //             <Text style={Styles.searchListText}>금액 표시</Text>
-  //           </TouchableOpacity>
-  //           <TouchableOpacity style={Styles.myLoveListWrap}>
-  //             <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
-  //             <Text style={Styles.searchListText}>유한양행</Text>
-  //             <Text style={Styles.searchListText}>금액 표시</Text>
-  //           </TouchableOpacity>
-  //           <TouchableOpacity style={Styles.myLoveListWrap}>
-  //             <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
-  //             <Text style={Styles.searchListText}>카카오</Text>
-  //             <Text style={Styles.searchListText}>금액 표시</Text>
-  //           </TouchableOpacity>
-  //           <TouchableOpacity style={Styles.myLoveListWrap}>
-  //             <Image style={Styles.myLoveImage} source={require('../../Resource/Icon/heart.png')}></Image>
-  //             <Text style={Styles.searchListText}>포스코건설</Text>
-  //             <Text style={Styles.searchListText}>금액 표시</Text>
-  //           </TouchableOpacity>
-  //         </View>
-  //       </View>
-  //   )
-  // }
-  
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />
 
       {/*========== search 영역 =========*/}
       <View style={Styles.homeArea}>
-        <View style={{width: '100%', height:'10%', backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop: '7%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{width: '95%', height: '70%', backgroundColor: StylesColors.whiteColor.backgroundColor, borderRadius: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{width: '100%', height:'7%', backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop: '7%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{width: '95%', height: '80%', backgroundColor: StylesColors.whiteColor.backgroundColor, borderRadius: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
             <TextInput
               style={Styles.serchBar}
               onChangeText={text => setSearchText(text)}

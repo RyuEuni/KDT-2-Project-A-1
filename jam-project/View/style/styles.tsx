@@ -601,38 +601,42 @@ export const Styles = StyleSheet.create({
   //! 주식 검색화면
   myLoveCpy: {
     width: '100%',
-    height: '100%',
-    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    height: '45%',
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
+    marginTop: '2%',
     alignItems: 'center',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    padding: '1%',
     flex:1,
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   userLoveCpy: {
     width: '100%',
     height: '45%',
-    marginTop: '4%',
+    marginTop: '2%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   searchListText: {
     // width: '40%',
-    height: '80%',
+    // height: '80%',
     fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'center',
+    // marginTop: '2%',
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
 
   },
   myLoveImage:{
@@ -640,8 +644,8 @@ export const Styles = StyleSheet.create({
     height: '90%',
     resizeMode: 'contain',
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   myLoveListWrap:{
     width: '95%',
@@ -649,12 +653,12 @@ export const Styles = StyleSheet.create({
     marginTop: '3%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     
     
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   userLoveListWrap:{
     width: '95%',
@@ -665,8 +669,8 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
 
   //! 주식종목 상세 페이지
@@ -717,8 +721,8 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     // alignItems: 'flex-end',
 
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   companyTabBtn: {
     width: '24%',
@@ -726,8 +730,8 @@ export const Styles = StyleSheet.create({
     borderRadius:10,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
 
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   companyTabText: {
     height: '40%', 
