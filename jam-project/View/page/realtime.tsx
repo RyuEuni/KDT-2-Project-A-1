@@ -91,18 +91,6 @@ export const RealtimeScreen: React.FC<any> = ({ navigation }) => {
 
         {/* 랭킹 목록 */}
         <View style={Styles.rankingList}>
-
-          {/* <View style={[Styles.rankingMenu, {marginLeft: '5%'}]}>
-            <Text>
-              {new Date().getHours()}시 {new Date().getMinutes()}분 기준
-            </Text>
-
-            새로고침 되는 기능 필요
-            <TouchableOpacity style={{marginLeft: '2%', marginTop: '0.7%'}}>
-              <Icon name="reload1" size={13} />
-            </TouchableOpacity>
-
-          </View> */}
           {renderContent()}
         </View>
 

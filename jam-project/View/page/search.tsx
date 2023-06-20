@@ -15,8 +15,7 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
     afterSearch
     setSearchText(searchText)
     
-    // setSearchText('검색'); // 검색 완료 후 텍스트를 '검색'으로 설정
-    // Perform search logic or any other operations with the entered text
+    // 검색 완료 후 텍스트를 '검색'으로 설정
   };
 
   function afterSearch() {

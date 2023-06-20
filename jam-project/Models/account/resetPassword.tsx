@@ -4,7 +4,6 @@ import { Alert } from "react-native";
 import url from '../func/fetchURL'
 
 export const ResetPassword=(id:string,email:string,password:string)=>{
-  // console.log("함수 실행은 되나 : "+id, email, password)
 
   let resetPassword={
     ID:id,
@@ -18,11 +17,8 @@ export const ResetPassword=(id:string,email:string,password:string)=>{
   })
   .then((response)=> {return response.json()})
   .then((data)=>{
-    // console.log(typeof data[0])
-    // console.log("fetch "+JSON.parse(data))
     
     let datas=JSON.parse(data)
-    // console.log(datas.result)
 
     // DB에서 받은 결과 도출
     if(datas.result==='success'){

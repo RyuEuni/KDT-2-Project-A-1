@@ -11,7 +11,6 @@ export function loveCheck(request: Request, response: Response) {
     body = body + data;
   });
   request.on("end", function () {
-    //console.log('유저 결과1: ', body)
     let bodySplit = body.split('"')
     const code = bodySplit[3]
     const name = bodySplit[7]
@@ -24,7 +23,6 @@ export function loveCheck(request: Request, response: Response) {
         if(err) throw err;
         else{
           let like:any = data;
-          //console.log("data: ", like)
           let postLikeCount:any;
           let likeRe = {};
 
@@ -32,10 +30,7 @@ export function loveCheck(request: Request, response: Response) {
           (err, data:any) => {
             if(err) throw err;
             else{
-              //console.log("data2: ", data)
               postLikeCount = data[0].like_count
-              // console.log("dangstar like count: ", data[0].like_count)
-              // postLikeCount = data[0].like_count;
 
               if(like === null || like.length === 0){
                 console.log("값이 없거나 null입니다", like)
@@ -50,7 +45,6 @@ export function loveCheck(request: Request, response: Response) {
               else{
                 const likeUserArr = like[0].userID.likeUser;
 
-                //console.log("야로로롤: ", likeUserArr, postLikeCount)
                 if (likeUserArr.includes(id)) {
                   likeRe = {
                     'type': true,
@@ -109,7 +103,6 @@ export function loveInput(request: Request, response: Response) {
           } 
           else {
             const likeUserArr = like[0].userID.likeUser
-            // console.log(likeUserArr)
 
             // 2. likeUser 배열에 이미 존재하는 경우 해당 값을 삭제
             if (likeUserArr.includes(id)) {

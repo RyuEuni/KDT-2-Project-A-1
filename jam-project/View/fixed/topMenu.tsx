@@ -20,7 +20,6 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
   useEffect(() => {
     const checkLogin = async () => {
       const loginCheck = await getLoginInfo();
-      console.log("여긴 상단부",loginCheck)
 
       if (loginCheck !== null) {
         SetmenuState(false);

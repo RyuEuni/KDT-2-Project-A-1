@@ -2,14 +2,6 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-/**
- * 앱 테마 컬러 리스트
- * mainColor: '#D3EAFF'
- * subColorLight: '#E3F2FF'
- * subColorDeep: '#A5C7FB'
- * grayColor: '#BDBDBD'
- */
-
 export const StylesColors = StyleSheet.create({
   mainColor: {
     backgroundColor: '#D3EAFF'
@@ -178,8 +170,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'blue',
     position: 'relative',
   },
   homeWrap: {
@@ -195,8 +185,6 @@ export const Styles = StyleSheet.create({
     height: '45%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'red'
   },
   titleText: {
     marginTop: 20,
@@ -215,8 +203,6 @@ export const Styles = StyleSheet.create({
     height: '45%',
     backgroundColor: '#E3F2FF',
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'red'
   },
   container2: {
     width: 80,
@@ -291,8 +277,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
     flex: 1,
     position: 'absolute',
     transition: 'left 0.6s ease',
@@ -605,11 +589,7 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   userLoveCpy: {
     width: '100%',
@@ -618,29 +598,17 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   searchListText: {
-    // width: '40%',
     height: '80%',
     fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red'
-
   },
   myLoveImage:{
     width: '10%',
     height: '90%',
     resizeMode: 'contain',
-
-    borderWidth: 1,
-    borderColor: 'red'
   },
   myLoveListWrap:{
     width: '95%',
@@ -650,10 +618,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    
-    
-    borderWidth: 1,
-    borderColor: 'red'
   },
   userLoveListWrap:{
     width: '95%',
@@ -663,9 +627,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
-    borderWidth: 1,
-    borderColor: 'red'
   },
 
   //! 주식종목 상세 페이지
@@ -678,27 +639,22 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     top: '8%',
-
   },
   companyInfo:{
     height: '100%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-
   },
   companyTitile: {
     fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
     marginLeft: '2%',
-
   },
   companyHeartImg: {
     width: '100%',
     height: '100%',
     resizeMode: 'contain',
-    
-
   },
   companyMoney:{
     fontSize: StylesText.sizeLarge.fontSize,
@@ -706,7 +662,6 @@ export const Styles = StyleSheet.create({
     marginLeft: '2%',
     position: 'absolute',
     left: '71%',
-
   },
   companyTabWrap: {
     width: '100%', 
@@ -714,19 +669,12 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    // alignItems: 'flex-end',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
   companyTabBtn: {
     width: '24%',
     height: '70%',
     borderRadius:10,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
   companyTabText: {
     height: '40%', 
@@ -740,8 +688,6 @@ export const Styles = StyleSheet.create({
     position: 'absolute', 
     top: '18%', 
     backgroundColor: StylesColors.subColorLight.backgroundColor, 
-    borderWidth: 1, 
-    borderColor: 'green',
   },
 
   //! 회사 소개 부분
@@ -752,9 +698,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-end',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
 
   //! 회사 재무 부분
@@ -765,9 +708,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-end',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
 
   //! 회사 이자 내역 부분
@@ -778,9 +718,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-end',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
   
   //! 종목 상세화면 - 구매
@@ -791,9 +728,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
   buyInputWrap: {
     width: '95%', 
@@ -804,15 +738,11 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     borderRadius: 10,
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
   buyInput:{
     width: '25%',
     height: '70%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
-
   },
   buyButton: {
     width: '60%',
@@ -868,7 +798,6 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: "flex",
     flexDirection: "column",
-
   },
   cartLists: {
     width: "100%",
@@ -893,19 +822,16 @@ export const Styles = StyleSheet.create({
     width: "30%",
     height: "100%",
     textAlign: "left",
-    // fontSize:StylesText.sizeSmall.fontSize
   },
   cartListItemEA: {
     width: "30%",
     height: "100%",
     textAlign: "right",
-    // fontSize:StylesText.sizeSmall.fontSize
   },
   cartListItemPrice: {
     width: "30%",
     height: "100%",
     textAlign: "center",
-    // fontSize:StylesText.sizeMedium.fontSize
   },
   cartListClick: {
     width: "10%",
@@ -965,7 +891,6 @@ export const Styles = StyleSheet.create({
   },
   cartTitleText: {
     width: "30%",
-    // height:10,
     fontSize: StylesText.sizeMedium.fontSize,
     left: 20,
     top: 10
@@ -1342,8 +1267,6 @@ export const Styles = StyleSheet.create({
   guideScroll: {
     width: "100%",
     height: "100%",
-    // flex:1,
-    // top:50
   },
   guideContent: {
     width: '100%',
