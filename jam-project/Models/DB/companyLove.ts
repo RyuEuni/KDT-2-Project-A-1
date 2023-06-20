@@ -17,7 +17,7 @@ export function loveCheck(request: Request, response: Response) {
     const name = bodySplit[7]
     const id = bodySplit[11]
 
-    console.log(code,name,id)
+    console.log("유저 결과1",code,name,id)
     DBInfo.query(
       `SELECT userID FROM lovecompany WHERE companyname = '${name}'`,
       (err, data) => {
@@ -32,8 +32,14 @@ export function loveCheck(request: Request, response: Response) {
           (err, data:any) => {
             if(err) throw err;
             else{
-              //console.log("data2: ", data)
-              postLikeCount = data[0].like_count
+              console.log("data2: ", data)
+              if(data === null || data.length === 0){
+                postLikeCount = 0  
+              }
+              else{
+                postLikeCount = data[0].like_count
+
+              }
               // console.log("dangstar like count: ", data[0].like_count)
               // postLikeCount = data[0].like_count;
 

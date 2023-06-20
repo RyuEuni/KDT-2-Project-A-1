@@ -11,10 +11,10 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 
   const [searchText, setSearchText] = useState('');
 
-  const handleSearch = () => {
+  const handleSearch = ({navigation}) => {
     console.log(searchText);
-    setSearchText('검색'); // 검색 완료 후 텍스트를 '검색'으로 설정
-    // Perform search logic or any other operations with the entered text
+    navigation.navigate('afterSearch', {searchText})
+    setSearchText('')
   };
 
   const [data, setData] = useState(null);
@@ -46,7 +46,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
             value={searchText}
             placeholder="검색"
           />
-          <TouchableOpacity style={Styles.serchButton} onPress={handleSearch}>
+          <TouchableOpacity style={Styles.serchButton} onPress={()=>handleSearch({navigation})}>
             <Text style={Styles.serchButtonText}>serch</Text>
           </TouchableOpacity>
         </View>
